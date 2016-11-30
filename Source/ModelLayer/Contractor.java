@@ -5,7 +5,6 @@ package ModelLayer;
  */
 public class Contractor extends Person {
     private String CVR;
-    private String bogdansdick;
     public Contractor(String name, String address, String email, String phone, String city, String CVR) {
         super(name, address, email, phone, city);
         this.CVR = CVR;
