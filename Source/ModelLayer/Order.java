@@ -8,10 +8,15 @@ public abstract class Order {
 
     private String numberID;
     private int quantity;
-    //private Item item TODO
+    private double price;
+    private Customer customer;
     private ArrayList<Item> items;
-    public Order(String numberID, int quantity) {
+
+    public Order(String numberID, int quantity, double price, Customer customer) {
         this.numberID = numberID;
+        this.quantity = quantity;
+        this.price = price;
+        this.customer = customer;
         items = new ArrayList<>();
     }
 
@@ -29,5 +34,21 @@ public abstract class Order {
 
     public void setQuantity(int quantity) {
         this.quantity = quantity;
+    }
+
+    public double getPrice() {
+        return price;
+    }
+
+    public void setPrice(double price) {
+        this.price = price;
+    }
+
+    public Customer getCustomer() {
+        return customer;
+    }
+
+    public void setCustomer(Customer customer) {
+        this.customer = customer;
     }
 }

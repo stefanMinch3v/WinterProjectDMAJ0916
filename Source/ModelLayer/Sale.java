@@ -7,7 +7,8 @@ import java.util.ArrayList;
  */
 public class Sale extends Order{
 
-    public Sale(String numberID, int quantity) {
-        super(numberID, quantity);
+    public Sale(String numberID, int quantity, double price, Customer customer, ArrayList<Item> items) {
+        super(numberID, quantity, price, customer);
+        items = new ArrayList<>();
     }
 }

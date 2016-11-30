@@ -1,6 +1,7 @@
 package ModelLayer;
 
 import java.text.DateFormat;
+import java.util.ArrayList;
 
 /**
  * Created by Admin on 11/28/2016.
@@ -8,11 +9,15 @@ import java.text.DateFormat;
 public class Loan extends Order{
     private DateFormat startDate;
     private int periodOfTime;
+    private boolean status;
 
-    public Loan(String numberID, int quantity, DateFormat startDate, int periodOfTime) {
-        super(numberID, quantity);
+    public Loan(String numberID, int quantity, double price,Customer customer, DateFormat startDate, int periodOfTime,
+                ArrayList<Item> items) {
+        super(numberID, quantity, price, customer);
         this.startDate = startDate;
         this.periodOfTime = periodOfTime;
+        items = new ArrayList<>();
+        status = false;
     }
 
     public DateFormat getStartDate() {
@@ -31,4 +36,15 @@ public class Loan extends Order{
         this.periodOfTime = periodOfTime;
     }
 
+    public boolean isReturned() {
+        return status;
+    }
+
+    public void setStatus(boolean status) {
+        this.status = status;
+    }
+
+    public String getNumberID() {
+        return getNumberID();
+    }
 }
