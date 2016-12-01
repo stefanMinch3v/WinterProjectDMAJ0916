@@ -10,14 +10,12 @@ public abstract class Order {
     private int quantity;
     private double price;
     private Customer customer;
-    private ArrayList<Item> items;
 
     public Order(String numberID, int quantity, double price, Customer customer) {
         this.numberID = numberID;
         this.quantity = quantity;
         this.price = price;
         this.customer = customer;
-        items = new ArrayList<>();
     }
 
     public String getNumberID() {

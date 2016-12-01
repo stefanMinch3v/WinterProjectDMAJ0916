@@ -10,9 +10,9 @@ public class Loan extends Order{
     private DateFormat startDate;
     private int periodOfTime;
     private boolean status;
+    private ArrayList<Item> items;
 
-    public Loan(String numberID, int quantity, double price,Customer customer, DateFormat startDate, int periodOfTime,
-                ArrayList<Item> items) {
+    public Loan(String numberID, int quantity, double price,Customer customer, DateFormat startDate, int periodOfTime) {
         super(numberID, quantity, price, customer);
         this.startDate = startDate;
         this.periodOfTime = periodOfTime;
