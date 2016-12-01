@@ -12,10 +12,11 @@ import java.io.PrintWriter;
  * Created by EU on 2016-11-26.
  */
 public abstract class CustomerInputChecker {
+    private CustomerControl customerControl;
     static String cpr, name, address, email, phone, city;
     static boolean ok;
 
-    public static void addCustomer() {
+    public void addCustomer() {
         cpr = verifyCpr();
         name = verifyName();
         address = verifyAddress();
@@ -23,7 +24,7 @@ public abstract class CustomerInputChecker {
         phone = verifyPhone();
         city = verifyCity();
 
-        CustomerControl.addCustomer(cpr, name, address, email, phone, city); // create customer and add to container
+        customerControl.addCustomer(cpr, name, address, email, phone, city); // create customer and add to container
     }
 
     public static String verifyCpr() {
