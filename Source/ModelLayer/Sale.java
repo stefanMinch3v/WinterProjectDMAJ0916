@@ -12,4 +12,8 @@ public class Sale extends Order{
         super(numberID, quantity, price, customer);
         items = new ArrayList<>();
     }
+
+    public ArrayList<Item> getItems() {
+        return items;
+    }
 }

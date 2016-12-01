@@ -47,4 +47,8 @@ public class Loan extends Order{
     public String getNumberID() {
         return getNumberID();
     }
+
+    public ArrayList<Item> getItems() {
+        return items;
+    }
 }
