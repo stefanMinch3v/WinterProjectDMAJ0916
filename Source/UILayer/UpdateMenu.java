@@ -1,7 +1,6 @@
 package UILayer;
 
 import ControlLayer.CustomerControl;
-import UILayer.CustomerInputChecker;
 
 import static UILayer.MenuText.*;
 
