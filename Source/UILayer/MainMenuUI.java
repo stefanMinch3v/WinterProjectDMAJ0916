@@ -10,6 +10,7 @@ import static UILayer.MenuText.*;
 public class MainMenuUI {
     public static void runMainLoop() {
         MenuText.write(MAIN_MENU);
+
         int choice;
         do {
             choice = Input.readInt();
