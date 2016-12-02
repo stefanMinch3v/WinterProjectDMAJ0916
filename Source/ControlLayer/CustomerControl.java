@@ -14,8 +14,6 @@ public class CustomerControl {
        customerContainer = CustomerContainer.getInstance();
     }
 
-    public CustomerControl() {}
-
     public void addCustomer(String cpr, String name, String address, String email, String phone, String city) {
 
         Customer customer = new Customer(cpr, name, address, email, phone, city); // creating customer
