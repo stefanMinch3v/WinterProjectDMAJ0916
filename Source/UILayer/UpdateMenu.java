@@ -19,7 +19,7 @@ public abstract class UpdateMenu {
 
             switch (choice) {
                 case 1: // CPR
-                    updatedInfo = CustomerInputChecker.verifyCpr();
+                    updatedInfo = InputChecker.verifyId();
 
                     System.out.println("Update successful, customers new info is:\n"+ CustomerControl.updateCustomer(indexI, 1, updatedInfo) );
                     break;
