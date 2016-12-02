@@ -6,6 +6,10 @@ import ModelLayer.*;
  */
 public class EmployeeControl {
 private EmployeeContainer employeeContainer;
+
+    public EmployeeControl() {
+        employeeContainer = EmployeeContainer.getInstance();
+    }
     public void addEmployee(String name, String address, String email, String phone, String city, String CPR, String workID) {
 
         Employee employee = new Employee(name, address, email, phone, city, CPR, workID);
