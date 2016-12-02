@@ -36,5 +36,15 @@ public class CustomerContainer {
         customers.remove(index);
     }
 
+    public Customer getCustomerByCPR(String cpr) {
+        Customer cust = null;
+        for(Customer c: customers) {
+            if(c.getCPR().equals(cpr)) {
+                cust = c;
+            }
+        }
+        return cust;
+    }
+
 }
 
