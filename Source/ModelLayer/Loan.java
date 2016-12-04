@@ -44,11 +44,34 @@ public class Loan extends Order{
         this.status = status;
     }
 
-    public String getNumberID() {
+    public String getNumberId() {
         return getNumberID();
     }
 
     public ArrayList<Item> getItems() {
         return items;
+    }
+
+    public boolean updateFields(int fieldNumber, Object fieldInfo) {
+        switch (fieldNumber) {
+            case 1:
+                //setQuantity() = (int) fieldInfo;
+                return true;
+            case 2:
+                //setPrice() = (double) fieldInfo;
+                return true;
+            case 3:
+                //setCustomer() = (Customer) fieldInfo);
+                return true;
+            case 4:
+                startDate = (DateFormat) fieldInfo;
+                return true;
+            case 5:
+                periodOfTime = (int) fieldInfo;
+                break;
+            default:
+                return false;
+        }
+        return false;
     }
 }

@@ -16,4 +16,20 @@ public class Sale extends Order{
     public ArrayList<Item> getItems() {
         return items;
     }
+
+    public boolean updateFields(int fieldNumber, Object fieldInfo) {
+        switch (fieldNumber) {
+            case 1:
+                //setQuantity() = (int) fieldInfo;
+                return true;
+            case 2:
+                //setPrice() = (double) fieldInfo;
+                return true;
+            case 3:
+                //setCustomer() = (Customer) fieldInfo);
+                return true;
+            default:
+                return false;
+        }
+    }
 }

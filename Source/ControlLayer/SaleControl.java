@@ -27,5 +27,8 @@ public class SaleControl {
         return s.getItems();
     }
 
-    //update Sale TODO
+    public boolean updateSale(String numberID, int fieldNumber, Object fieldInfo) {
+        Sale sale = saleContainer.getSaleByID(numberID);
+        return sale.updateFields(fieldNumber, fieldInfo);
+    }
 }

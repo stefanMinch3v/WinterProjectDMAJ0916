@@ -1,5 +1,6 @@
 package ModelLayer;
 
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Iterator;
 
@@ -52,4 +53,16 @@ public class LoanContainer {
         }
         return foundLoan;
     }
+
+    /*public ArrayList<String> getLoanByNumberID(String numberID) {
+        ArrayList<String> list = new ArrayList<>();
+        for (Loan l: loan) {
+            if(l.getNumberID().equals(numberID)) {
+                list.add("numberID: " + l.getNumberID() + "n/quantity: " + l.getQuantity() + "n/price: " + l.getPrice() + "n/customer: " + l.getCustomer() +
+                "n/start date: " + l.getStartDate() + "n/period: " + l.getPeriodOfTime() + "n/available: " + l.isReturned() +
+                "n/item: " + l.getItems());
+            }
+        }
+        return list;
+    }*/
 }

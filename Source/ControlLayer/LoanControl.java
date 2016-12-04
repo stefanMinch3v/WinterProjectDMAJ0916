@@ -28,5 +28,8 @@ public class LoanControl {
         return l.getItems();
     }
 
-    //update loan TODO
+    public boolean updateLoan(String numberID, int fieldNumber, Object fieldInfo) {
+        Loan loan = loanContainer.getLoanByID(numberID);
+        return loan.updateFields(fieldNumber, fieldInfo);
+    }
 }
