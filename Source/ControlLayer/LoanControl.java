@@ -23,9 +23,8 @@ public class LoanControl {
         loanContainer.addLoan(new Loan(numberID, quantity, price, customer, startDate, periodOfTime));
     }
 
-    public ArrayList<Item> readLoan(String numberID) {
-        Loan l = loanContainer.getLoanByID(numberID);
-        return l.getItems();
+    public ArrayList<String> readLoan(String numberID) {
+        return loanContainer.getLoanByNumberID(numberID);
     }
 
     public boolean updateLoan(String numberID, int fieldNumber, Object fieldInfo) {

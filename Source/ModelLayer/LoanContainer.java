@@ -30,14 +30,14 @@ public class LoanContainer {
         return loan;
     }
 
-    public void removeLoan(String numberID) {
+    /*public void removeLoan(String numberID) {
         for (Loan l: loan) {
             if (l.getNumberID().equals(numberID)) {
                 loan.remove(numberID);
                 System.out.println("Removed");
             }
         }
-    }
+    }*/
     //Search for a specific loan by his unique numberID
     public Loan getLoanByID(String numberID) {
         //boolean found = false;

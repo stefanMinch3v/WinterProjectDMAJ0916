@@ -43,14 +43,14 @@ public class SaleContainer {
         return foundSale;
     }
 
-    public void removeSale(String numberID) {
+    /*public void removeSale(String numberID) {
         for (Sale s: sale) {
             if (s.getNumberID().equals(numberID)) {
                 sale.remove(numberID);
                 System.out.println("Removed");
             }
         }
-    }
+    }*/
 
     public ArrayList<String> getSaleByNumberID(String numberID) {
         ArrayList<String> list = new ArrayList<>();

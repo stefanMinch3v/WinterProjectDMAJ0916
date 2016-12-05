@@ -22,9 +22,8 @@ public class SaleControl {
         saleContainer.addSale(new Sale(numberID,quantity,price,customer));
     }
 
-    public ArrayList<Item> readSale(String numberID) {
-        Sale s = saleContainer.getSaleByID(numberID);
-        return s.getItems();
+    public ArrayList<String> readSale(String numberID) {
+        return saleContainer.getSaleByNumberID(numberID);
     }
 
     public boolean updateSale(String numberID, int fieldNumber, Object fieldInfo) {
