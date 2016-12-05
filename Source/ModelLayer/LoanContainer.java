@@ -54,15 +54,20 @@ public class LoanContainer {
         return foundLoan;
     }
 
-    /*public ArrayList<String> getLoanByNumberID(String numberID) {
+    public ArrayList<String> getLoanByNumberID(String numberID) {
         ArrayList<String> list = new ArrayList<>();
         for (Loan l: loan) {
             if(l.getNumberID().equals(numberID)) {
-                list.add("numberID: " + l.getNumberID() + "n/quantity: " + l.getQuantity() + "n/price: " + l.getPrice() + "n/customer: " + l.getCustomer() +
-                "n/start date: " + l.getStartDate() + "n/period: " + l.getPeriodOfTime() + "n/available: " + l.isReturned() +
-                "n/item: " + l.getItems());
+                list.add("1.NumberID: " + l.getNumberID());
+                list.add("2.Quantity: " + l.getQuantity());
+                list.add("3.Price: " + l.getPrice());
+                list.add("4.Customer: " + l.getCustomer());
+                list.add("5.Start date: " + l.getStartDate());
+                list.add("6.Period: " + l.getPeriodOfTime());
+                list.add("7.Available: " + l.isReturned());
+                list.add("8.Item: " + l.getItems());
             }
         }
         return list;
-    }*/
+    }
 }

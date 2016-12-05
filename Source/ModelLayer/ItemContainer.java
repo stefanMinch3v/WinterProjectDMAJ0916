@@ -53,7 +53,7 @@ public class ItemContainer {
                 fields.add("5. Trade allowance: "+ item.getTradeAllowance());
                 fields.add("6. Retail price: "+ item.getRetailPrice());
                 fields.add("7. Quantity of "+item.getName()+" at DIY: "+ item.getQuantityAtDIY());
-                fields.add("7. Quantity of "+item.getName()+" at Timber: "+ item.getQuantityAtTimber());
+                fields.add("8. Quantity of "+item.getName()+" at Timber: "+ item.getQuantityAtTimber());
             }
         }
         return fields;
