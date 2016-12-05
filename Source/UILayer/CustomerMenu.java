@@ -55,7 +55,7 @@ public class CustomerMenu {
          email = InputChecker.verifyEmail();
          phone = InputChecker.verifyPhone();
          city = InputChecker.verifyCity();
-
          //customerControler.addCustomer(cpr, name, address, email, phone, city);
+        //TODO: Fix imput checker for cpr since its not working corectly (null pointer) and fix addCustomer.
     }
 }

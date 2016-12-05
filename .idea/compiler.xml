@@ -2,7 +2,6 @@
 <project version="4">
   <component name="CompilerConfiguration">
     <excludeFromCompile>
-      <file url="file://$PROJECT_DIR$/Source/UILayer/MainMenuUI.java" />
       <file url="file://$PROJECT_DIR$/Source/UILayer/UpdateMenu.java" />
     </excludeFromCompile>
     <resourceExtensions />
