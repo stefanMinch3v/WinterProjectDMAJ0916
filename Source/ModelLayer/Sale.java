@@ -20,13 +20,13 @@ public class Sale extends Order{
     public boolean updateFields(int fieldNumber, Object fieldInfo) {
         switch (fieldNumber) {
             case 1:
-                //setQuantity() = (int) fieldInfo;
+                setQuantity((int)fieldInfo);
                 return true;
             case 2:
-                //setPrice() = (double) fieldInfo;
+                setPrice((double)fieldInfo);
                 return true;
             case 3:
-                //setCustomer() = (Customer) fieldInfo);
+                setCustomer((Customer)fieldInfo);
                 return true;
             default:
                 return false;

@@ -55,23 +55,22 @@ public class Loan extends Order{
     public boolean updateFields(int fieldNumber, Object fieldInfo) {
         switch (fieldNumber) {
             case 1:
-                //setQuantity() = (int) fieldInfo;
+                setQuantity((int)fieldInfo);
                 return true;
             case 2:
-                //setPrice() = (double) fieldInfo;
+                setPrice((double)fieldInfo);
                 return true;
             case 3:
-                //setCustomer() = (Customer) fieldInfo);
+                setCustomer((Customer)fieldInfo);
                 return true;
             case 4:
-                startDate = (DateFormat) fieldInfo;
+                startDate = (DateFormat)fieldInfo;
                 return true;
             case 5:
                 periodOfTime = (int) fieldInfo;
-                break;
+                return true;
             default:
                 return false;
         }
-        return false;
     }
 }

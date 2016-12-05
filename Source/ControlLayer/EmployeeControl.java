@@ -40,7 +40,7 @@ private EmployeeContainer employeeContainer;
                 break;
             case 4:
                 employeeContainer.getEmployee(index).setEmail(newInfo);
-                break;
+            break;
             case 5:
                 employeeContainer.getEmployee(index).setPhone(newInfo);
                 break;
