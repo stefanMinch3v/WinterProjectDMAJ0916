@@ -5,6 +5,7 @@ package ModelLayer;
 public class Employee extends Person {
     private String workID;
     private String CPR;
+    private Person person;
 
     public Employee(String name, String address, String email, String phone, String city, String workID, String CPR) {
        super(name, address, email, phone, city);
@@ -27,5 +28,6 @@ public class Employee extends Person {
     public void setCPR(String CPR) {
         this.CPR = CPR;
     }
+
 
 }
