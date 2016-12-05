@@ -14,6 +14,10 @@ public abstract class Person {
         this.phone = phone;
     }
 
+    public String getName() {
+        return name;
+    }
+
     public String getAddress() {
         return address;
     }
@@ -50,7 +54,4 @@ public abstract class Person {
         this.phone = phone;
     }
 
-    public String getName() {
-        return name;
-    }
 }

@@ -11,23 +11,27 @@ import java.util.ArrayList;
 public class ItemControl {
     private ItemContainer itemContainer;
 
-    public boolean addItem(String name,String type,String barcode, double costPrice, double tradeAllowance, double retailPrice, int quantity, String place)
-    {
-        Item item = new Item(name,type, barcode, costPrice, tradeAllowance, retailPrice, quantity, place);
+//CREATE
+    public boolean addItem(String name,String type,String barcode, double costPrice, double tradeAllowance, double retailPrice, int quantity, String place) {
+        Item item = new Item(name, type, barcode, costPrice, tradeAllowance, retailPrice, quantity, place);
         return itemContainer.addEItem(item);
     }
-    public boolean deleteItem(String barcode)
-    {
-        return itemContainer.removeItemByBarcode(barcode);
-    }
 
+//READ
     public ArrayList<String> getItemByBarcode(String barcode){
         return itemContainer.getItemsFieldsByBarcode(barcode);
     }
 
+//UPDATE
     public boolean changeItemFieldByBarcode(String barcode, int fieldNumber, Object fieldInfo)
     {
         Item item = itemContainer.findItemByBarcode(barcode);
         return item.setField(fieldNumber,fieldInfo);
+    }
+
+    //DELETE
+    public boolean deleteItem(String barcode)
+    {
+        return itemContainer.removeItemByBarcode(barcode);
     }
 }

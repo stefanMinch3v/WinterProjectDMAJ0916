@@ -1,6 +1,7 @@
 package ModelLayer;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 
 /**
  * Created by RaidenRabit on 23-Nov-16.
@@ -20,8 +21,9 @@ public class CustomerContainer {
         return instance;
     }
 
-    public  void addCustomer(Customer customer) {
+    public  boolean addCustomer(Customer customer) {
         customers.add(customer);
+        return true;
     }
 
     public  Customer getCustomer(int index) {
@@ -32,19 +34,42 @@ public class CustomerContainer {
         return customers.size();
     }
 
-    public  void removeCustomer(int index) {
-        customers.remove(index);
+
+    public Customer findCustomerByCpr(String cpr){
+        for (Customer customer:customers) {
+            if( customer.getCpr().equals(cpr) )
+                return customer;
+        }
+        return null;
     }
 
-    public Customer getCustomerByCPR(String cpr) {
-        Customer cust = null;
-        for(Customer c: customers) {
-            if(c.getCPR().equals(cpr)) {
-                cust = c;
+    public ArrayList<String> getCustomerFieldsByCpr(String cpr){
+        ArrayList<String> fields = new ArrayList<>();
+        for (Customer customer:customers) {
+            if(customer.getCpr().equals(cpr)) {
+                fields.add( "1. CPR: "+ customer.getCpr() );
+                fields.add("2. Name: "+ customer.getName() );
+                fields.add( "3. Address: "+ customer.getAddress() );
+                fields.add( "4. Email: "+ customer.getEmail() );
+                fields.add( "5. Phone: "+ customer.getPhone() );
+                fields.add( "6. City: "+ customer.getCity() );
             }
         }
-        return cust;
+        return fields;
     }
+
+    public  boolean removeCustomerByCPR(String cpr) {
+        Iterator<Customer> it = customers.iterator();
+        while(it.hasNext()){
+            Customer customer = it.next();
+            if(customer.getCpr().equals(cpr)) {
+                it.remove();
+                return true;
+            }
+        }
+        return false;
+    }
+
 
 }
 
