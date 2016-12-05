@@ -14,7 +14,6 @@ import UILayer.Authentication;
 import ModelLayer.LoginContainer;
 
 public class Main {
-    private LoginContainer loginContainer;
 
     public static void main(String[] args) {
 

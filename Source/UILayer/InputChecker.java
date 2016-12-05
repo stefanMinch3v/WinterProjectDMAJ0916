@@ -7,23 +7,23 @@ import static UILayer.ErrorCode.*;
  * Created by EU on 2016-12-01.
  */
 public class InputChecker {
-    private static String id, name, address, email, phone, city; // not ready yet.
+    private static String cpr, name, address, email, phone, city; // not ready yet.
     private static boolean ok;
     private static ArrayList<String> existingIds; // keeping track of all of the CPR and CVR so we can make sure they are unique
 
-    public static String verifyId() {
-        id = null; // making sure it is empty before starting the process
+    public static String verifyCPR() {
+        cpr = null; // making sure it is empty before starting the process
         do {
             ok = true;
-            id = Input.readString();
-            if (id.length() != 10 || (!id.matches("[0-9]+"))) { // checking if the ID(CPR/CVR) is correct from a logical point of view(10 numbers and no characters)
+            cpr = Input.readString();
+            if (cpr.length() != 10 || (!cpr.matches("[0-9]+"))) { // checking if the ID(CPR/CVR) is correct from a logical point of view(10 numbers and no characters)
                 ok = false;
                 ErrorCode.print(WRONG_CPR_INPUT);
             }
 
 
             for(int i=0; i < existingIds.size(); i++) // if the ID (CPR/CVR) already exists in the system
-                if(existingIds.get(i).equals(id))
+                if(existingIds.get(i).equals(cpr))
                 {
                     ok = false;
                     ErrorCode.print(ID_ALREADY_EXISTS);
@@ -31,9 +31,9 @@ public class InputChecker {
 
         } while (!ok);
 
-        existingIds.add(id); // adding the unique id to the system
+        existingIds.add(cpr); // adding the unique id to the system
 
-        return id;
+        return cpr;
     }
 
     public static String verifyName() {

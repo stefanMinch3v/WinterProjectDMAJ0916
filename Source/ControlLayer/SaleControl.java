@@ -18,7 +18,7 @@ public class SaleControl {
 
     public void addSale(String numberID, int quantity, double price, String customerCPR) {
         //Sale sale = new Sale(numberID, quantity, price, customer);
-        Customer customer = customerContainer.getCustomerByCPR(customerCPR);
+        Customer customer = customerContainer.findCustomerByCpr(customerCPR);
         saleContainer.addSale(new Sale(numberID,quantity,price,customer));
     }
 

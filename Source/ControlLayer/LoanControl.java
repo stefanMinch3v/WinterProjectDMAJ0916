@@ -19,7 +19,7 @@ public class LoanControl {
 
     public void addLoan(String numberID, int quantity, double price, String customerCPR, DateFormat startDate, int periodOfTime) {
         //Loan loan = new Loan(numberID, quantity, price,customer, startDate, periodOfTime);
-        Customer customer = customerContainer.getCustomerByCPR(customerCPR);
+        Customer customer = customerContainer.findCustomerByCpr(customerCPR);
         loanContainer.addLoan(new Loan(numberID, quantity, price, customer, startDate, periodOfTime));
     }
 

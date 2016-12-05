@@ -6,7 +6,7 @@ import ModelLayer.*;
  * Created by Luke on 01/12/2016.
  */
 public class Authentication {
-private LoginContainer loginContainer;
+    private LoginContainer loginContainer;
 
     public Authentication() {
         loginContainer = new LoginContainer();
@@ -38,8 +38,8 @@ private LoginContainer loginContainer;
 
         System.out.println("You are logged in");
 
-//                MainMenuUI c = new MainMenuUI();
-//                c.runMainLoop();
+                //MainMenuUI c = new MainMenuUI();
+                MainMenuUI.runMainLoop();
 
 
         }

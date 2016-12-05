@@ -11,7 +11,7 @@ import static UILayer.MenuText.*;
 public class CustomerMenu {
 
     private static CustomerControl customerControler;
-     public static int customerMenu() {
+     public static void customerMenu() {
         customerControler = new CustomerControl();
 
         int choice;
@@ -49,13 +49,13 @@ public class CustomerMenu {
     private static void createCustomer(CustomerControl customerControler) {
          String cpr, name, address, email, phone, city;
 
-         cpr = InputChecker.verifyId();
+         //cpr = InputChecker.verifyCPR();
          name = InputChecker.verifyName();
          address = InputChecker.verifyAddress();
          email = InputChecker.verifyEmail();
          phone = InputChecker.verifyPhone();
          city = InputChecker.verifyCity();
 
-         customerControler.addCustomer(cpr, name, address, email, phone, city);
+         //customerControler.addCustomer(cpr, name, address, email, phone, city);
     }
 }
