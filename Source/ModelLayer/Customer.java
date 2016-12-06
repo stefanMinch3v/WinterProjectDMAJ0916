@@ -39,11 +39,11 @@ public class Customer extends Person {
                 return true;
             case 6:
                 setPhone( (String)fieldInfo );
-                break;
+                return true;
 
             default:
                 return false;
         }
-        return false;
+
     }
 }

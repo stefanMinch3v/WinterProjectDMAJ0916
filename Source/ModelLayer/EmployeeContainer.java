@@ -27,7 +27,6 @@ public class EmployeeContainer {
     }
 
 
-
     public Employee getEmployeeByCPR(String CPR){
         for (Employee employee:employees){
             if(employee.getCPR().equals(CPR))return employee;

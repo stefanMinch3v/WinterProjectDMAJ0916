@@ -24,13 +24,13 @@ private EmployeeContainer employeeContainer;
         return employeeContainer.getEmployeesFieldsByCPR(CPR);
     }
 
-/*//UPDATE
+//UPDATE
     public boolean changeEmployeeFieldByCPR(String CPR, int fieldNumber, Object fieldInfo)
 {
     Employee employee = employeeContainer.getEmployeeByCPR(CPR);
-    return employee.setField(fieldNumber,fieldInfo);*/
-//TODO: Update, will create cannot be done same as item since we use superclases
-//}
+    return employee.setField(fieldNumber,fieldInfo);
+
+}
 //DELETE
 public boolean deleteEmployee(String CPR){
 

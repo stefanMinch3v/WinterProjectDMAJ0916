@@ -81,16 +81,15 @@ public class Item {
                 return true;
             case 5:
                 retailPrice = (double) fieldInfo;
-                break;
+                return true;
             case 6:
                 quantityAtDIY = (int) fieldInfo;
-                break;
+                return true;
             case 7:
                 quantityAtTimber = (int) fieldInfo;
-                break;
+                return true;
             default:
                 return false;
         }
-        return false;
     }
 }
