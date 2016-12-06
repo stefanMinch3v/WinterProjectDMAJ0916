@@ -5,14 +5,22 @@ import java.util.*;
  * Created by Luke on 01/12/2016.
  */
 public class LoginContainer {
-   public HashMap<String, String> mapList;
+   private HashMap<String, String> mapList;
+   private static LoginContainer instance;
 
-    public LoginContainer(){
+    private LoginContainer() {
         mapList = new HashMap<String, String>();
+        mapList.put("username", "nopass");
         mapList.put("Dement", "Kokot");
-        mapList.put("Dement1", "Kokot1");
-
     }
+    
+    public static LoginContainer getInstance(){
+        if (instance == null) {
+            instance = new LoginContainer();
+        }
+        return  instance;
+    }
+
     public void addUser(Login user){
      mapList.put(user.getUsername(),user.getPassword());
     }
