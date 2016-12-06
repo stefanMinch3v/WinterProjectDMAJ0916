@@ -9,7 +9,7 @@ public class Authentication {
     private LoginContainer loginContainer;
 
     public Authentication() {
-        loginContainer = new LoginContainer();
+        loginContainer = LoginContainer.getInstance();
     }
 
     public void login(){
