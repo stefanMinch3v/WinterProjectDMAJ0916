@@ -1,6 +1,6 @@
 package ModelLayer;
 
-import java.util.ArrayList;
+import java.util.*;
 
 /**
  * Created by RedJohn on 23-Nov-16.
@@ -36,5 +36,25 @@ public class ContractorContainer {
         contractors.remove(index);
     }
 
-}
+    public void removeContractor(String CVR) {
+        for (Contractor c : contractors) {
+            if (c.getCVR().equals(CVR)) {
+                contractors.remove(CVR);
+                System.out.println("Removed");
+            }
+        }
+    }
+    public Contractor getContractorByID(String CVR) {
+        Contractor foundCont = null;
 
+        Iterator<Contractor> it = contractors.iterator();
+        while(it.hasNext()) {//!found
+            Contractor recordCont = it.next();
+            if(recordCont.getCVR().equals(CVR)) {
+                //found = true;
+                foundCont = recordCont;
+            }
+        }
+        return foundCont;
+    }
+}

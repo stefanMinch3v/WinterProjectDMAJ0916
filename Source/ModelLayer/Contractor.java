@@ -17,4 +17,28 @@ public class Contractor extends Person {
     public void setCVR(String CVR) {
         this.CVR = CVR;
     }
+    public boolean updateFields(int fieldNumber, Object fieldInfo) {
+        switch (fieldNumber) {
+            case 1:
+                setName((String)fieldInfo);
+                return true;
+            case 2:
+                setAddress((String)fieldInfo);
+                return true;
+            case 3:
+                setEmail((String)fieldInfo);
+                return true;
+            case 4:
+                setCity((String)fieldInfo);
+                return true;
+            case 5:
+                setPhone((String)fieldInfo);
+                return true;
+            case 6:
+                CVR = (String)fieldInfo;
+                return true;
+            default:
+                return false;
+        }
+    }
 }

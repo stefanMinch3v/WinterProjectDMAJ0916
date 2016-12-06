@@ -27,54 +27,24 @@ public class ContractorControl {
             return String.valueOf(findContractor(name));
     }
 
-
-    public  String updateContractor(int index, int updateType, String newInfo) {
-        switch(updateType)
-        {
-            case 1:
-                contractorContainer.getContractor(index).setCVR(newInfo);
-                break;
-
-            case 2:
-                contractorContainer.getContractor(index).setName(newInfo);
-                break;
-            case 3:
-                contractorContainer.getContractor(index).setAddress(newInfo);
-                break;
-            case 4:
-                contractorContainer.getContractor(index).setEmail(newInfo);
-                break;
-            case 5:
-                contractorContainer.getContractor(index).setPhone(newInfo);
-                break;
-            case 6:
-               contractorContainer.getContractor(index).setCity(newInfo);
-                break;
-
-        }
-        return newInfor( contractorContainer.getContractor(index).getCVR() );
+    public boolean updateContractor(String CVR, int fieldNumber, Object fieldInfo) {
+        Contractor cont = contractorContainer.getContractorByID(CVR);
+        return cont.updateFields(fieldNumber, fieldInfo);
     }
 
-    private  String newInfor(String name)
-    {
-        Contractor contractor = contractorContainer.getContractor(findContractor(name));
-        return ( "NAME: "+contractor.getName()+"\nCITY: "+contractor.getCity()+"\nADDRESS: "+contractor.getAddress()+"\nCVR: "+contractor.getCVR()+"\nEMAIL: "+contractor.getEmail()+"\nPHONE: "+contractor.getPhone() );
-    }
-
-    public  int deleteContractor(String name) {
-        if (findContractor(name) >= 0)
+    public  int deleteContractor(String CVR) {
+        if (findContractor(CVR) >= 0)
         {
-            contractorContainer.removeContractor(findContractor(name));
-            return findContractor(name);
+            contractorContainer.removeContractor(findContractor(CVR));
+            return findContractor(CVR);
         } else
-            return findContractor(name);
+            return findContractor(CVR);
     }
 
-    private  int findContractor(String name) {
+    private  int findContractor(String CVR) {
         for (int i = 0; i < contractorContainer.getContractorsSize(); i++)
-            if (contractorContainer.getContractor(i).getName().equals(name))
+            if (contractorContainer.getContractor(i).getName().equals(CVR))
                 return i;
         return -1;
     }
 }
-
