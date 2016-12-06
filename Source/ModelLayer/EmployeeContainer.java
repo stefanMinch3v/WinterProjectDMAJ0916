@@ -58,6 +58,13 @@ public class EmployeeContainer {
         return employeeFields;
     }
 
+    public Employee findEmployeeByCPR(String CPR){
+        for (Employee employee:employees) {
+            if(employee.getCPR().equals(CPR))return employee;
+        }
+        return null;
+    }
+
     public  boolean removeEmployeeByCPR(String CPR) {
         Iterator<Employee> it = employees.iterator();
         while(it.hasNext()){
