@@ -7,23 +7,23 @@ import static UILayer.ErrorCode.*;
  * Created by EU on 2016-12-01.
  */
 public class InputChecker {
-    private static String cpr, name, address, email, phone, city; // not ready yet.
+    private static String id, name, address, email, phone, city, workId; // not ready yet.
     private static boolean ok;
     private static ArrayList<String> existingIds; // keeping track of all of the CPR and CVR so we can make sure they are unique
 
-    public static String verifyCPR() {
-        cpr = null; // making sure it is empty before starting the process
+    public static String verifyId() {
+        id = null; // making sure it is empty before starting the process
         do {
             ok = true;
-            cpr = Input.readString();
-            if (cpr.length() != 10 || (!cpr.matches("[0-9]+"))) { // checking if the ID(CPR/CVR) is correct from a logical point of view(10 numbers and no characters)
+            id = Input.readString();
+            if (id.length() != 10 || (!id.matches("[0-9]+"))) { // checking if the ID(CPR/CVR) is correct from a logical point of view(10 numbers and no characters)
                 ok = false;
                 ErrorCode.print(WRONG_CPR_INPUT);
             }
 
 
             for(int i=0; i < existingIds.size(); i++) // if the ID (CPR/CVR) already exists in the system
-                if(existingIds.get(i).equals(cpr))
+                if(existingIds.get(i).equals(id))
                 {
                     ok = false;
                     ErrorCode.print(ID_ALREADY_EXISTS);
@@ -31,9 +31,9 @@ public class InputChecker {
 
         } while (!ok);
 
-        existingIds.add(cpr); // adding the unique id to the system
+        existingIds.add(id); // adding the unique id to the system
 
-        return cpr;
+        return id;
     }
 
     public static String verifyName() {
@@ -43,7 +43,7 @@ public class InputChecker {
             name = Input.readString();
             if (name.length() <= 3) {
                 ok = false;
-                ErrorWriter.print(ErrorCode.WRONG_NAME_INPUT);
+                ErrorCode.print(WRONG_NAME_INPUT);
             }
         } while (!ok);
 
@@ -59,7 +59,7 @@ public class InputChecker {
             if (address.matches(".*\\d+.*") || address.length() < 3) //checks if there is at least one number in the string
             {
                 ok = false;
-                ErrorWriter.print(ErrorCode.WRONG_ADDRESS_INPUT);
+                ErrorCode.print(WRONG_ADDRESS_INPUT);
             }
         } while (!ok);
 
@@ -74,7 +74,7 @@ public class InputChecker {
             if (!(email.toLowerCase().contains("@") && email.toLowerCase().contains(".")) || email.length() < 5) // checks if email is at least 5 characters and contains @ and .
             {
                 ok = false;
-                ErrorWriter.print(ErrorCode.WRONG_EMAIL_INPUT);
+                ErrorCode.print(WRONG_EMAIL_INPUT);
             }
         } while (!ok);
 
@@ -90,12 +90,12 @@ public class InputChecker {
             if (!phone.matches("[0-9]+")) //checks if string is composed only of numbers
             {
                 ok = false;
-                ErrorWriter.print(ErrorCode.WRONG_PHONE_INPUT);
+                ErrorCode.print(WRONG_PHONE_INPUT);
             }
 
             if (phone.length() < 6 || phone.length() > 16) {
                 ok = false;
-                ErrorWriter.print(ErrorCode.WRONG_PHONE_LENGTH_INPUT);
+                ErrorCode.print(WRONG_PHONE_LENGTH_INPUT);
             }
         } while (!ok);
 
@@ -110,10 +110,36 @@ public class InputChecker {
             city = Input.readString();
             if (city.length() < 3) {
                 ok = false;
-                ErrorWriter.print(ErrorCode.WRONG_CITY_INPUT);
+                ErrorCode.print(WRONG_CITY_INPUT);
             }
         } while (!ok);
 
         return city;
+    }
+
+    public static String verifyWorkId() {
+        workId = null; // making sure it is empty before starting the process
+
+        do {
+            ok = true;
+            workId = Input.readString();
+            if (workId.length() != 6 || (!workId.matches("[0-9]+"))) // checking if
+            {
+                ok = false;
+                ErrorCode.print(WRONG_WORKID_INPUT);
+            }
+
+            for(int i=0; i < existingIds.size(); i++) // if the WorkI already exists in the system
+                if(existingIds.get(i).equals(workId))
+                {
+                    ok = false;
+                    ErrorCode.print(ID_ALREADY_EXISTS);
+                }
+
+        } while (!ok);
+
+        existingIds.add(workId); // adding the workId to the list
+
+        return workId;
     }
 }
