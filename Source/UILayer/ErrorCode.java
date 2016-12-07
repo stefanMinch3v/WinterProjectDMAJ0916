@@ -15,7 +15,9 @@ public enum ErrorCode {
     WRONG_INPUT_INTEGER("Please introduce a number, not a character"),
     WRONG_INT_INPUT("Please select one of the available options"),
     WRONG_WORKID_INPUT("WORKID must be 6 digits long and must not contain letters."),
-    NO_SUCH_CUSTOMER("There is no Customer with this CPR");
+
+    NO_SUCH_CUSTOMER("There is no Customer with this CPR"),
+    NO_SUCH_EMPLOYEE("There is no Employee with this ID");
 
 
     private String errorMessage;

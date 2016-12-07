@@ -72,7 +72,7 @@ public class InputChecker {
             System.out.println("Please input user's address.");
             ok = true;
             address = Input.readString();
-            if (address.matches(".*\\d+.*") || address.length() < 3) //checks if there is at least one number in the string
+            if (!address.matches(".*\\d+.*") || address.length() < 3) //checks if there is at least one number in the string
             {
                 ok = false;
                 ErrorCode.print(WRONG_ADDRESS_INPUT);

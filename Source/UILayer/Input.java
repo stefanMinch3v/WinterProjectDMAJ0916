@@ -2,6 +2,8 @@ package UILayer;
 import java.util.Scanner;
 import UILayer.ErrorCode;
 
+import static UILayer.ErrorCode.WRONG_INPUT_INTEGER;
+
 /**
  * Created by EU on 2016-11-25.
  */
@@ -25,7 +27,7 @@ public abstract class Input {
 
         if( !inputString.matches("[0-9]+") )// if whatever is read is not mainly made out of numbers
         {
-            System.out.println( ErrorCode.WRONG_INPUT_INTEGER );
+            ErrorCode.print( WRONG_INPUT_INTEGER );
             return 0;
         }
 
