@@ -10,7 +10,7 @@ import static UILayer.MenuText.*;
  */
 public class CustomerMenu {
 
-    private static CustomerControl customerControler;
+    private  CustomerControl customerControler;
     public int menu() {
         customerControler = new CustomerControl();
 
@@ -22,7 +22,7 @@ public class CustomerMenu {
 
             switch (choice) {
                 case 1: // create
-                    createCustomer(customerControler);
+                    createCustomer();
                     break;
                 case 2: // read
 
@@ -43,19 +43,19 @@ public class CustomerMenu {
                     System.out.println("Choice must be a value between 1 and 6.");
             }
         } while (choice != 5 && choice != 6);
-        return choice;
+        if(choice == 6) return 7;
+        else return 1;
     }
 
-    private static void createCustomer(CustomerControl customerControler) {
+    private  void createCustomer() {
         String cpr, name, address, email, phone, city;
-
-        //cpr = InputChecker.verifyCPR();
+        CustomerControl customerControl = new CustomerControl();
+        cpr = InputChecker.verifyId();
         name = InputChecker.verifyName();
         address = InputChecker.verifyAddress();
         email = InputChecker.verifyEmail();
         phone = InputChecker.verifyPhone();
         city = InputChecker.verifyCity();
-        //customerControler.addCustomer(cpr, name, address, email, phone, city);
-        //TODO: Fix imput checker for cpr since its not working corectly (null pointer) and fix addCustomer.
+        customerControl.addCustomer(cpr, name, address, email, phone, city);
     }
 }

@@ -17,10 +17,10 @@ public class MainMenuUI {
 
             switch (choice) {
                 case 1:
-                    customerMenu.menu();
+                    choice = customerMenu.menu();
                     break;
                 case 2:
-                    employeeMenu.menu();
+                    choice = employeeMenu.menu();
                     break;
                 case 3:
                     //  itemMenu();
@@ -36,6 +36,7 @@ public class MainMenuUI {
                     break;
                 case 7:
                     //exit
+                    break;
                 default:
                     System.out.println("Choice must be a value between 1 and 7.");
             }

@@ -10,10 +10,23 @@ public class InputChecker {
     private static String id, name, address, email, phone, city, workId; // not ready yet.
     private static boolean ok;
     private static ArrayList<String> existingIds; // keeping track of all of the CPR and CVR so we can make sure they are unique
+    private static InputChecker instance;
+
+    private InputChecker() {
+        existingIds = new ArrayList<>();
+    }
+
+    public static InputChecker getInstance() {
+        if (instance == null) {
+            instance = new InputChecker();
+        }
+        return instance;
+    }
 
     public static String verifyId() {
         id = null; // making sure it is empty before starting the process
         do {
+            System.out.println("Please input user's CPR.");
             ok = true;
             id = Input.readString();
             if (id.length() != 10 || (!id.matches("[0-9]+"))) { // checking if the ID(CPR/CVR) is correct from a logical point of view(10 numbers and no characters)
@@ -21,16 +34,18 @@ public class InputChecker {
                 ErrorCode.print(WRONG_CPR_INPUT);
             }
 
-
-            for (int i = 0; i < existingIds.size(); i++) // if the ID (CPR/CVR) already exists in the system
+/*            if(existingIds.isEmpty()) getInstance();
+            if(existingIds.size()>0)
+            {for (int i = 0; i <= existingIds.size(); i++) // if the ID (CPR/CVR) already exists in the system
                 if (existingIds.get(i).equals(id)) {
                     ok = false;
                     ErrorCode.print(ID_ALREADY_EXISTS);
                 }
+            }*/
 
         } while (!ok);
 
-        existingIds.add(id); // adding the unique id to the system
+//        existingIds.add(id); // adding the unique id to the system
 
         return id;
     }
@@ -38,6 +53,7 @@ public class InputChecker {
     public static String verifyName() {
         name = null;    // making sure it is empty before starting the process
         do {
+            System.out.println("Please input user's name");
             ok = true;
             name = Input.readString();
             if (name.length() <= 3) {
@@ -53,6 +69,7 @@ public class InputChecker {
         address = null; // making sure it is empty before starting the process
 
         do {
+            System.out.println("Please input user's address.");
             ok = true;
             address = Input.readString();
             if (address.matches(".*\\d+.*") || address.length() < 3) //checks if there is at least one number in the string
@@ -67,6 +84,7 @@ public class InputChecker {
 
     public static String verifyEmail() {
         do {
+            System.out.println("Please input user's email.");
             email = null; // making sure it is empty before starting the process
             ok = true;
             email = Input.readString();
@@ -84,6 +102,7 @@ public class InputChecker {
         phone = null; // making sure it is empty before starting the process
 
         do {
+            System.out.println("Please input user's phone.");
             ok = true;
             phone = Input.readString();
             if (!phone.matches("[0-9]+")) //checks if string is composed only of numbers
@@ -105,6 +124,7 @@ public class InputChecker {
         int inputIndex; //
 
         do {
+            System.out.println("Please input the field's number.");
             ok = true;
             inputIndex = Input.readInt();
             if (inputIndex > index) {
@@ -120,6 +140,7 @@ public class InputChecker {
         city = null; // making sure it is empty before starting the process
 
         do {
+            System.out.println("Please input user's city.");
             ok = true;
             city = Input.readString();
             if (city.length() < 3) {
@@ -135,6 +156,7 @@ public class InputChecker {
         workId = null; // making sure it is empty before starting the process
 
         do {
+            System.out.println("Please input user's workID.");
             ok = true;
             workId = Input.readString();
             if (workId.length() != 6 || (!workId.matches("[0-9]+"))) // checking if
@@ -142,16 +164,16 @@ public class InputChecker {
                 ok = false;
                 ErrorCode.print(WRONG_WORKID_INPUT);
             }
-
+            /*if(existingIds.isEmpty())getInstance();
             for (int i = 0; i < existingIds.size(); i++) // if the WorkI already exists in the system
                 if (existingIds.get(i).equals(workId)) {
                     ok = false;
                     ErrorCode.print(ID_ALREADY_EXISTS);
-                }
+                }*/
 
         } while (!ok);
 
-        existingIds.add(workId); // adding the workId to the list
+//        existingIds.add(workId); // adding the workId to the list
 
         return workId;
     }

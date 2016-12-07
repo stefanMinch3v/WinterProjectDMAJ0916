@@ -21,23 +21,28 @@ public class EmployeeMenu {
             switch (choice) {
                 case 1: // create
 
-                    employeeControl.addEmployee(InputChecker.verifyName(),InputChecker.verifyAddress(),InputChecker.verifyEmail(),InputChecker.verifyPhone(),InputChecker.verifyCity(),InputChecker.verifyId(),InputChecker.verifyWorkId());
+                    if(employeeControl.addEmployee(InputChecker.verifyName(),InputChecker.verifyAddress(),InputChecker.verifyEmail(),InputChecker.verifyPhone(),InputChecker.verifyCity(),InputChecker.verifyId(),InputChecker.verifyWorkId())) MenuText.write(SUCCESS);
+                    else MenuText.write(FAILURE);
                     break;
                 case 2: // read
                     ArrayList<String> aux = employeeControl.getEmployeeByWorkId(InputChecker.verifyId());
                     if(aux != null) System.out.println(aux);
-                    else System.out.println("Employee not found");
+                    else MenuText.write(FAILURE);
                     break;
                 case 3: // update
                     String workId = InputChecker.verifyId();
                     ArrayList<String> aux2 = employeeControl.getEmployeeByWorkId(workId);
                     if(aux2 != null) System.out.println(aux2);
+                    else {
+                        MenuText.write(FAILURE);
+                        break;
+                    }
                     int fieldNumber = InputChecker.verifyFieldNumber(aux2.size());
                     String fieldInfo = checkData(fieldNumber);
-                    employeeControl.changeEmployeeFieldByWorkId(workId, fieldNumber, fieldInfo);
-                    break;
+                    if(employeeControl.changeEmployeeFieldByWorkId(workId, fieldNumber, fieldInfo)) MenuText.write(SUCCESS);
                 case 4: // delete
-
+                    if(employeeControl.deleteEmployee( InputChecker.verifyId())) MenuText.write(SUCCESS);
+                    else MenuText.write(FAILURE);
                     break;
                 case 5:
                     //go back
@@ -49,8 +54,8 @@ public class EmployeeMenu {
                     System.out.println("Choice must be a value between 1 and 6.");
             }
         } while (choice != 5 && choice != 6);
-        if(choice == 5) return 1;
-        else return 7;
+        if(choice == 6) return 7;
+        else return 1;
     }
     public String checkData(int fieldNumber)
     {

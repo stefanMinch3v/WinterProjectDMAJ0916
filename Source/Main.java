@@ -12,14 +12,16 @@ import UILayer.Authentication;
     }
 }*/
 import ModelLayer.LoginContainer;
+import UILayer.MainMenuUI;
 
 public class Main {
 
     public static void main(String[] args) {
 
-        Authentication p = new Authentication();
-        p.login();
-
+        //Authentication p = new Authentication();
+        //p.login();
+        MainMenuUI mainMenuUI = new MainMenuUI();
+        mainMenuUI.runMainLoop();
 
     }
 }

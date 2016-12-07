@@ -16,7 +16,7 @@ public class CustomerControl {
         customerContainer = CustomerContainer.getInstance();
     }
     //CREATE
-    public boolean addItem( String cpr, String name, String address, String email,String phone,String city )
+    public boolean addCustomer( String cpr, String name, String address, String email,String phone,String city )
     {
         Customer customer = new Customer(cpr, name, address, email, phone, city);
         return customerContainer.addCustomer(customer);
