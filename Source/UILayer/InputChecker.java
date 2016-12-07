@@ -22,9 +22,8 @@ public class InputChecker {
             }
 
 
-            for(int i=0; i < existingIds.size(); i++) // if the ID (CPR/CVR) already exists in the system
-                if(existingIds.get(i).equals(id))
-                {
+            for (int i = 0; i < existingIds.size(); i++) // if the ID (CPR/CVR) already exists in the system
+                if (existingIds.get(i).equals(id)) {
                     ok = false;
                     ErrorCode.print(ID_ALREADY_EXISTS);
                 }
@@ -102,6 +101,21 @@ public class InputChecker {
         return phone;
     }
 
+    public static int verifyFieldNumber(int index) {
+        int inputIndex; //
+
+        do {
+            ok = true;
+            inputIndex = Input.readInt();
+            if (inputIndex > index) {
+                ok = false;
+                ErrorCode.print(WRONG_INT_INPUT);
+            }
+        } while (!ok);
+
+        return inputIndex;
+    }
+
     public static String verifyCity() {
         city = null; // making sure it is empty before starting the process
 
@@ -129,9 +143,8 @@ public class InputChecker {
                 ErrorCode.print(WRONG_WORKID_INPUT);
             }
 
-            for(int i=0; i < existingIds.size(); i++) // if the WorkI already exists in the system
-                if(existingIds.get(i).equals(workId))
-                {
+            for (int i = 0; i < existingIds.size(); i++) // if the WorkI already exists in the system
+                if (existingIds.get(i).equals(workId)) {
                     ok = false;
                     ErrorCode.print(ID_ALREADY_EXISTS);
                 }

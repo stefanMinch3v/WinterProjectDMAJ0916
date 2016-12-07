@@ -1,6 +1,5 @@
 package UILayer;
 
-import static UILayer.CustomerMenu.customerMenu;
 import static UILayer.MenuText.*;
 
 
@@ -10,30 +9,37 @@ import static UILayer.MenuText.*;
 public class MainMenuUI {
     public static void runMainLoop() {
         MenuText.write(MAIN_MENU);
-
+        CustomerMenu customerMenu = new CustomerMenu();
+        EmployeeMenu employeeMenu = new EmployeeMenu();
         int choice;
         do {
             choice = Input.readInt();
 
             switch (choice) {
                 case 1:
-                    customerMenu();
+                    customerMenu.menu();
                     break;
                 case 2:
-                   // emoployeeMenu();
+                    employeeMenu.menu();
                     break;
                 case 3:
-                  //  itemMenu();
+                    //  itemMenu();
                     break;
                 case 4:
-                //    contractorMenu();
+                    //    contractorMenu();
                     break;
                 case 5:
-                    // exit program
+                    // saleMenu();
+                    break;
+                case 6:
+                    // leasingMenu();
+                    break;
+                case 7:
+                    //exit
                 default:
-                    System.out.println("Choice must be a value between 1 and 4.");
+                    System.out.println("Choice must be a value between 1 and 7.");
             }
-        } while (choice != 5);
+        } while (choice != 7);
     }
 
 

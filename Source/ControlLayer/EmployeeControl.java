@@ -7,34 +7,33 @@ import java.util.ArrayList;
  * Created by RedJohn on 23-Nov-16.
  */
 public class EmployeeControl {
-private EmployeeContainer employeeContainer;
+    private EmployeeContainer employeeContainer;
 
     public EmployeeControl() {
         employeeContainer = EmployeeContainer.getInstance();
     }
     //CREATE
-    public void addEmployee(String name, String address, String email, String phone, String city, String CPR, String workID) {
+    public boolean addEmployee(String name, String address, String email, String phone, String city, String CPR, String workID) {
 
         Employee employee = new Employee(name, address, email, phone, city, CPR, workID);
-        employeeContainer.addEmployee(employee);
+        return employeeContainer.addEmployee(employee);
     }
 
     //READ
-    public ArrayList<String> getEmployeeByCPR(String CPR){
-        return employeeContainer.getEmployeesFieldsByCPR(CPR);
+    public ArrayList<String> getEmployeeByWorkId(String workId){
+        return employeeContainer.getEmployeesFieldsByWorkId(workId);
     }
 
-//UPDATE
-    public boolean changeEmployeeFieldByCPR(String CPR, int fieldNumber, Object fieldInfo)
-{
-    Employee employee = employeeContainer.getEmployeeByCPR(CPR);
-    return employee.setField(fieldNumber,fieldInfo);
+    //UPDATE
+    public boolean changeEmployeeFieldByWorkId(String workId, int fieldNumber, Object fieldInfo)
+    {
+        Employee employee = employeeContainer.findEmployeeByWorkId(workId);
+        return employee.setField(fieldNumber,fieldInfo);
 
-}
-//DELETE
-public boolean deleteEmployee(String CPR){
+    }
+    //DELETE
+    public boolean deleteEmployee(String workId){
 
-    return employeeContainer.removeEmployeeByCPR(CPR);
-}
-
+        return employeeContainer.removeEmployeeByWorkId(workId);
+    }
 }

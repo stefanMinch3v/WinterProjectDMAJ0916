@@ -9,30 +9,30 @@ import java.util.ArrayList;
  * Created by RaidenRabit on 23-Nov-16.
  */
 public class CustomerControl {
-    private ModelLayer.CustomerContainer customerContainer;
+    private CustomerContainer customerContainer;
 
 
     public CustomerControl() {
-       customerContainer = CustomerContainer.getInstance();
+        customerContainer = CustomerContainer.getInstance();
     }
-//CREATE
+    //CREATE
     public boolean addItem( String cpr, String name, String address, String email,String phone,String city )
     {
         Customer customer = new Customer(cpr, name, address, email, phone, city);
         return customerContainer.addCustomer(customer);
     }
-//READ
+    //READ
     public ArrayList<String> getCustomerByCpr(String cpr){
         return customerContainer.getCustomerFieldsByCpr(cpr);
     }
-//UPDATE
+    //UPDATE
     public boolean changeCustomerFieldByCpr(String cpr, int fieldNumber, Object fieldInfo)
     {
         Customer customer = customerContainer.findCustomerByCpr( cpr );
         return customer.setField( fieldNumber, fieldInfo );
     }
 
-//DELETE
+    //DELETE
     public boolean deleteCustomer(String cpr) { // asumes there is at least 1 customer in the system
         return customerContainer.removeCustomerByCPR(cpr);
     }

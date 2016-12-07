@@ -13,7 +13,7 @@ public class LoginContainer {
         mapList.put("username", "nopass");
         mapList.put("Dement", "Kokot");
     }
-    
+
     public static LoginContainer getInstance(){
         if (instance == null) {
             instance = new LoginContainer();

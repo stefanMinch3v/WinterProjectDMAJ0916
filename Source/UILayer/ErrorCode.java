@@ -13,6 +13,7 @@ public enum ErrorCode {
     WRONG_PHONE_INPUT("PHONE must not contain and letters"),
     WRONG_CITY_INPUT("CITY must consist of at least 3 characters"),
     WRONG_INPUT_INTEGER("Please introduce a number, not a character"),
+    WRONG_INT_INPUT("Please select one of the available options"),
     WRONG_WORKID_INPUT("WORKID must be 6 digits long and must not contain letters."),
     NO_SUCH_CUSTOMER("There is no Customer with this CPR");
 

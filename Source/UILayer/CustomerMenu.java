@@ -11,7 +11,7 @@ import static UILayer.MenuText.*;
 public class CustomerMenu {
 
     private static CustomerControl customerControler;
-     public static void customerMenu() {
+    public int menu() {
         customerControler = new CustomerControl();
 
         int choice;
@@ -34,28 +34,28 @@ public class CustomerMenu {
 
                     break;
                 case 5:
-                    MainMenuUI.runMainLoop(); //go back to the previous menu
+                    //go back
                     break;
                 case 6:
-                    //TODO:exit
+                    //exit code
                     break;
                 default:
                     System.out.println("Choice must be a value between 1 and 6.");
             }
         } while (choice != 5 && choice != 6);
-
+        return choice;
     }
 
     private static void createCustomer(CustomerControl customerControler) {
-         String cpr, name, address, email, phone, city;
+        String cpr, name, address, email, phone, city;
 
-         //cpr = InputChecker.verifyCPR();
-         name = InputChecker.verifyName();
-         address = InputChecker.verifyAddress();
-         email = InputChecker.verifyEmail();
-         phone = InputChecker.verifyPhone();
-         city = InputChecker.verifyCity();
-         //customerControler.addCustomer(cpr, name, address, email, phone, city);
+        //cpr = InputChecker.verifyCPR();
+        name = InputChecker.verifyName();
+        address = InputChecker.verifyAddress();
+        email = InputChecker.verifyEmail();
+        phone = InputChecker.verifyPhone();
+        city = InputChecker.verifyCity();
+        //customerControler.addCustomer(cpr, name, address, email, phone, city);
         //TODO: Fix imput checker for cpr since its not working corectly (null pointer) and fix addCustomer.
     }
 }

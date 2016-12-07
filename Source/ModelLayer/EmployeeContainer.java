@@ -41,10 +41,10 @@ public class EmployeeContainer {
         return employees.size();
     }
 
-    public ArrayList<String> getEmployeesFieldsByCPR(String CPR){
+    public ArrayList<String> getEmployeesFieldsByWorkId(String workId){
         ArrayList<String> employeeFields = new ArrayList<>();
         for (Employee employee:employees) {
-            if(employee.getCPR().equals(CPR)) {
+            if(employee.getWorkID().equals(workId)) {
                 employeeFields.add("1. Name: "+ employee.getName());
                 employeeFields.add("2. Address: "+ employee.getAddress());
                 employeeFields.add("3. Email: "+ employee.getEmail());
@@ -57,18 +57,18 @@ public class EmployeeContainer {
         return employeeFields;
     }
 
-    public Employee findEmployeeByCPR(String CPR){
+    public Employee findEmployeeByWorkId(String workId){
         for (Employee employee:employees) {
-            if(employee.getCPR().equals(CPR))return employee;
+            if(employee.getWorkID().equals(workId))return employee;
         }
         return null;
     }
 
-    public  boolean removeEmployeeByCPR(String CPR) {
+    public  boolean removeEmployeeByWorkId(String workId) {
         Iterator<Employee> it = employees.iterator();
         while(it.hasNext()){
-           Employee employee= it.next();
-            if(employee.getCPR().equals(CPR)) {
+            Employee employee= it.next();
+            if(employee.getWorkID().equals(workId)) {
                 it.remove();
                 return true;
             }
