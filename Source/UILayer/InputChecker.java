@@ -9,10 +9,10 @@ import static UILayer.ErrorCode.*;
 public class InputChecker {
     private static String id, name, address, email, phone, city, workId; // not ready yet.
     private static boolean ok;
-    public static ArrayList<String> existingIds; // keeping track of all of the CPR and CVR so we can make sure they are unique
+    public static ArrayList<String> existingIds = new ArrayList<>(); // keeping track of all of the CPR and CVR so we can make sure they are unique
     private static InputChecker instance;
 
-    private InputChecker() {
+    public InputChecker() {
         existingIds = new ArrayList<>();
     }
 
@@ -35,22 +35,25 @@ public class InputChecker {
             }
 
 
-            if( InputChecker.getInstance().existingIds.size() > 0 )
-            {for (int i = 0; i <= InputChecker.getInstance().existingIds.size(); i++) // if the ID (CPR/CVR) already exists in the system
-            {
-                if(check == 3) //if you want to delete one customer/contractor
-                    InputChecker.getInstance().existingIds.remove(i); // remove his CPR/CVR from the system
 
-                if (InputChecker.getInstance().existingIds.get(i).equals(id) && check == 1) {
-                    ok = false;
-                    ErrorCode.print(ID_ALREADY_EXISTS);
+            if( existingIds.size() > 0 && check != 2 && ok)
+            {
+                for (int i = 0; i < existingIds.size(); i++) // if the ID (CPR/CVR) already exists in the system
+                {
+                    if(check == 3) //if you want to delete one customer/contractor
+                      existingIds.remove(i); // remove his CPR/CVR from the system
+
+                    if (existingIds.get(i).equals(id) && check == 1 ) {
+                        ok = false;
+                        ErrorCode.print(ID_ALREADY_EXISTS);
+                    }
                 }
-            }
             }
 
         } while (!ok);
+
         if(check == 1)
-            InputChecker.getInstance().existingIds.add(id); // adding the unique id to the system
+            existingIds.add(id); // adding the unique id to the system
 
 
         return id;
