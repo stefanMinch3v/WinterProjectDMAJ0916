@@ -21,16 +21,16 @@ public class EmployeeMenu {
             switch (choice) {
                 case 1: // create
 
-                    if(employeeControl.addEmployee(InputChecker.verifyName(),InputChecker.verifyAddress(),InputChecker.verifyEmail(),InputChecker.verifyPhone(),InputChecker.verifyCity(),InputChecker.verifyId(),InputChecker.verifyWorkId())) MenuText.write(SUCCESS);
+                    if(employeeControl.addEmployee(InputChecker.verifyName(),InputChecker.verifyAddress(),InputChecker.verifyEmail(),InputChecker.verifyPhone(),InputChecker.verifyCity(),InputChecker.verifyId(1),InputChecker.verifyWorkId(1))) MenuText.write(SUCCESS);
                     else MenuText.write(FAILURE);
                     break;
                 case 2: // read
-                    ArrayList<String> aux = employeeControl.getEmployeeByWorkId(InputChecker.verifyId());
+                    ArrayList<String> aux = employeeControl.getEmployeeByWorkId(InputChecker.verifyId(2));
                     if(aux != null) System.out.println(aux);
                     else MenuText.write(FAILURE);
                     break;
                 case 3: // update
-                    String workId = InputChecker.verifyId();
+                    String workId = InputChecker.verifyId(2);
                     ArrayList<String> aux2 = employeeControl.getEmployeeByWorkId(workId);
                     if(aux2 != null) System.out.println(aux2);
                     else {
@@ -41,7 +41,7 @@ public class EmployeeMenu {
                     String fieldInfo = checkData(fieldNumber);
                     if(employeeControl.changeEmployeeFieldByWorkId(workId, fieldNumber, fieldInfo)) MenuText.write(SUCCESS);
                 case 4: // delete
-                    if(employeeControl.deleteEmployee( InputChecker.verifyId())) MenuText.write(SUCCESS);
+                    if(employeeControl.deleteEmployee( InputChecker.verifyId(3))) MenuText.write(SUCCESS);
                     else MenuText.write(FAILURE);
                     break;
                 case 5:
@@ -72,9 +72,9 @@ public class EmployeeMenu {
             case 5:
                 return InputChecker.verifyCity();
             case 7:
-                return InputChecker.verifyWorkId();
+                return InputChecker.verifyWorkId(2);
             case 8:
-                return InputChecker.verifyId();
+                return InputChecker.verifyId(2);
             default:
                 return null;
         }

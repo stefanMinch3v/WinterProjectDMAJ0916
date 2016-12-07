@@ -26,20 +26,20 @@ public class CustomerMenu {
 
             switch (choice) {
                 case 1: // create
-                    if(customerControler.createCustomer(InputChecker.verifyId(), InputChecker.verifyName(),InputChecker.verifyAddress(),InputChecker.verifyEmail(),InputChecker.verifyPhone(),InputChecker.verifyCity()))
+                    if(customerControler.createCustomer(InputChecker.verifyId(1), InputChecker.verifyName(),InputChecker.verifyAddress(),InputChecker.verifyEmail(),InputChecker.verifyPhone(),InputChecker.verifyCity()))
                         MenuText.write(SUCCESS);
                     else
                         MenuText.write(FAILURE);
                     break;
                 case 2: // read
-                    ArrayList<String> aux = customerControler.getCustomerByCpr(InputChecker.verifyId());
+                    ArrayList<String> aux = customerControler.getCustomerByCpr(InputChecker.verifyId(2));
                     if(aux != null)
                         System.out.println(aux);
                     else
                         ErrorCode.print(NO_SUCH_CUSTOMER);
                     break;
                 case 3: // update
-                    String cpr = InputChecker.verifyId();
+                    String cpr = InputChecker.verifyId(2);
                     ArrayList<String> aux2 = customerControler.getCustomerByCpr(cpr);
                     if(aux2 != null) System.out.println(aux2);
                     else {
@@ -54,7 +54,7 @@ public class CustomerMenu {
                         MenuText.write(FAILURE);
                     break;
                 case 4: // delete
-                    if(customerControler.deleteCustomer( InputChecker.verifyId()))
+                    if(customerControler.deleteCustomer( InputChecker.verifyId(3)))
                         MenuText.write(SUCCESS);
                     else
                         ErrorCode.print(NO_SUCH_CUSTOMER);
@@ -78,7 +78,7 @@ public class CustomerMenu {
         switch (fieldNumber)
         {
             case 1:
-                return InputChecker.verifyId();
+                return InputChecker.verifyId(2);
             case 2:
                 return InputChecker.verifyName();
             case 3:
