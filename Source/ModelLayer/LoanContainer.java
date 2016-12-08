@@ -55,6 +55,7 @@ public class LoanContainer {
         return foundLoan;
     }
 
+
     public ArrayList<String> getLoanByNumberID(String numberID) {
         ArrayList<String> list = new ArrayList<>();
         for (Loan l: loan) {
@@ -62,7 +63,7 @@ public class LoanContainer {
                 list.add("1.NumberID: " + l.getNumberID());
                 list.add("2.Quantity: " + l.getQuantity());
                 list.add("3.Price: " + l.getPrice() + " DKK");
-                list.add("4.Customer: " + l.getCustomer());
+                list.add("4.Customer: " + l.getCustomer().getName());
                 list.add("5.Start date: " + l.getStartDate());
                 list.add("6.Period: " + l.getPeriodOfTime() + " week/s");
                 list.add("7.Available: " + l.isReturned());
