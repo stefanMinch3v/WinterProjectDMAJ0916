@@ -26,13 +26,13 @@ public class EmployeeMenu {
                     break;
                 case 2: // read
                     ArrayList<String> aux = employeeControl.getEmployeeByWorkId(InputChecker.verifyWorkId(2));
-                    if(aux != null) System.out.println(aux);
+                    if(!aux.isEmpty()) System.out.println(aux);
                     else MenuText.write(FAILURE);
                     break;
                 case 3: // update
                     String workId = InputChecker.verifyWorkId(2);
                     ArrayList<String> aux2 = employeeControl.getEmployeeByWorkId(workId);
-                    if(aux2 != null) System.out.println(aux2);
+                    if(!aux2.isEmpty()) System.out.println(aux2);
                     else {
                         MenuText.write(FAILURE);
                         break;

@@ -32,7 +32,7 @@ public class InputChecker {
     public static String verifyId(int check) {
         id = null; // making sure it is empty before starting the process
         do {
-            System.out.println("Please input user's CPR.");
+            System.out.println("Please input user's CPR/CVR.");
             ok = true;
             id = Input.readString();
             if (id.length() != 10 || (!id.matches("[0-9]+"))) { // checking if the ID(CPR/CVR) is correct from a logical point of view(10 numbers and no characters)

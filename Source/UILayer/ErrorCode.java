@@ -21,7 +21,8 @@ public enum ErrorCode {
     WRONG_DATE("The date must be in format yyyy-dd-mm !"),
     WRONG_PERIOD("The period of time must be an integer and it's read in weeks (1 == 1 week, 2 == 2 weeks ...)"),
     NO_SUCH_CUSTOMER("There is no Customer with this CPR"),
-    NO_SUCH_EMPLOYEE("There is no Employee with this ID");
+    NO_SUCH_EMPLOYEE("There is no Employee with this ID"),
+    NO_SUCH_CONTRACTOR("There is no Contractor with this CVR");
 
 
     private String errorMessage;

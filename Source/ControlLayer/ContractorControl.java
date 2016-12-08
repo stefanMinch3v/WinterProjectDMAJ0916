@@ -1,50 +1,41 @@
 package ControlLayer;
 import ModelLayer.*;
 
+import java.util.ArrayList;
+
 
 /**
  * Created by RedJohn on 23-Nov-16.
  */
 public class ContractorControl {
-    private ModelLayer.ContractorContainer contractorContainer;
+    private ContractorContainer contractorContainer;
 
     public ContractorControl() {
         contractorContainer = ContractorContainer.getInstance();
     }
 
-    public  void addContractor(String name, String address, String email, String phone, String city, String CVR) {
+//CREATE
+public boolean createContractor(String cvr, String name, String address, String email, String phone, String city )
+{
+    Contractor contractor = new Contractor(cvr, name, address, email, phone, city);
+    return contractorContainer.addContractor(contractor);
+}
 
-        Contractor contractor = new Contractor(name, address, email, phone, city, CVR);
-        contractorContainer.addContractor(contractor);
+//READ
+    public ArrayList<String> readContractor(String cvr) {
+        return contractorContainer.getContractorFieldsByCvr(cvr);
     }
 
-    public  String readContractor(String name) { //TODO: return string of all the info that will be printed in MainMenuUI
-        if( findContractor(name) >= 0 )
-        {   Contractor contractor = contractorContainer.getContractor(findContractor(name));
-            return ( "NAME: "+contractor.getName()+"\nCITY: "+contractor.getCity()+"\nADDRESS: "+contractor.getAddress()+"\nCPR: "+contractor.getCVR()+"\nEMAIL: "+contractor.getEmail()+"\nPHONE: "+contractor.getPhone() );
-        }
-        else
-            return String.valueOf(findContractor(name));
+//UPDATE
+    public boolean changeContractorFieldByCvr(String cvr, int fieldNumber, Object fieldInfo)
+    {
+        Contractor contractor = contractorContainer.findContractorByCvr( cvr );
+        return contractor.setField( fieldNumber, fieldInfo );
     }
 
-    public boolean updateContractor(String CVR, int fieldNumber, Object fieldInfo) {
-        Contractor cont = contractorContainer.getContractorByID(CVR);
-        return cont.updateFields(fieldNumber, fieldInfo);
+//DELETE
+    public boolean deleteContractor(String cvr) { // asumes there is at least 1 customer in the system
+          return contractorContainer.removeContractorByCvr(cvr);
     }
 
-    public  int deleteContractor(String CVR) {
-        if (findContractor(CVR) >= 0)
-        {
-            contractorContainer.removeContractor(findContractor(CVR));
-            return findContractor(CVR);
-        } else
-            return findContractor(CVR);
-    }
-
-    private  int findContractor(String CVR) {
-        for (int i = 0; i < contractorContainer.getContractorsSize(); i++)
-            if (contractorContainer.getContractor(i).getName().equals(CVR))
-                return i;
-        return -1;
-    }
 }

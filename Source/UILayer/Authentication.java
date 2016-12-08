@@ -38,8 +38,8 @@ public class Authentication {
 
         System.out.println("You are logged in");
 
-                //MainMenuUI c = new MainMenuUI();
-                MainMenuUI.runMainLoop();
+                MainMenuUI c = new MainMenuUI();
+                c.runMainLoop();
 
 
         }

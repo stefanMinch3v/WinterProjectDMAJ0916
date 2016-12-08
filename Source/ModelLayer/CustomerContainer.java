@@ -26,15 +26,6 @@ public class CustomerContainer {
         return true;
     }
 
-    public  Customer getCustomer(int index) {
-        return customers.get(index);
-    }
-
-    public  int getCustomersSize() {
-        return customers.size();
-    }
-
-
     public Customer findCustomerByCpr(String cpr){
         for (Customer customer:customers) {
             if( customer.getCpr().equals(cpr) )

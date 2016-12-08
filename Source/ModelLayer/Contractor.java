@@ -4,39 +4,41 @@ package ModelLayer;
  * Created by RedJohn on 23-Nov-16.
  */
 public class Contractor extends Person {
-    private String CVR;
-    public Contractor(String name, String address, String email, String phone, String city, String CVR) {
+    private String cvr;
+    public Contractor(String name, String address, String email, String phone, String city, String cvr) {
         super(name, address, email, phone, city);
-        this.CVR = CVR;
+        this.cvr = cvr;
     }
 
-    public String getCVR() {
-        return CVR;
+    public String getCvr() {
+        return cvr;
     }
 
-    public void setCVR(String CVR) {
-        this.CVR = CVR;
+    public void setCvr(String cvr) {
+        this.cvr = cvr;
     }
-    public boolean updateFields(int fieldNumber, Object fieldInfo) {
+
+    public boolean setField(int fieldNumber, Object fieldInfo) {
         switch (fieldNumber) {
             case 1:
-                setName((String)fieldInfo);
+                setCvr( (String)fieldInfo );
                 return true;
             case 2:
-                setAddress((String)fieldInfo);
+                setName((String)fieldInfo);
                 return true;
             case 3:
-                setEmail((String)fieldInfo);
+                setAddress((String)fieldInfo);
                 return true;
             case 4:
-                setCity((String)fieldInfo);
+                setEmail((String)fieldInfo);
                 return true;
             case 5:
-                setPhone((String)fieldInfo);
+                setCity((String)fieldInfo);
                 return true;
             case 6:
-                CVR = (String)fieldInfo;
+                setPhone((String)fieldInfo);
                 return true;
+
             default:
                 return false;
         }

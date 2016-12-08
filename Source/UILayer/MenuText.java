@@ -10,7 +10,8 @@ public enum MenuText {
     CUSTOMER_MENU("***CUSTOMER MENU***\n* 1)Create Customer *\n* 2)Read Customer *\n* 3)Update Customer *\n* 4)Delete Customer *\n* 5)Previous Menu *\n* 6)Exit Program *"),
     EMPLOYEE_MENU("***EMPLOYEE MENU***\n* 1)Create Employee *\n* 2)Read Employee *\n* 3)Edit Employee *\n* 4)Delete Employee *\n* 5)Previous Menu *\n* 6)Exit Program *"),
     SALE_MENU("***SALE MENU***\n* 1)Create Sale *\n* 2)Read Sale *\n* 3)Edit Sale *\n* 4)Previous Menu *\n* 5)Exit Program *"),
-    LOAN_MENU("***LEASING MENU***\n* 1)Create Leasing *\n* 2)Read Leasing *\n* 3)Edit Leasing *\n* 4)Retrieve Leasing *\n* 5)Previous Menu *\n* 6)Exit Program *");
+    LOAN_MENU("***LEASING MENU***\n* 1)Create Leasing *\n* 2)Read Leasing *\n* 3)Edit Leasing *\n* 4)Retrieve Leasing *\n* 5)Previous Menu *\n* 6)Exit Program *"),
+    CONTRACOTR_MENU("***CONTRACTOR MENU***\n* 1)Create Contractor *\n* 2)Read Contractor *\n* 3)Update Contractor *\n* 4)Delete Contractor *\n* 5)Previous Menu *\n* 6)Exit Program");
 
     private String errorMessage;
 

@@ -20,41 +20,49 @@ public class ContractorContainer {
         return instance;
     }
 
-    public  void addContractor(Contractor contractor) {
+    public  boolean addContractor(Contractor contractor) {
         contractors.add(contractor);
+        return true;
     }
 
-    public  Contractor getContractor(int index) {
-        return contractors.get(index);
-    }
-
-    public  int getContractorsSize() {
-        return contractors.size();
-    }
-
-    public  void removeContractor(int index) {
-        contractors.remove(index);
-    }
-
-    public void removeContractor(String CVR) {
-        for (Contractor c : contractors) {
-            if (c.getCVR().equals(CVR)) {
-                contractors.remove(CVR);
-                System.out.println("Removed");
+    public boolean removeContractorByCvr(String cvr) {
+        Iterator<Contractor> it = contractors.iterator();
+        while(it.hasNext()){
+            Contractor contractor = it.next();
+            if(contractor.getCvr().equals(cvr)) {
+                it.remove();
+                return true;
             }
         }
+        return false;
     }
-    public Contractor getContractorByID(String CVR) {
+
+    public Contractor findContractorByCvr(String cvr) {
         Contractor foundCont = null;
 
         Iterator<Contractor> it = contractors.iterator();
         while(it.hasNext()) {//!found
             Contractor recordCont = it.next();
-            if(recordCont.getCVR().equals(CVR)) {
+            if(recordCont.getCvr().equals(cvr)) {
                 //found = true;
                 foundCont = recordCont;
             }
         }
         return foundCont;
+    }
+
+    public ArrayList<String> getContractorFieldsByCvr(String cvr){
+        ArrayList<String> fields = new ArrayList<>();
+        for (Contractor contractor:contractors) {
+            if(contractor.getCvr().equals(cvr)) {
+                fields.add( "1. CVR: "+ contractor.getCvr() );
+                fields.add("2. Name: "+ contractor.getName() );
+                fields.add( "3. Address: "+ contractor.getAddress() );
+                fields.add( "4. Email: "+ contractor.getEmail() );
+                fields.add( "5. Phone: "+ contractor.getPhone() );
+                fields.add( "6. City: "+ contractor.getCity() );
+            }
+        }
+        return fields;
     }
 }
