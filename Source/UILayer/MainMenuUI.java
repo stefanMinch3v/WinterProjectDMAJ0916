@@ -11,6 +11,8 @@ public class MainMenuUI {
         MenuText.write(MAIN_MENU);
         CustomerMenu customerMenu = new CustomerMenu();
         EmployeeMenu employeeMenu = new EmployeeMenu();
+        SaleManu saleManu = new SaleManu();
+        LoanMenu loanMenu = new LoanMenu();
         int choice;
         do {
             choice = Input.readInt();
@@ -29,10 +31,10 @@ public class MainMenuUI {
                     //    contractorMenu();
                     break;
                 case 5:
-                    // saleMenu();
+                    choice = saleManu.menu();
                     break;
                 case 6:
-                    // leasingMenu();
+                    choice = loanMenu.menu();
                     break;
                 case 7:
                     //exit

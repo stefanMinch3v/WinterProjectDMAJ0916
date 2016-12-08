@@ -16,10 +16,11 @@ public class SaleControl {
         customerContainer = CustomerContainer.getInstance();
     }
 
-    public void addSale(String numberID, int quantity, double price, String customerCPR) {
-        //Sale sale = new Sale(numberID, quantity, price, customer);
+    public boolean addSale(String numberID, int quantity, double price, String customerCPR) {
         Customer customer = customerContainer.findCustomerByCpr(customerCPR);
-        saleContainer.addSale(new Sale(numberID,quantity,price,customer));
+        Sale sale = new Sale(numberID, quantity, price, customer);
+        //saleContainer.addSale(new Sale(numberID,quantity,price,customer));
+        return saleContainer.addSale(sale);
     }
 
     public ArrayList<String> readSale(String numberID) {

@@ -25,8 +25,9 @@ public class SaleContainer {
         return sale;
     }
 
-    public void addSale(Sale sale1) {
+    public boolean addSale(Sale sale1) {
         sale.add(sale1);
+        return true;
     }
 
     //Search for a specific sale by his unique numberID

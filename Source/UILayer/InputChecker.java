@@ -1,5 +1,8 @@
 package UILayer;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 
 import static UILayer.ErrorCode.*;
 
@@ -7,9 +10,12 @@ import static UILayer.ErrorCode.*;
  * Created by EU on 2016-12-01.
  */
 public class InputChecker {
-    private static String id, name, address, email, phone, city, workId; // not ready yet.
+    private static String id, name, address, email, phone, city, workId, numberID; // not ready yet.
+    private static int quantity, periodOfTime;
+    private static double price;
+    private static String startDate;
     private static boolean ok;
-    private static ArrayList<String> existingIds; // keeping track of all of the CPR and CVR so we can make sure they are unique
+    private static ArrayList<String> existingIds; // keeping track of all of the CPR and CVR and numberID so we can make sure they are unique
     private static InputChecker instance;
 
     private InputChecker() {
@@ -176,5 +182,92 @@ public class InputChecker {
 //        existingIds.add(workId); // adding the workId to the list
 
         return workId;
+    }
+
+    public static String verifySaleNumberID() {
+        numberID = null; // make sure it is empty before starting the process
+
+        do {
+            System.out.println("Please input sale's/leasing's numberID.");
+            ok = true;
+            numberID = Input.readString();
+            if (numberID.length() <= 4 || (!numberID.matches("[0-9]+"))) {
+                ok = false;
+                ErrorCode.print(WRONG_SALE_OR_LOAN_NUMBERID);
+            }
+            /*if(existingIds.isEmpty())getInstance();
+            for (int i = 0; i < existingIds.size(); i++) // if the WorkI already exists in the system
+                if (existingIds.get(i).equals(workId)) {
+                    ok = false;
+                    ErrorCode.print(ID_ALREADY_EXISTS);
+                }*/
+        } while (!ok);
+
+        //existingIds.add(numberID); // adding the workId to the list
+        return numberID;
+    }
+
+    public static int verifyQuantity() {
+        quantity = 0; // make sure it is empty before starting the process
+
+        do {
+            System.out.println("Please input quantity.");
+            ok = true;
+            quantity = Input.readInt();
+            if (quantity <= 0) {
+                ok = false;
+                ErrorCode.print(WRONG_QUANTITY);
+            }
+        } while (!ok);
+
+        return quantity;
+    }
+
+    public static double verifyPrice() {
+        price = 0; // make sure it is empty before starting the process
+
+        do {
+            System.out.println("Please input the current price.");
+            ok = true;
+            price = Input.readInt();
+            if (price <= 0) {
+                ok = false;
+                ErrorCode.print(WRONG_PRICE);
+            }
+        } while (!ok);
+
+        return price;
+    }
+
+    public static String verifyDate() {
+        startDate = null; //  make sure it is empty before starting the process
+
+        do {
+            System.out.println("Please input start date.");
+            ok = true;
+            startDate = Input.readString(); //
+            if (startDate == null || (!startDate.matches("\\d{4}-\\d{2}-\\d{2}"))) {
+                ok = false;
+                ErrorCode.print(WRONG_DATE);
+            }
+        }while(!ok);
+
+        return startDate;
+    }
+
+    public static int verifyPeriod() {
+        periodOfTime = 0; // make sure it is empty before starting the process
+
+        do {
+            System.out.println("Please input period of time.");
+            ok = true;
+            periodOfTime = Input.readInt();
+            if (periodOfTime <= 0) {
+                ok = false;
+                ErrorCode.print(WRONG_PERIOD);
+            }
+        } while (!ok);
+
+        return periodOfTime;
     }
 }

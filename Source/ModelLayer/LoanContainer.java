@@ -22,8 +22,9 @@ public class LoanContainer {
         return instance;
     }
 
-    public void addLoan(Loan loan1) {
+    public boolean addLoan(Loan loan1) {
         loan.add(loan1);
+        return true;
     }
 
     public ArrayList<Loan> getLoan() {
@@ -60,10 +61,10 @@ public class LoanContainer {
             if(l.getNumberID().equals(numberID)) {
                 list.add("1.NumberID: " + l.getNumberID());
                 list.add("2.Quantity: " + l.getQuantity());
-                list.add("3.Price: " + l.getPrice());
+                list.add("3.Price: " + l.getPrice() + " DKK");
                 list.add("4.Customer: " + l.getCustomer());
                 list.add("5.Start date: " + l.getStartDate());
-                list.add("6.Period: " + l.getPeriodOfTime());
+                list.add("6.Period: " + l.getPeriodOfTime() + " week/s");
                 list.add("7.Available: " + l.isReturned());
                 list.add("8.Item: " + l.getItems());
             }

@@ -8,7 +8,10 @@ public enum MenuText {
     FAILURE("Operation failed."),
     MAIN_MENU("***MAIN MENU***\n* 1)Customer Menu *\n* 2)Employee Menu *\n* 3)Item Menu *\n* 4)Contractor Menu *\n* 5) Sale menu *\n* 6) Leasing menu*\n* 7) Exit Program *\n************"),
     CUSTOMER_MENU("***CUSTOMER MENU***\n* 1)Create Customer *\n* 2)Read Customer *\n* 3)Update Customer *\n* 4)Delete Customer *\n* 5)Previous Menu *\n* 6)Exit Program *"),
-    EMPLOYEE_MENU("***EMPLOYEE MENU***\n* 1)Create Employee *\n* 2)Read Employee *\n* 3)Edit Employee *\n* 4)Delete Employee *\n* 5)Previous Menu *\n* 6)Exit Program *");
+    EMPLOYEE_MENU("***EMPLOYEE MENU***\n* 1)Create Employee *\n* 2)Read Employee *\n* 3)Edit Employee *\n* 4)Delete Employee *\n* 5)Previous Menu *\n* 6)Exit Program *"),
+    SALE_MENU("***SALE MENU***\n* 1)Create Sale *\n* 2)Read Sale *\n* 3)Edit Sale *\n* 4)Previous Menu *\n* 5)Exit Program *"),
+    LOAN_MENU("***LEASING MENU***\n* 1)Create Leasing *\n* 2)Read Leasing *\n* 3)Edit Leasing *\n* 4)Previous Menu *\n* 5)Exit Program *");
+
     private String errorMessage;
 
     MenuText (String errorMessage) {

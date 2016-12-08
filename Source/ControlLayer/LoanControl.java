@@ -17,10 +17,11 @@ public class LoanControl {
         customerContainer = CustomerContainer.getInstance();
     }
 
-    public void addLoan(String numberID, int quantity, double price, String customerCPR, DateFormat startDate, int periodOfTime) {
-        //Loan loan = new Loan(numberID, quantity, price,customer, startDate, periodOfTime);
+    public boolean addLoan(String numberID, int quantity, double price, String customerCPR, String startDate, int periodOfTime) {
         Customer customer = customerContainer.findCustomerByCpr(customerCPR);
-        loanContainer.addLoan(new Loan(numberID, quantity, price, customer, startDate, periodOfTime));
+        Loan loan = new Loan(numberID, quantity, price,customer, startDate, periodOfTime);
+        //loanContainer.addLoan(new Loan(numberID, quantity, price, customer, startDate, periodOfTime));
+        return loanContainer.addLoan(loan);
     }
 
     public ArrayList<String> readLoan(String numberID) {

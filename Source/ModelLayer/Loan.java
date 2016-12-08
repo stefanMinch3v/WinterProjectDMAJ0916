@@ -7,12 +7,12 @@ import java.util.ArrayList;
  * Created by Admin on 11/28/2016.
  */
 public class Loan extends Order{
-    private DateFormat startDate;
+    private String startDate;
     private int periodOfTime;
     private boolean status;
     private ArrayList<Item> items;
 
-    public Loan(String numberID, int quantity, double price,Customer customer, DateFormat startDate, int periodOfTime) {
+    public Loan(String numberID, int quantity, double price,Customer customer, String startDate, int periodOfTime) {
         super(numberID, quantity, price, customer);
         this.startDate = startDate;
         this.periodOfTime = periodOfTime;
@@ -20,11 +20,11 @@ public class Loan extends Order{
         status = false;
     }
 
-    public DateFormat getStartDate() {
+    public String getStartDate() {
         return startDate;
     }
 
-    public void setStartDate(DateFormat startDate) {
+    public void setStartDate(String startDate) {
         this.startDate = startDate;
     }
 
@@ -64,7 +64,7 @@ public class Loan extends Order{
                 setCustomer((Customer)fieldInfo);
                 return true;
             case 4:
-                startDate = (DateFormat)fieldInfo;
+                startDate = (String)fieldInfo;
                 return true;
             case 5:
                 periodOfTime = (int) fieldInfo;

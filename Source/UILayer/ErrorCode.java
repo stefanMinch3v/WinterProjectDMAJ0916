@@ -15,7 +15,11 @@ public enum ErrorCode {
     WRONG_INPUT_INTEGER("Please introduce a number, not a character"),
     WRONG_INT_INPUT("Please select one of the available options"),
     WRONG_WORKID_INPUT("WORKID must be 6 digits long and must not contain letters."),
-
+    WRONG_SALE_OR_LOAN_NUMBERID("The numberID must be at least 5 digits long!"),
+    WRONG_QUANTITY("The quantity must be not a negative number or zero!"),
+    WRONG_PRICE("The price cannot be negative or zero!"),
+    WRONG_DATE("The date must be in format yyyy-dd-mm !"),
+    WRONG_PERIOD("The period of time must be an integer and it's read in weeks (1 == 1 week, 2 == 2 weeks ...)"),
     NO_SUCH_CUSTOMER("There is no Customer with this CPR"),
     NO_SUCH_EMPLOYEE("There is no Employee with this ID");
 
