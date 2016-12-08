@@ -2,7 +2,7 @@ package UILayer;
 import ControlLayer.*;
 
 import java.util.ArrayList;
-
+import static UILayer.ErrorCode.NO_SUCH_EMPLOYEE;
 import static UILayer.MenuText.*;
 
 /**
@@ -21,20 +21,22 @@ public class EmployeeMenu {
             switch (choice) {
                 case 1: // create
 
-                    if(employeeControl.addEmployee(InputChecker.verifyName(),InputChecker.verifyAddress(),InputChecker.verifyEmail(),InputChecker.verifyPhone(),InputChecker.verifyCity(),InputChecker.verifyId(1),InputChecker.verifyWorkId(1))) MenuText.write(SUCCESS);
-                    else MenuText.write(FAILURE);
+                    if(employeeControl.addEmployee(InputChecker.verifyName(),InputChecker.verifyAddress(),InputChecker.verifyEmail(),InputChecker.verifyPhone(),InputChecker.verifyCity(),InputChecker.verifyId(1),InputChecker.verifyWorkId(1)))
+                        MenuText.write(SUCCESS);
+                    else
+                        ErrorCode.print(NO_SUCH_EMPLOYEE);
                     break;
                 case 2: // read
                     ArrayList<String> aux = employeeControl.getEmployeeByWorkId(InputChecker.verifyWorkId(2));
                     if(!aux.isEmpty()) System.out.println(aux);
-                    else MenuText.write(FAILURE);
+                    else ErrorCode.print(NO_SUCH_EMPLOYEE);
                     break;
                 case 3: // update
                     String workId = InputChecker.verifyWorkId(2);
                     ArrayList<String> aux2 = employeeControl.getEmployeeByWorkId(workId);
                     if(!aux2.isEmpty()) System.out.println(aux2);
                     else {
-                        MenuText.write(FAILURE);
+                        ErrorCode.print(NO_SUCH_EMPLOYEE);
                         break;
                     }
                     int fieldNumber = InputChecker.verifyFieldNumber(aux2.size());
@@ -43,7 +45,7 @@ public class EmployeeMenu {
                     break;
                 case 4: // delete
                     if(employeeControl.deleteEmployee( InputChecker.verifyWorkId(3))) MenuText.write(SUCCESS);
-                    else MenuText.write(FAILURE);
+                    else ErrorCode.print(NO_SUCH_EMPLOYEE);
                     break;
                 case 5:
                     //go back

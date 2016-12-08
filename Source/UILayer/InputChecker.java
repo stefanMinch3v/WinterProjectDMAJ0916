@@ -329,6 +329,6 @@ public class InputChecker {
             }
         } while (!ok);
 
-        return costPrice;
+        return (int) costPrice;
     }
 }
