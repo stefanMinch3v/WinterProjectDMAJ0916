@@ -8,13 +8,14 @@ import static UILayer.MenuText.*;
  */
 public class MainMenuUI {
     public static void runMainLoop() {
-        MenuText.write(MAIN_MENU);
+
         CustomerMenu customerMenu = new CustomerMenu();
         EmployeeMenu employeeMenu = new EmployeeMenu();
-        SaleManu saleManu = new SaleManu();
+        SaleMenu saleMenu = new SaleMenu();
         LoanMenu loanMenu = new LoanMenu();
         int choice;
         do {
+            MenuText.write(MAIN_MENU);
             choice = Input.readInt();
 
             switch (choice) {
@@ -31,7 +32,7 @@ public class MainMenuUI {
                     //    contractorMenu();
                     break;
                 case 5:
-                    choice = saleManu.menu();
+                    choice = saleMenu.menu();
                     break;
                 case 6:
                     choice = loanMenu.menu();

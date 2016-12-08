@@ -8,7 +8,7 @@ import static UILayer.MenuText.*;
 /**
  * Created by Admin on 12/7/2016.
  */
-public class SaleManu {
+public class SaleMenu {
     public int menu() {
         SaleControl saleControl = new SaleControl();
         int choice;
@@ -19,7 +19,7 @@ public class SaleManu {
 
             switch (choice) {
                 case 1: // create
-                    if(saleControl.addSale(InputChecker.verifySaleNumberID(), InputChecker.verifyQuantity(), InputChecker.verifyPrice(), InputChecker.verifyId())) {
+                    if(saleControl.addSale(InputChecker.verifySaleNumberID(), InputChecker.verifyQuantity(), InputChecker.verifyPrice(), InputChecker.verifyId(2))) {
                         MenuText.write(SUCCESS);
                     }
                     else {
@@ -85,7 +85,7 @@ public class SaleManu {
             case 3:
                 return InputChecker.verifyPrice();
             case 4:
-                return InputChecker.verifyId();
+                return InputChecker.verifyId(2);
             default:
                 return null;
         }

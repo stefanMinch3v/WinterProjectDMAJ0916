@@ -17,7 +17,7 @@ public class Loan extends Order{
         this.startDate = startDate;
         this.periodOfTime = periodOfTime;
         items = new ArrayList<>();
-        status = false;
+        status = true;
     }
 
     public String getStartDate() {

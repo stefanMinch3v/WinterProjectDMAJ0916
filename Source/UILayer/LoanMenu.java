@@ -21,7 +21,7 @@ public class LoanMenu {
 
             switch (choice) {
                 case 1: //create
-                    if (loanControl.addLoan(InputChecker.verifySaleNumberID(), InputChecker.verifyQuantity(), InputChecker.verifyPrice(), InputChecker.verifyId(), InputChecker.verifyDate(), InputChecker.verifyPeriod())) {
+                    if (loanControl.addLoan(InputChecker.verifySaleNumberID(), InputChecker.verifyQuantity(), InputChecker.verifyPrice(), InputChecker.verifyId(2), InputChecker.verifyDate(), InputChecker.verifyPeriod())) {
                         MenuText.write(SUCCESS);
                     }
                     else {
@@ -53,22 +53,20 @@ public class LoanMenu {
                         MenuText.write(SUCCESS);
                     }
                 case 4:
-                    //go back
+                    //retrieve leasing
                     break;
                 case 5:
-                    //exit code
+                    //go back
+                    break;
+                case 6:
+                    //exit
                     break;
                 default:
-                    System.out.println("Choice must be a value between 1 and 5.");
+                    System.out.println("Choice must be a value between 1 and 6.");
             }
         }
-        while (choice != 4 && choice != 5);
-        if (choice == 5) {
-            return 7;
-        }
-        else {
-            return 1;
-        }
+        while (choice != 5 && choice != 6);
+        return choice == 6 ? 7 : 1;
     }
 
     public Object checkData(int fieldNumber)
@@ -82,7 +80,7 @@ public class LoanMenu {
             case 3:
                 return InputChecker.verifyPrice();
             case 4:
-                return InputChecker.verifyId();
+                return InputChecker.verifyId(2);
             case 5:
                 return InputChecker.verifyDate();
             case 6:
