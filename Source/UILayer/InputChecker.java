@@ -305,7 +305,8 @@ public class InputChecker {
                         ErrorCode.print(BARCODE_ALREADY_EXISTS);
                     }
                 }
-            };
+            }
+            ;
 
         } while (!ok);
 
@@ -314,7 +315,8 @@ public class InputChecker {
         return barcode;
 
     }
-    public static int verifyCostPrice()
+
+    public static double verifyCostPrice()
 
     {
         costPrice = 0; // make sure it is empty before starting the process
@@ -329,6 +331,72 @@ public class InputChecker {
             }
         } while (!ok);
 
-        return (int) costPrice;
+        return (double) costPrice;
+    }
+
+    public static double verifyTradeAllowance()
+
+    {
+        tradeAllowance = 0; // make sure it is empty before starting the process
+
+        do {
+            System.out.println("Please input item's trade allowance price : ");
+            ok = true;
+            tradeAllowance = Input.readInt();
+            if (tradeAllowance < 0) {
+                ok = false;
+                ErrorCode.print(WRONG_PRICE);
+            }
+        } while (!ok);
+        return (double) tradeAllowance;
+
+
+    }
+
+    public static double verifyRetailPrice() {
+        retailPrice = 0; // make sure it is empty before starting the process
+
+        do {
+            System.out.println("Please input item's retail price : ");
+            ok = true;
+            retailPrice = Input.readInt();
+            if (retailPrice < 0) {
+                ok = false;
+                ErrorCode.print(WRONG_PRICE);
+            }
+        } while (!ok);
+        return (double) retailPrice;
+
+
+    }
+
+    public static String verifyType() {
+        type = null;    // making sure it is empty before starting the process
+        do {
+            System.out.println("Please input item's type : ");
+            ok = true;
+            type = Input.readString();
+            if (type.length() < 2) {
+                ok = false;
+                ErrorCode.print(WRONG_NAME_INPUT);
+            }
+        } while (!ok);
+
+        return type;
+    }
+
+    public static String verifyPlace() {
+        place = null;    // making sure it is empty before starting the process
+        do {
+            System.out.println("Please input item's place : ");
+            ok = true;
+            place = Input.readString();
+            if (place.length() < 2) {
+                ok = false;
+                ErrorCode.print(WRONG_NAME_INPUT);
+            }
+        } while (!ok);
+
+        return place;
     }
 }

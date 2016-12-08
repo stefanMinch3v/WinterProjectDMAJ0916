@@ -5,11 +5,11 @@ import ModelLayer.ItemContainer;
 import java.util.ArrayList;
 
 import static UILayer.MenuText.*;
+import static UILayer.ErrorCode.NO_SUCH_ITEM;
 /**
  * Created by Luke on 08/12/2016.
  */
 public class ItemMenu {
-    ItemControl itemControl = new ItemControl();
     public int Menu(){
         ItemControl itemControl = new ItemControl();
 
@@ -19,8 +19,8 @@ public class ItemMenu {
            MenuText.write(ITEM_MENU);
             choice = Input.readInt();
             switch(choice) {
-                case 1: //create
-                    if (itemControl.addItem(Input.readString(), Input.readString(), Input.readString(), +Input.readInt(), Input.readInt(), Input.readInt(), Input.readInt(), Input.readString())){
+                case 1: //create name, type, barcode, costPrice, tradeAllowance, retailPrice, quantity, place
+                    if (itemControl.addItem(InputChecker.verifyName(), InputChecker.verifyType(), InputChecker.verifyItemBarcode(2), InputChecker.verifyCostPrice(), InputChecker.verifyTradeAllowance(), InputChecker.verifyRetailPrice(), InputChecker.verifyQuantity(), InputChecker.verifyPlace())){
                         MenuText.write(SUCCESS);
             }
                     else {
@@ -29,31 +29,34 @@ public class ItemMenu {
                     break;
 
                 case 2: //read
-                    ArrayList<String> loans = loanControl.readLoan(InputChecker.verifySaleNumberID());
-                    if (loans != null) {
-                        System.out.println(loans);
+                    ArrayList<String> items = itemControl.getItemByBarcode(InputChecker.verifyItemBarcode(2));
+                    if (items != null) {
+                        System.out.println(items);
                     }
                     else {
                         MenuText.write(FAILURE);
                     }
                     break;
                 case 3: // update
-                    String numberID = InputChecker.verifySaleNumberID();
-                    ArrayList<String> loans2 = loanControl.readLoan(numberID);
-                    if (loans2 != null) {
-                        System.out.println(loans2);
+                    String barcode = InputChecker.verifyItemBarcode(2);
+                    ArrayList<String> items2 = itemControl.getItemByBarcode(barcode);
+                    if (items2 != null) {
+                        System.out.println(items2);
                     }
                     else {
                         MenuText.write(FAILURE);
                         break;
                     }
-                    int fieldNumber = InputChecker.verifyFieldNumber(loans2.size());
+                    int fieldNumber = InputChecker.verifyFieldNumber(items2.size());
                     Object fieldInfo = checkData(fieldNumber);
-                    if (loanControl.updateLoan(numberID, fieldNumber, fieldInfo)) {
+                    if (itemControl.changeItemFieldByBarcode(barcode, fieldNumber, fieldInfo)) {
                         MenuText.write(SUCCESS);
                     }
-                case 4:
-                    //retrieve leasing
+                case 4: // delete
+                    if(itemControl.deleteItem( InputChecker.verifyItemBarcode(3)))
+                        MenuText.write(SUCCESS);
+                    else
+                        ErrorCode.print(NO_SUCH_ITEM);
                     break;
                 case 5:
                     //go back
@@ -74,17 +77,24 @@ public class ItemMenu {
         switch (fieldNumber)
         {
             case 1:
-                return InputChecker.verifySaleNumberID();
+                return InputChecker.verifyName();
             case 2:
-                return InputChecker.verifyQuantity();
+                return InputChecker.verifyType();
             case 3:
-                return InputChecker.verifyPrice();
+                return InputChecker.verifyItemBarcode(2);
             case 4:
                 return InputChecker.verifyId(2);
             case 5:
-                return InputChecker.verifyDate();
+                return InputChecker.verifyCostPrice();
             case 6:
-                return InputChecker.verifyPeriod();
+                return InputChecker.verifyTradeAllowance();
+            case 7:
+                return InputChecker.verifyRetailPrice();
+            case 8:
+                return  InputChecker.verifyQuantity();
+            case 9:
+                return InputChecker.verifyPlace();
+
             default:
                 return null;
         }

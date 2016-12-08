@@ -23,7 +23,8 @@ public enum ErrorCode {
     NO_SUCH_CUSTOMER("There is no Customer with this CPR"),
     NO_SUCH_EMPLOYEE("There is no Employee with this ID"),
     NO_SUCH_CONTRACTOR("There is no Contractor with this CVR"),
-    BARCODE_ALREADY_EXISTS("This barcode already exist, chose different one");
+    BARCODE_ALREADY_EXISTS("This barcode already exist, chose different one"),
+    NO_SUCH_ITEM("This item doesn't exist");
 
     private String errorMessage;
 
