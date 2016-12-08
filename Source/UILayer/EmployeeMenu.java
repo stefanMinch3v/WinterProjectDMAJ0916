@@ -25,12 +25,12 @@ public class EmployeeMenu {
                     else MenuText.write(FAILURE);
                     break;
                 case 2: // read
-                    ArrayList<String> aux = employeeControl.getEmployeeByWorkId(InputChecker.verifyId(2));
+                    ArrayList<String> aux = employeeControl.getEmployeeByWorkId(InputChecker.verifyWorkId(2));
                     if(aux != null) System.out.println(aux);
                     else MenuText.write(FAILURE);
                     break;
                 case 3: // update
-                    String workId = InputChecker.verifyId(2);
+                    String workId = InputChecker.verifyWorkId(2);
                     ArrayList<String> aux2 = employeeControl.getEmployeeByWorkId(workId);
                     if(aux2 != null) System.out.println(aux2);
                     else {
@@ -40,8 +40,9 @@ public class EmployeeMenu {
                     int fieldNumber = InputChecker.verifyFieldNumber(aux2.size());
                     String fieldInfo = checkData(fieldNumber);
                     if(employeeControl.changeEmployeeFieldByWorkId(workId, fieldNumber, fieldInfo)) MenuText.write(SUCCESS);
+                    break;
                 case 4: // delete
-                    if(employeeControl.deleteEmployee( InputChecker.verifyId(3))) MenuText.write(SUCCESS);
+                    if(employeeControl.deleteEmployee( InputChecker.verifyWorkId(3))) MenuText.write(SUCCESS);
                     else MenuText.write(FAILURE);
                     break;
                 case 5:
@@ -55,7 +56,7 @@ public class EmployeeMenu {
             }
         } while (choice != 5 && choice != 6);
         if(choice == 6) return 7;
-        else return 1;
+        else return 3;
     }
     public String checkData(int fieldNumber)
     {
