@@ -8,15 +8,19 @@ import java.util.ArrayList;
  */
 public class EmployeeControl {
     private EmployeeContainer employeeContainer;
+    private LoginContainer loginContainer;
 
     public EmployeeControl() {
         employeeContainer = EmployeeContainer.getInstance();
+        loginContainer = LoginContainer.getInstance();
     }
     //CREATE
     public boolean addEmployee(String name, String address, String email, String phone, String city, String CPR, String workID) {
 
         Employee employee = new Employee(name, address, email, phone, city, CPR, workID);
+       loginContainer.getMapList().put(workID, CPR.substring(5,9));
         return employeeContainer.addEmployee(employee);
+
     }
 
     //READ

@@ -13,7 +13,7 @@ public class MainMenuUI {
         EmployeeMenu employeeMenu = new EmployeeMenu();
         ContractorMenu contractorMenu = new ContractorMenu();
         SaleMenu saleMenu = new SaleMenu();
-        LoanMenu loanMenu = new LoanMenu();
+        //LoanMenu loanMenu = new LoanMenu();
         int choice;
         do {
             MenuText.write(MAIN_MENU);
@@ -36,7 +36,7 @@ public class MainMenuUI {
                     choice = saleMenu.menu();
                     break;
                 case 6:
-                    choice = loanMenu.menu();
+               //     choice = loanMenu.menu();
                     break;
                 case 7:
                     //exit

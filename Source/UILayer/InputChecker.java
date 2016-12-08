@@ -10,12 +10,13 @@ import static UILayer.ErrorCode.*;
  * Created by EU on 2016-12-01.
  */
 public class InputChecker {
-    private static String id, name, address, email, phone, city, workId, numberID; // not ready yet.
+    private static String id, name, address, email, phone, city, workId, numberID, barcode, type, place; // not ready yet.
     private static int quantity, periodOfTime;
-    private static double price;
+    private static double price, costPrice, tradeAllowance, retailPrice;
     private static String startDate;
     private static boolean ok;
-    public static ArrayList<String> existingIds = new ArrayList<>(); // keeping track of all of the CPR and CVR so we can make sure they are unique
+    public static ArrayList<String> existingIds = new ArrayList<>();
+    public static ArrayList<String> existingBarcodes = new ArrayList<>();// keeping track of all of the CPR and CVR so we can make sure they are unique
     private static InputChecker instance;
 
     public InputChecker() {
@@ -41,15 +42,13 @@ public class InputChecker {
             }
 
 
-
-            if( existingIds.size() > 0 && check != 2 && ok)
-            {
+            if (existingIds.size() > 0 && check != 2 && ok) {
                 for (int i = 0; i < existingIds.size(); i++) // if the ID (CPR/CVR) already exists in the system
                 {
-                    if(check == 3) //if you want to delete one customer/contractor
-                      existingIds.remove(i); // remove his CPR/CVR from the system
+                    if (check == 3) //if you want to delete one customer/contractor
+                        existingIds.remove(i); // remove his CPR/CVR from the system
 
-                    if (existingIds.get(i).equals(id) && check == 1 ) {
+                    if (existingIds.get(i).equals(id) && check == 1) {
                         ok = false;
                         ErrorCode.print(ID_ALREADY_EXISTS);
                     }
@@ -58,7 +57,7 @@ public class InputChecker {
 
         } while (!ok);
 
-        if(check == 1)
+        if (check == 1)
             existingIds.add(id); // adding the unique id to the system
 
 
@@ -180,10 +179,10 @@ public class InputChecker {
                 ErrorCode.print(WRONG_WORKID_INPUT);
             }
 
-            if(InputChecker.getInstance().existingIds.size() > 0)
+            if (InputChecker.getInstance().existingIds.size() > 0)
                 for (int i = 0; i < InputChecker.getInstance().existingIds.size(); i++) // if the WorkI already exists in the system
                 {
-                    if(check == 3) // if you want to delete an employee
+                    if (check == 3) // if you want to delete an employee
                         InputChecker.getInstance().existingIds.remove(i); // remove his workId from the system aswell
 
                     if (InputChecker.getInstance().existingIds.get(i).equals(workId) && check == 1) {
@@ -194,7 +193,7 @@ public class InputChecker {
 
         } while (!ok);
 
-        if(check == 1)
+        if (check == 1)
             InputChecker.getInstance().existingIds.add(workId); // adding the workId to the list
 
         return workId;
@@ -266,7 +265,7 @@ public class InputChecker {
                 ok = false;
                 ErrorCode.print(WRONG_DATE);
             }
-        }while(!ok);
+        } while (!ok);
 
         return startDate;
     }
@@ -285,5 +284,51 @@ public class InputChecker {
         } while (!ok);
 
         return periodOfTime;
+    }
+
+    public static String verifyItemBarcode(int check) {
+        barcode = null; // making sure it is empty before starting the process
+        do {
+            System.out.println("Please input item's barcode: ");
+            ok = true;
+            barcode = Input.readString();
+
+
+            if (existingBarcodes.size() > 0 && check != 2 && ok) {
+                for (int i = 0; i < existingBarcodes.size(); i++) // if the ID (CPR/CVR) already exists in the system
+                {
+                    if (check == 3) //if you want to delete one item
+                        existingBarcodes.remove(i); // remove its barcode
+
+                    if (existingBarcodes.get(i).equals(barcode) && check == 1) {
+                        ok = false;
+                        ErrorCode.print(BARCODE_ALREADY_EXISTS);
+                    }
+                }
+            };
+
+        } while (!ok);
+
+        if (check == 1)
+            existingBarcodes.add(barcode); // adding the unique id to the system
+        return barcode;
+
+    }
+    public static int verifyCostPrice()
+
+    {
+        costPrice = 0; // make sure it is empty before starting the process
+
+        do {
+            System.out.println("Please input item's cost price : ");
+            ok = true;
+            costPrice = Input.readInt();
+            if (costPrice <= 0) {
+                ok = false;
+                ErrorCode.print(WRONG_PRICE);
+            }
+        } while (!ok);
+
+        return costPrice;
     }
 }

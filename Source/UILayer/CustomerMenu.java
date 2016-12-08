@@ -64,8 +64,6 @@ public class CustomerMenu {
                     // go back
                     break;
                 case 6:
-                    //exit code
-                    break;
                 default:
                     System.out.println("Choice must be a value between 1 and 6.");
             }
