@@ -15,7 +15,7 @@ public class Customer extends Person {
         return cpr;
     }
 
-    public void setCpr(String CPR) {
+    public void setCpr(String cpr) {
         this.cpr = cpr;
     }
 

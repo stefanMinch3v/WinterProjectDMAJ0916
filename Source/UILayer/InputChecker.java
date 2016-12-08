@@ -15,10 +15,10 @@ public class InputChecker {
     private static double price;
     private static String startDate;
     private static boolean ok;
-    private static ArrayList<String> existingIds; // keeping track of all of the CPR and CVR and numberID so we can make sure they are unique
+    public static ArrayList<String> existingIds = new ArrayList<>(); // keeping track of all of the CPR and CVR so we can make sure they are unique
     private static InputChecker instance;
 
-    private InputChecker() {
+    public InputChecker() {
         existingIds = new ArrayList<>();
     }
 
@@ -29,7 +29,7 @@ public class InputChecker {
         return instance;
     }
 
-    public static String verifyId() {
+    public static String verifyId(int check) {
         id = null; // making sure it is empty before starting the process
         do {
             System.out.println("Please input user's CPR.");
@@ -40,18 +40,27 @@ public class InputChecker {
                 ErrorCode.print(WRONG_CPR_INPUT);
             }
 
-/*            if(existingIds.isEmpty()) getInstance();
-            if(existingIds.size()>0)
-            {for (int i = 0; i <= existingIds.size(); i++) // if the ID (CPR/CVR) already exists in the system
-                if (existingIds.get(i).equals(id)) {
-                    ok = false;
-                    ErrorCode.print(ID_ALREADY_EXISTS);
+
+
+            if( existingIds.size() > 0 && check != 2 && ok)
+            {
+                for (int i = 0; i < existingIds.size(); i++) // if the ID (CPR/CVR) already exists in the system
+                {
+                    if(check == 3) //if you want to delete one customer/contractor
+                      existingIds.remove(i); // remove his CPR/CVR from the system
+
+                    if (existingIds.get(i).equals(id) && check == 1 ) {
+                        ok = false;
+                        ErrorCode.print(ID_ALREADY_EXISTS);
+                    }
                 }
-            }*/
+            }
 
         } while (!ok);
 
-//        existingIds.add(id); // adding the unique id to the system
+        if(check == 1)
+            existingIds.add(id); // adding the unique id to the system
+
 
         return id;
     }
@@ -158,7 +167,7 @@ public class InputChecker {
         return city;
     }
 
-    public static String verifyWorkId() {
+    public static String verifyWorkId(int check) {
         workId = null; // making sure it is empty before starting the process
 
         do {
@@ -170,16 +179,23 @@ public class InputChecker {
                 ok = false;
                 ErrorCode.print(WRONG_WORKID_INPUT);
             }
-            /*if(existingIds.isEmpty())getInstance();
-            for (int i = 0; i < existingIds.size(); i++) // if the WorkI already exists in the system
-                if (existingIds.get(i).equals(workId)) {
-                    ok = false;
-                    ErrorCode.print(ID_ALREADY_EXISTS);
-                }*/
+
+            if(InputChecker.getInstance().existingIds.size() > 0)
+                for (int i = 0; i < InputChecker.getInstance().existingIds.size(); i++) // if the WorkI already exists in the system
+                {
+                    if(check == 3) // if you want to delete an employee
+                        InputChecker.getInstance().existingIds.remove(i); // remove his workId from the system aswell
+
+                    if (InputChecker.getInstance().existingIds.get(i).equals(workId) && check == 1) {
+                        ok = false;
+                        ErrorCode.print(ID_ALREADY_EXISTS);
+                    }
+                }
 
         } while (!ok);
 
-//        existingIds.add(workId); // adding the workId to the list
+        if(check == 1)
+            InputChecker.getInstance().existingIds.add(workId); // adding the workId to the list
 
         return workId;
     }
