@@ -1,5 +1,6 @@
 package UILayer;
 
+import ControlLayer.Brexit;
 import ControlLayer.ContractorControl;
 
 import java.util.ArrayList;
@@ -16,6 +17,7 @@ public class ContractorMenu {
     public int menu() {
 
         contractorControl = new ContractorControl();
+        Brexit brexit = new Brexit();
 
         int choice;
 
@@ -62,7 +64,7 @@ public class ContractorMenu {
                     //go back
                     break;
                 case 6:
-                    //exit code
+                    brexit.exit();
                     break;
                 default:
                     System.out.println("Choice must be a value between 1 and 6.");

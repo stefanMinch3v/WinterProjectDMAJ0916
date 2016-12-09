@@ -65,4 +65,21 @@ public class ContractorContainer {
         }
         return fields;
     }
+
+    public int getContractorSize()
+    {
+        return contractors.size();
+    }
+
+    public String saveData(int index)
+    {
+        String data = "";
+        Contractor contractor = contractors.get(index);
+        data = ( contractor.getName()+" "+contractor.getAddress()+" "+contractor.getEmail()+" "+contractor.getPhone()+" "+contractor.getCity()+" "+contractor.getCvr()+"\n");
+
+
+        data = data + "\r\n"; // make a new line
+
+        return data;
+    }
 }

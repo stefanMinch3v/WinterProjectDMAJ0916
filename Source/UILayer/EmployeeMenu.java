@@ -11,6 +11,7 @@ import static UILayer.MenuText.*;
 public class EmployeeMenu {
     public int menu() {
         EmployeeControl employeeControl = new EmployeeControl();
+        Brexit brexit = new Brexit();
 
         int choice;
 
@@ -51,7 +52,7 @@ public class EmployeeMenu {
                     //go back
                     break;
                 case 6:
-                    //exit code
+                    brexit.exit();
                     break;
                 default:
                     System.out.println("Choice must be a value between 1 and 6.");

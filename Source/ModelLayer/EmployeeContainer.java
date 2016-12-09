@@ -27,9 +27,9 @@ public class EmployeeContainer {
     }
 
 
-    public Employee getEmployeeByCPR(String CPR){
+    public Employee getEmployeeByCPR(String cpr){
         for (Employee employee:employees){
-            if(employee.getCPR().equals(CPR))return employee;
+            if(employee.getCpr().equals(cpr))return employee;
         }
         return null;
     }
@@ -44,14 +44,14 @@ public class EmployeeContainer {
     public ArrayList<String> getEmployeesFieldsByWorkId(String workId){
         ArrayList<String> employeeFields = new ArrayList<>();
         for (Employee employee:employees) {
-            if(employee.getWorkID().equals(workId)) {
+            if(employee.getWorkId().equals(workId)) {
                 employeeFields.add("1. Name: "+ employee.getName());
                 employeeFields.add("2. Address: "+ employee.getAddress());
                 employeeFields.add("3. Email: "+ employee.getEmail());
                 employeeFields.add("4. Phone: "+ employee.getPhone());
                 employeeFields.add("5. City: "+ employee.getCity());
-                employeeFields.add("6. WorkID: "+ employee.getWorkID());
-                employeeFields.add("7. CPR"+employee.getCPR());
+                employeeFields.add("6. WorkID: "+ employee.getWorkId());
+                employeeFields.add("7. CPR"+employee.getCpr());
             }
         }
         return employeeFields;
@@ -59,7 +59,7 @@ public class EmployeeContainer {
 
     public Employee findEmployeeByWorkId(String workId){
         for (Employee employee:employees) {
-            if(employee.getWorkID().equals(workId))return employee;
+            if(employee.getWorkId().equals(workId))return employee;
         }
         return null;
     }
@@ -68,12 +68,28 @@ public class EmployeeContainer {
         Iterator<Employee> it = employees.iterator();
         while(it.hasNext()){
             Employee employee= it.next();
-            if(employee.getWorkID().equals(workId)) {
+            if(employee.getWorkId().equals(workId)) {
                 it.remove();
                 return true;
             }
         }
         return false;
+    }
+    public int getCustomersSize()
+    {
+        return employees.size();
+    }
+
+    public String saveData(int index)
+    {
+        String data = "";
+        Employee employee = employees.get(index);
+        data = ( employee.getName()+" "+employee.getAddress()+" "+employee.getEmail()+" "+employee.getPhone()+" "+employee.getCity()+employee.getCpr()+" "+employee.getWorkId()+"\n");
+
+
+        data = data + "\r\n"; // make a new line
+
+        return data;
     }
 
 }

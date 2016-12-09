@@ -3,13 +3,13 @@ package ModelLayer;
  * Created by RedJohn on 23-Nov-16.
  */
 public class Employee extends Person {
-    private String workID;
-    private String CPR;
+    private String workId;
+    private String cpr;
 
-    public Employee(String name, String address, String email, String phone, String city, String workID, String CPR) {
+    public Employee(String name, String address, String email, String phone, String city, String workId, String cpr) {
         super(name, address, email, phone, city);
-        this.workID = workID;
-        this.CPR = CPR;
+        this.workId = workId;
+        this.cpr = cpr;
     }
 
     public boolean setField(int fieldNumber, Object fieldInfo) {
@@ -30,22 +30,22 @@ public class Employee extends Person {
                 setCity((String) fieldInfo);
                 return true;
             case 7:
-                workID = ((String) fieldInfo);
+                workId = ((String) fieldInfo);
                 return true;
             case 8:
-                CPR = ((String) fieldInfo);
+                cpr = ((String) fieldInfo);
                 return true;
             default:
                 return false;
         }
     }
 
-    public String getWorkID() {
-        return workID;
+    public String getWorkId() {
+        return workId;
     }
 
-    public String getCPR() {
-        return CPR;
+    public String getCpr() {
+        return cpr;
     }
 
 }
