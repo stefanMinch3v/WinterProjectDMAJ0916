@@ -10,7 +10,7 @@ import static UILayer.ErrorCode.NO_SUCH_ITEM;
  * Created by Luke on 08/12/2016.
  */
 public class ItemMenu {
-    public int Menu(){
+    public int menu(){
         ItemControl itemControl = new ItemControl();
 
         int choice;
@@ -20,7 +20,7 @@ public class ItemMenu {
             choice = Input.readInt();
             switch(choice) {
                 case 1: //create name, type, barcode, costPrice, tradeAllowance, retailPrice, quantity, place
-                    if (itemControl.addItem(InputChecker.verifyName(), InputChecker.verifyType(), InputChecker.verifyItemBarcode(2), InputChecker.verifyCostPrice(), InputChecker.verifyTradeAllowance(), InputChecker.verifyRetailPrice(), InputChecker.verifyQuantity(), InputChecker.verifyPlace())){
+                    if (itemControl.addItem(InputChecker.verifyName(), InputChecker.verifyType(), InputChecker.verifyItemBarcode(), InputChecker.verifyCostPrice(), InputChecker.verifyTradeAllowance(), InputChecker.verifyRetailPrice(), InputChecker.verifyQuantity(), InputChecker.verifyPlace())){
                         MenuText.write(SUCCESS);
             }
                     else {
@@ -29,7 +29,7 @@ public class ItemMenu {
                     break;
 
                 case 2: //read
-                    ArrayList<String> items = itemControl.getItemByBarcode(InputChecker.verifyItemBarcode(2));
+                    ArrayList<String> items = itemControl.getItemByBarcode(InputChecker.verifyItemBarcode());
                     if (items != null) {
                         System.out.println(items);
                     }
@@ -38,7 +38,7 @@ public class ItemMenu {
                     }
                     break;
                 case 3: // update
-                    String barcode = InputChecker.verifyItemBarcode(2);
+                    String barcode = InputChecker.verifyItemBarcode();
                     ArrayList<String> items2 = itemControl.getItemByBarcode(barcode);
                     if (items2 != null) {
                         System.out.println(items2);
@@ -53,7 +53,7 @@ public class ItemMenu {
                         MenuText.write(SUCCESS);
                     }
                 case 4: // delete
-                    if(itemControl.deleteItem( InputChecker.verifyItemBarcode(3)))
+                    if(itemControl.deleteItem( InputChecker.verifyItemBarcode()))
                         MenuText.write(SUCCESS);
                     else
                         ErrorCode.print(NO_SUCH_ITEM);
@@ -81,7 +81,7 @@ public class ItemMenu {
             case 2:
                 return InputChecker.verifyType();
             case 3:
-                return InputChecker.verifyItemBarcode(2);
+                return InputChecker.verifyItemBarcode();
             case 4:
                 return InputChecker.verifyId(2);
             case 5:

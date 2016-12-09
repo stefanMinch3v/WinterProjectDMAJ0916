@@ -12,26 +12,26 @@ import static UILayer.MenuText.*;
  */
 public class ContractorMenu {
 
-    private ContractorControl contractorControler;
+    private ContractorControl contractorControl;
     public int menu() {
 
-        contractorControler = new ContractorControl();
+        contractorControl = new ContractorControl();
 
         int choice;
 
         do {
-            MenuText.write(CONTRACOTR_MENU);
+            MenuText.write(CONTRACTOR_MENU);
             choice = Input.readInt();
 
             switch (choice) {
                 case 1: // create
-                    if(contractorControler.createContractor( InputChecker.verifyId(1), InputChecker.verifyName(),InputChecker.verifyAddress(),InputChecker.verifyEmail(),InputChecker.verifyPhone(),InputChecker.verifyCity()))
+                    if(contractorControl.createContractor( InputChecker.verifyId(1), InputChecker.verifyName(),InputChecker.verifyAddress(),InputChecker.verifyEmail(),InputChecker.verifyPhone(),InputChecker.verifyCity()))
                         MenuText.write(SUCCESS);
                     else
                         MenuText.write(FAILURE);
                     break;
                 case 2: // read
-                    ArrayList<String> aux = contractorControler.readContractor(InputChecker.verifyId(2));
+                    ArrayList<String> aux = contractorControl.readContractor(InputChecker.verifyId(2));
                     if(!aux.isEmpty())
                         System.out.println(aux);
                     else
@@ -39,7 +39,7 @@ public class ContractorMenu {
                     break;
                 case 3: // update
                     String cvr = InputChecker.verifyId(2);
-                    ArrayList<String> aux2 = contractorControler.readContractor(cvr);
+                    ArrayList<String> aux2 = contractorControl.readContractor(cvr);
                     if(!aux2.isEmpty()) System.out.println(aux2);
                     else {
                         ErrorCode.print(NO_SUCH_CONTRACTOR);
@@ -47,13 +47,13 @@ public class ContractorMenu {
                     }
                     int fieldNumber = InputChecker.verifyFieldNumber(aux2.size());
                     String fieldInfo = checkData(fieldNumber);
-                    if(contractorControler.changeContractorFieldByCvr(cvr, fieldNumber, fieldInfo))
+                    if(contractorControl.changeContractorFieldByCvr(cvr, fieldNumber, fieldInfo))
                         MenuText.write(SUCCESS);
                     else
                         MenuText.write(FAILURE);
                     break;
                 case 4: // delete
-                    if(contractorControler.deleteContractor( InputChecker.verifyId(3)))
+                    if(contractorControl.deleteContractor( InputChecker.verifyId(3)))
                         MenuText.write(SUCCESS);
                     else
                         ErrorCode.print(NO_SUCH_CONTRACTOR);

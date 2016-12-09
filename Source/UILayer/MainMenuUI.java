@@ -12,6 +12,7 @@ public class MainMenuUI {
         CustomerMenu customerMenu = new CustomerMenu();
         EmployeeMenu employeeMenu = new EmployeeMenu();
         ContractorMenu contractorMenu = new ContractorMenu();
+        ItemMenu itemMenu = new ItemMenu();
         SaleMenu saleMenu = new SaleMenu();
         LoanMenu loanMenu = new LoanMenu();
         int choice;
@@ -27,7 +28,7 @@ public class MainMenuUI {
                     choice = employeeMenu.menu();
                     break;
                 case 3:
-                    //  itemMenu();
+                    choice =  itemMenu.menu();
                     break;
                 case 4:
                      choice = contractorMenu.menu();

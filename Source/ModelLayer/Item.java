@@ -13,6 +13,30 @@ public class Item {
     private int quantityAtDIY;
     private int quantityAtTimber;
 
+    public void setType(String type) {
+        this.type = type;
+    }
+
+    public void setBarcode(String barcode) {
+        this.barcode = barcode;
+    }
+
+    public void setCostPrice(double costPrice) {
+        this.costPrice = costPrice;
+    }
+
+    public void setTradeAllowance(double tradeAllowance) {
+        this.tradeAllowance = tradeAllowance;
+    }
+
+    public void setRetailPrice(double retailPrice) {
+        this.retailPrice = retailPrice;
+    }
+
+    public void setQuantityAtTimber(int quantityAtTimber) {
+        this.quantityAtTimber = quantityAtTimber;
+    }
+
     public String getName() {
         return name;
     }

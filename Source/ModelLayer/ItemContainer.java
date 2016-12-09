@@ -27,8 +27,23 @@ public class ItemContainer {
         return true;
     }
 
-    public   Item getItem(int index) {
-        return items.get(index);
+    public Item getOrderItem(String place, String barcode, int quantity) {
+        Item myItem = null;
+        for (Item item : items) {
+            if (item.getBarcode().equals(barcode))
+                if (place.equals("timber")) {
+                    item.setQuantityAtTimber(item.getQuantityAtTimber() - quantity);
+                } else item.setQuantityAtDIY(item.getQuantityAtDIY() - quantity);
+            myItem = item;
+            if (place.equals("timber")) {
+                myItem.setQuantityAtTimber(quantity);
+                myItem.setQuantityAtDIY(0);
+            } else {
+                myItem.setQuantityAtTimber(0);
+                myItem.setQuantityAtDIY(quantity);
+            }
+        }
+        return myItem;
     }
 
     public Item findItemByBarcode(String barcode){
@@ -40,6 +55,19 @@ public class ItemContainer {
 
     public  int getItemsSize() {
         return items.size();
+    }
+
+    public int getQuantityPlace(String place, String barcode)
+    {
+        for(Item item: items)
+        {
+        if(item.getBarcode().equals(barcode)){
+            if(place.equals("timber"))return item.getQuantityAtTimber();
+            else return item.getQuantityAtDIY();
+        }
+
+        }
+        return 0;
     }
 
     public ArrayList<String> getItemsFieldsByBarcode(String barcode){

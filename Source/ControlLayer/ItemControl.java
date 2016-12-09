@@ -11,6 +11,9 @@ import java.util.ArrayList;
 public class ItemControl {
     private ItemContainer itemContainer;
 
+    public ItemControl() {
+        itemContainer = ItemContainer.getInstance();
+    }
 //CREATE
     public boolean addItem(String name,String type,String barcode, double costPrice, double tradeAllowance, double retailPrice, int quantity, String place) {
         Item item = new Item(name, type, barcode, costPrice, tradeAllowance, retailPrice, quantity, place);
@@ -32,5 +35,10 @@ public class ItemControl {
     public boolean deleteItem(String barcode)
     {
         return itemContainer.removeItemByBarcode(barcode);
+    }
+
+    public int getQuantityAtPlace(String place, String barcode)
+    {
+        return itemContainer.getQuantityPlace(place, barcode);
     }
 }

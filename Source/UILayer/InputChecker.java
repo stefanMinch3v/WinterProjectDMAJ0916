@@ -1,4 +1,6 @@
 package UILayer;
+import ControlLayer.ItemControl;
+
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -13,14 +15,16 @@ public class InputChecker {
     private static String id, name, address, email, phone, city, workId, numberID, barcode, type, place; // not ready yet.
     private static int quantity, periodOfTime;
     private static double price, costPrice, tradeAllowance, retailPrice;
-    private static String startDate;
     private static boolean ok;
+    public static ItemControl itemControl;
     public static ArrayList<String> existingIds = new ArrayList<>();
     public static ArrayList<String> existingBarcodes = new ArrayList<>();// keeping track of all of the CPR and CVR so we can make sure they are unique
     private static InputChecker instance;
 
     public InputChecker() {
         existingIds = new ArrayList<>();
+        existingBarcodes = new ArrayList<>();
+        itemControl = new ItemControl();
     }
 
     public static InputChecker getInstance() {
@@ -270,33 +274,34 @@ public class InputChecker {
         return periodOfTime;
     }
 
-    public static String verifyItemBarcode(int check) {
-        barcode = null; // making sure it is empty before starting the process
+    public static String verifyItemBarcode() {
+
         do {
             System.out.println("Please input item's barcode: ");
+            System.out.println("Type done if there is no barcode to be inputted");
             ok = true;
-            barcode = Input.readString();
-
-
-            if (existingBarcodes.size() > 0 && check != 2 && ok) {
-                for (int i = 0; i < existingBarcodes.size(); i++) // if the ID (CPR/CVR) already exists in the system
-                {
-                    if (check == 3) //if you want to delete one item
-                        existingBarcodes.remove(i); // remove its barcode
-
-                    if (existingBarcodes.get(i).equals(barcode) && check == 1) {
-                        ok = false;
-                        ErrorCode.print(BARCODE_ALREADY_EXISTS);
-                    }
-                }
+            barcode = Input.readString().toLowerCase();
+            if(barcode.length()<4){
+                ok = false;
             }
-            ;
 
         } while (!ok);
+    return barcode;
+    }
+    public static int getQuantityAtPlace(String place, String barcode)
+    {
+       int availableQuantity = itemControl.getQuantityAtPlace(place, barcode);
+        do {
+            System.out.println("Please input quantity that is lesser or equal to " + availableQuantity + ".");
+            ok = true;
+            quantity = Input.readInt();
+            if (quantity > availableQuantity) {
+                ok = false;
+                ErrorCode.print(WRONG_QUANTITY);
+            }
+        } while (!ok);
 
-        if (check == 1)
-            existingBarcodes.add(barcode); // adding the unique id to the system
-        return barcode;
+        return quantity;
 
     }
 
@@ -372,10 +377,10 @@ public class InputChecker {
     public static String verifyPlace() {
         place = null;    // making sure it is empty before starting the process
         do {
-            System.out.println("Please input item's place : ");
+            System.out.println("Please input item's place : Timber or DIY");
             ok = true;
-            place = Input.readString();
-            if (place.length() < 2) {
+            place = Input.readString().toLowerCase();
+            if (!((place.equals("timber"))||(place.equals("diy")))) {
                 ok = false;
                 ErrorCode.print(WRONG_NAME_INPUT);
             }

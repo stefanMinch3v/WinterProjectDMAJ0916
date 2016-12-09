@@ -3,6 +3,7 @@ package UILayer;
 import ControlLayer.SaleControl;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 
 import static UILayer.MenuText.*;
 /**
@@ -18,14 +19,20 @@ public class SaleMenu {
             choice = Input.readInt();
 
             switch (choice) {
-                case 1: // create
-                    /*if(saleControl.addSale(InputChecker.verifyItem("1"),InputChecker.verifySaleNumberID(), InputChecker.verifyQuantity(), InputChecker.verifyPrice(), InputChecker.verifyId(2))) {
-                        MenuText.write(SUCCESS);
-                    }
-                    else {
-                        MenuText.write(FAILURE);
-                    }
-                    break;*/
+                case 1:
+                    String place = InputChecker.verifyPlace();
+                    HashMap<String,Integer> items = new HashMap<>();
+                    String barcode;
+                    int quantity;
+                    do {
+                    barcode = InputChecker.verifyItemBarcode();
+                        if(!barcode.isEmpty()&&!barcode.equals("done")) {
+                            quantity = InputChecker.getQuantityAtPlace(place,barcode);
+                            if(quantity>0) items.put(barcode,quantity);
+                        }
+                    }while(!barcode.equals("done"));
+                    saleControl.getAvailableItems(place, items);
+                    return 7;
                 case 2: // read
                     ArrayList<String> sales = saleControl.readSale(InputChecker.verifySaleNumberID());
                     if (sales != null) {
