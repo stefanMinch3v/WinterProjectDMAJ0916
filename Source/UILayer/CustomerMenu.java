@@ -15,9 +15,10 @@ import static UILayer.MenuText.*;
  */
 public class CustomerMenu {
 
-    private  CustomerControl customerControl;
+    private  CustomerControl customerControler;
     public int menu() {
-        customerControl = new CustomerControl();
+        customerControler = new CustomerControl();
+        Brexit brexit = new Brexit();
 
         int choice;
 
@@ -27,13 +28,13 @@ public class CustomerMenu {
 
             switch (choice) {
                 case 1: // create
-                    if(customerControl.createCustomer(InputChecker.verifyId(1), InputChecker.verifyName(),InputChecker.verifyAddress(),InputChecker.verifyEmail(),InputChecker.verifyPhone(),InputChecker.verifyCity()))
+                    if(customerControler.createCustomer(InputChecker.verifyId(1), InputChecker.verifyName(),InputChecker.verifyAddress(),InputChecker.verifyEmail(),InputChecker.verifyPhone(),InputChecker.verifyCity()))
                         MenuText.write(SUCCESS);
                     else
                         MenuText.write(FAILURE);
                     break;
                 case 2: // read
-                    ArrayList<String> aux = customerControl.getCustomerByCpr(InputChecker.verifyId(2));
+                    ArrayList<String> aux = customerControler.getCustomerByCpr(InputChecker.verifyId(2));
                     if(!aux.isEmpty())
                         System.out.println(aux);
                     else
@@ -41,7 +42,7 @@ public class CustomerMenu {
                     break;
                 case 3: // update
                     String cpr = InputChecker.verifyId(2);
-                    ArrayList<String> aux2 = customerControl.getCustomerByCpr(cpr);
+                    ArrayList<String> aux2 = customerControler.getCustomerByCpr(cpr);
                     if(!aux2.isEmpty()) System.out.println(aux2);
                     else {
                         ErrorCode.print(NO_SUCH_CUSTOMER);
@@ -49,13 +50,13 @@ public class CustomerMenu {
                     }
                     int fieldNumber = InputChecker.verifyFieldNumber(aux2.size());
                     String fieldInfo = checkData(fieldNumber);
-                    if(customerControl.changeCustomerFieldByCpr(cpr, fieldNumber, fieldInfo))
+                    if(customerControler.changeCustomerFieldByCpr(cpr, fieldNumber, fieldInfo))
                         MenuText.write(SUCCESS);
                     else
                         MenuText.write(FAILURE);
                     break;
                 case 4: // delete
-                    if(customerControl.deleteCustomer( InputChecker.verifyId(3)))
+                    if(customerControler.deleteCustomer( InputChecker.verifyId(3)))
                         MenuText.write(SUCCESS);
                     else
                         ErrorCode.print(NO_SUCH_CUSTOMER);
@@ -64,6 +65,7 @@ public class CustomerMenu {
                     // go back
                     break;
                 case 6:
+                    brexit.exit();
                 default:
                     System.out.println("Choice must be a value between 1 and 6.");
             }

@@ -61,6 +61,23 @@ public class CustomerContainer {
         return false;
     }
 
+    public int getCustomersSize()
+    {
+        return customers.size();
+    }
+
+    public String saveData(int index)
+    {
+        String data = "";
+        Customer customer = customers.get(index);
+            data = ( customer.getCpr()+" "+customer.getName()+" "+customer.getAddress()+" "+customer.getEmail()+" "+customer.getPhone()+" "+customer.getCity()+"\n");
+
+
+        data = data + "\r\n"; // make a new line
+
+        return data;
+    }
+
 
 }
 
