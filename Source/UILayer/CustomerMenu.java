@@ -1,5 +1,6 @@
 package UILayer;
 
+import ControlLayer.Brexit;
 import ControlLayer.CustomerControl;
 
 import java.util.ArrayList;
@@ -23,6 +24,7 @@ public class CustomerMenu {
         int choice;
 
         do {
+            brexit.load();
             MenuText.write(CUSTOMER_MENU);
             choice = Input.readInt();
 
