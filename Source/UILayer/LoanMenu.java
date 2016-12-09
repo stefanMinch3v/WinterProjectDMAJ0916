@@ -21,7 +21,7 @@ public class LoanMenu {
 
             switch (choice) {
                 case 1: //create
-                    if (loanControl.addLoan(InputChecker.verifySaleNumberID(), InputChecker.verifyQuantity(), InputChecker.verifyPrice(), InputChecker.verifyId(2), InputChecker.verifyDate(), InputChecker.verifyPeriod())) {
+                    if (loanControl.addLoan(InputChecker.verifySaleNumberID(), InputChecker.verifyQuantity(), InputChecker.verifyPrice(), InputChecker.verifyId(2), InputChecker.verifyPeriod())) {
                         MenuText.write(SUCCESS);
                     }
                     else {
@@ -82,8 +82,6 @@ public class LoanMenu {
             case 4:
                 return InputChecker.verifyId(2);
             case 5:
-                return InputChecker.verifyDate();
-            case 6:
                 return InputChecker.verifyPeriod();
             default:
                 return null;

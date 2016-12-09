@@ -1,31 +1,31 @@
 package ModelLayer;
 
 import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
+import java.util.Calendar;
 
 /**
  * Created by Admin on 11/28/2016.
  */
 public class Loan extends Order{
-    private String startDate;
+    private String startDate = new SimpleDateFormat("dd/MM/yyyy - HH:mm:ss").format(Calendar.getInstance().getTime());
     private int periodOfTime;
     private boolean status;
-    private ArrayList<Item> items;
+    private ArrayList<Item> items = new ArrayList<>();
 
-    public Loan(String numberID, int quantity, double price,Customer customer, String startDate, int periodOfTime) {
+    public Loan(/*ArrayList<Item> items,*/String numberID, int quantity, double price,Customer customer, int periodOfTime) {
         super(numberID, quantity, price, customer);
-        this.startDate = startDate;
         this.periodOfTime = periodOfTime;
-        items = new ArrayList<>();
+        //this.items = items;
         status = true;
     }
 
     public String getStartDate() {
         return startDate;
-    }
-
-    public void setStartDate(String startDate) {
-        this.startDate = startDate;
     }
 
     public int getPeriodOfTime() {
@@ -64,9 +64,6 @@ public class Loan extends Order{
                 setCustomer((Customer)fieldInfo);
                 return true;
             case 4:
-                startDate = (String)fieldInfo;
-                return true;
-            case 5:
                 periodOfTime = (int) fieldInfo;
                 return true;
             default:

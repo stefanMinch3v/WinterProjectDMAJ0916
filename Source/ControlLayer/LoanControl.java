@@ -17,9 +17,9 @@ public class LoanControl {
         customerContainer = CustomerContainer.getInstance();
     }
 
-    public boolean addLoan(String numberID, int quantity, double price, String customerCPR, String startDate, int periodOfTime) {
+    public boolean addLoan(/*ArrayList<Item> items,*/String numberID, int quantity, double price, String customerCPR, int periodOfTime) {
         Customer customer = customerContainer.findCustomerByCpr(customerCPR);
-        Loan loan = new Loan(numberID, quantity, price,customer, startDate, periodOfTime);
+        Loan loan = new Loan(/*items,*/ numberID, quantity, price, customer, periodOfTime);
         //loanContainer.addLoan(new Loan(numberID, quantity, price, customer, startDate, periodOfTime));
         return loanContainer.addLoan(loan);
     }

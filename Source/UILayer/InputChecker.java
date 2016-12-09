@@ -254,22 +254,6 @@ public class InputChecker {
         return price;
     }
 
-    public static String verifyDate() {
-        startDate = null; //  make sure it is empty before starting the process
-
-        do {
-            System.out.println("Please input start date.");
-            ok = true;
-            startDate = Input.readString(); //
-            if (startDate == null || (!startDate.matches("\\d{4}-\\d{2}-\\d{2}"))) {
-                ok = false;
-                ErrorCode.print(WRONG_DATE);
-            }
-        } while (!ok);
-
-        return startDate;
-    }
-
     public static int verifyPeriod() {
         periodOfTime = 0; // make sure it is empty before starting the process
 

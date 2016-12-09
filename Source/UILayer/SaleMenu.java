@@ -19,13 +19,13 @@ public class SaleMenu {
 
             switch (choice) {
                 case 1: // create
-                    if(saleControl.addSale(InputChecker.verifySaleNumberID(), InputChecker.verifyQuantity(), InputChecker.verifyPrice(), InputChecker.verifyId(2))) {
+                    /*if(saleControl.addSale(InputChecker.verifyItem("1"),InputChecker.verifySaleNumberID(), InputChecker.verifyQuantity(), InputChecker.verifyPrice(), InputChecker.verifyId(2))) {
                         MenuText.write(SUCCESS);
                     }
                     else {
                         MenuText.write(FAILURE);
                     }
-                    break;
+                    break;*/
                 case 2: // read
                     ArrayList<String> sales = saleControl.readSale(InputChecker.verifySaleNumberID());
                     if (sales != null) {
