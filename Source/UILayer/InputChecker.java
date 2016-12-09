@@ -179,13 +179,13 @@ public class InputChecker {
                 ErrorCode.print(WRONG_WORKID_INPUT);
             }
 
-            if (InputChecker.getInstance().existingIds.size() > 0)
-                for (int i = 0; i < InputChecker.getInstance().existingIds.size(); i++) // if the WorkI already exists in the system
+            if (existingIds.size() > 0)
+                for (int i = 0; i < existingIds.size(); i++) // if the WorkI already exists in the system
                 {
                     if (check == 3) // if you want to delete an employee
-                        InputChecker.getInstance().existingIds.remove(i); // remove his workId from the system aswell
+                        existingIds.remove(i); // remove his workId from the system aswell
 
-                    if (InputChecker.getInstance().existingIds.get(i).equals(workId) && check == 1) {
+                    if (existingIds.get(i).equals(workId) && check == 1) {
                         ok = false;
                         ErrorCode.print(ID_ALREADY_EXISTS);
                     }
@@ -194,7 +194,7 @@ public class InputChecker {
         } while (!ok);
 
         if (check == 1)
-            InputChecker.getInstance().existingIds.add(workId); // adding the workId to the list
+            existingIds.add(workId); // adding the workId to the list
 
         return workId;
     }
