@@ -18,10 +18,10 @@ public class Main {
 
     public static void main(String[] args) {
 
-        //Authentication p = new Authentication();
-        //p.login();
-        MainMenuUI mainMenuUI = new MainMenuUI();
-        mainMenuUI.runMainLoop();
+        Authentication p = new Authentication();
+        p.adminLogin();
+//        MainMenuUI mainMenuUI = new MainMenuUI();
+//        mainMenuUI.runMainLoop();
 
     }
 }

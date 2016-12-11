@@ -8,11 +8,13 @@ import ModelLayer.*;
 public class Authentication {
     private LoginContainer loginContainer;
 
+
     public Authentication() {
         loginContainer = LoginContainer.getInstance();
     }
 
     public void login(){
+        String admin;
         String user;
         String pass;
         System.out.println("Log in:");
@@ -43,13 +45,28 @@ public class Authentication {
 
 
         }
-
-
-
-
-
+        public boolean adminLogin(){
+            String pw;
+            String admin = "admin";
+            System.out.println("Please input administrator password in order to continue: ");
+            pw = Input.readString();
+            if (loginContainer.getMapList().get(admin).equals(pw)) {
+            System.out.println("Authentication successful");
+            return true;
+            }
+            else return false;
+        }
 
 
 
     }
+
+
+
+
+
+
+
+
+
 

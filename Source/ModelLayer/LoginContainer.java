@@ -11,7 +11,7 @@ public class LoginContainer {
     private LoginContainer() {
         mapList = new HashMap<String, String>();
         mapList.put("username", "nopass");
-        mapList.put("Dement", "Kokot");
+        mapList.put("admin", "Kokot");
     }
 
 

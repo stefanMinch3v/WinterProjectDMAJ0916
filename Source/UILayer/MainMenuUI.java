@@ -3,6 +3,7 @@ package UILayer;
 import static UILayer.MenuText.*;
 
 
+
 /**
  * Created by RaidenRabit on 23-Nov-16.
  */
@@ -15,6 +16,8 @@ public class MainMenuUI {
         ItemMenu itemMenu = new ItemMenu();
         SaleMenu saleMenu = new SaleMenu();
         LoanMenu loanMenu = new LoanMenu();
+        Authentication p = new Authentication();
+
         int choice;
         do {
             MenuText.write(MAIN_MENU);
@@ -41,6 +44,9 @@ public class MainMenuUI {
                     break;
                 case 7:
                     //exit
+                    break;
+                case 8:
+                    p.login();
                     break;
                 default:
                     System.out.println("Choice must be a value between 1 and 7.");
