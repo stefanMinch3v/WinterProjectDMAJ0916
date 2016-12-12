@@ -1,5 +1,6 @@
 package UILayer;
 import ControlLayer.*;
+import ModelLayer.Authentication;
 import ModelLayer.ItemContainer;
 
 import java.util.ArrayList;
@@ -10,6 +11,7 @@ import static UILayer.ErrorCode.NO_SUCH_ITEM;
  * Created by Luke on 08/12/2016.
  */
 public class ItemMenu {
+    Authentication authentication = new Authentication();
     public int menu(){
         ItemControl itemControl = new ItemControl();
 
@@ -20,12 +22,13 @@ public class ItemMenu {
             choice = Input.readInt();
             switch(choice) {
                 case 1: //create name, type, barcode, costPrice, tradeAllowance, retailPrice, quantity, place
-                    if (itemControl.addItem(InputChecker.verifyName(), InputChecker.verifyType(), InputChecker.verifyItemBarcode(), InputChecker.verifyCostPrice(), InputChecker.verifyTradeAllowance(), InputChecker.verifyRetailPrice(), InputChecker.verifyQuantity(), InputChecker.verifyPlace())){
-                        MenuText.write(SUCCESS);
-            }
-                    else {
-                         MenuText.write(FAILURE);
-            }
+                    if(authentication.adminLogin()) {
+                        if (itemControl.addItem(InputChecker.verifyName(), InputChecker.verifyType(), InputChecker.verifyItemBarcode(), InputChecker.verifyCostPrice(), InputChecker.verifyTradeAllowance(), InputChecker.verifyRetailPrice(), InputChecker.verifyQuantity(), InputChecker.verifyPlace())) {
+                            MenuText.write(SUCCESS);
+                        } else {
+                            MenuText.write(FAILURE);
+                        }
+                    }
                     break;
 
                 case 2: //read

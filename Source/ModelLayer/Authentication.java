@@ -1,6 +1,8 @@
-package UILayer;
+package ModelLayer;
 
 import ModelLayer.*;
+import UILayer.Input;
+import UILayer.MainMenuUI;
 
 /**
  * Created by Luke on 01/12/2016.
@@ -54,7 +56,10 @@ public class Authentication {
             System.out.println("Authentication successful");
             return true;
             }
-            else return false;
+            else {
+               System.out.println("You have entered wrong password. ");
+                return false;
+            }
         }
 
 

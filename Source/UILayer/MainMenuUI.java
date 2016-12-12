@@ -1,5 +1,7 @@
 package UILayer;
 
+import ModelLayer.Authentication;
+
 import static UILayer.MenuText.*;
 
 
@@ -9,7 +11,7 @@ import static UILayer.MenuText.*;
  */
 public class MainMenuUI {
     public static void runMainLoop() {
-
+        Authentication authentication = new Authentication();
         CustomerMenu customerMenu = new CustomerMenu();
         EmployeeMenu employeeMenu = new EmployeeMenu();
         ContractorMenu contractorMenu = new ContractorMenu();
@@ -28,7 +30,11 @@ public class MainMenuUI {
                     choice = customerMenu.menu();
                     break;
                 case 2:
-                    choice = employeeMenu.menu();
+                    if(authentication.adminLogin()) {
+                        choice = employeeMenu.menu();
+                    }
+                    else
+
                     break;
                 case 3:
                     choice =  itemMenu.menu();
