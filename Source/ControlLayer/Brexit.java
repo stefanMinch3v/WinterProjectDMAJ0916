@@ -5,6 +5,7 @@ import ModelLayer.Contractor;
 import ModelLayer.Employee;
 import ModelLayer.CustomerContainer;
 import ModelLayer.EmployeeContainer;
+import UILayer.AesEncrypter;
 
 import java.io.*;
 import java.util.ArrayList;
@@ -42,49 +43,65 @@ public class Brexit {
             File fileEmployee = new File(pathEmployee);
 
             // if file doesnt exists, then create it
-            if ( !fileCustomer.exists() ) {
-                fileCustomer.createNewFile();
-            }
+
 
 
 //CUSTOMER
-            FileWriter fw1 = new FileWriter(fileCustomer.getAbsoluteFile());
-            BufferedWriter bw1 = new BufferedWriter(fw1);
-            // write in file
-            bw1.write( customerContainer.getCustomersSize()+"\r\n" );
-            for(int i = 0; i < customerContainer.getCustomersSize(); i++)
-            {
-                content = null;
-                content =  customerContainer.saveData(i);
-                bw1.write( content );
+            if(customerContainer.getCustomersSize() > 0) {
+
+                if ( !fileCustomer.exists() ) {
+                    fileCustomer.createNewFile();
+                }
+
+                FileWriter fw1 = new FileWriter(fileCustomer.getAbsoluteFile());
+                BufferedWriter bw1 = new BufferedWriter(fw1);
+                // write in file
+                bw1.write(customerContainer.getCustomersSize() + "\r\n");
+                for (int i = 0; i < customerContainer.getCustomersSize(); i++) {
+                    content = null;
+                    content = customerContainer.saveData(i);
+                    bw1.write(content);
+                }
+                bw1.close();
             }
 //EMPLOYEE
-            FileWriter fw2 = new FileWriter(fileEmployee.getAbsoluteFile());
-            BufferedWriter bw2 = new BufferedWriter(fw2);
-            // write in file
-            bw2.write( employeeContainer.getCustomersSize()+"\r\n" );
-            for(int i = 0; i < employeeContainer.getCustomersSize(); i++)
-            {
-                content = null;
-                content =  employeeContainer.saveData(i);
-                bw2.write( content );
+            if(employeeContainer.getEmployeesSize() > 0) {
+
+                if ( !fileCustomer.exists() ) {
+                    fileEmployee.createNewFile();
+                }
+
+                FileWriter fw2 = new FileWriter(fileEmployee.getAbsoluteFile());
+                BufferedWriter bw2 = new BufferedWriter(fw2);
+                // write in file
+                bw2.write(employeeContainer.getCustomersSize() + "\r\n");
+                for (int i = 0; i < employeeContainer.getCustomersSize(); i++) {
+                    content = null;
+                    content = employeeContainer.saveData(i);
+                    bw2.write(content);
+                }
+                bw2.close();
             }
 //CONTRACTOR
-            FileWriter fw3 = new FileWriter(fileContractor.getAbsoluteFile());
-            BufferedWriter bw3 = new BufferedWriter(fw3);
-            // write in file
-            bw3.write( contractorContainer.getContractorSize()+"\r\n" );
-            for(int i = 0; i < contractorContainer.getContractorSize(); i++)
-            {
-                content = null;
-                content =  contractorContainer.saveData(i);
-                bw3.write( content );
+            if(contractorContainer.getContractorSize() > 0) {
+
+                if ( !fileCustomer.exists() ) {
+                    fileContractor.createNewFile();
+                }
+
+                FileWriter fw3 = new FileWriter(fileContractor.getAbsoluteFile());
+                BufferedWriter bw3 = new BufferedWriter(fw3);
+                // write in file
+                bw3.write(contractorContainer.getContractorSize() + "\r\n");
+                for (int i = 0; i < contractorContainer.getContractorSize(); i++) {
+                    content = null;
+                    content = contractorContainer.saveData(i);
+                    bw3.write(content);
+                }
+                bw3.close();
             }
 
-            // close connection
-            bw1.close();
-            bw2.close();
-            bw3.close();
+
 
         }catch(Exception e){
             System.out.println(e);
@@ -127,7 +144,8 @@ public class Brexit {
                             field = field + current;
                         else
                         {
-                            fields.add(field);
+                            AesEncrypter.decrypt(field); // decript the string
+                            fields.add(AesEncrypter.getDecryptedString()); // add it to the arraylist
                             field = "";
                         }
                         current = (char) fis.read();
@@ -177,7 +195,8 @@ public class Brexit {
                             field = field + current;
                         else
                         {
-                            fields.add(field);
+                            AesEncrypter.decrypt(field); // decript the string
+                            fields.add(AesEncrypter.getDecryptedString()); // add it to the arrayList
                             field = "";
                         }
                         current = (char) fis.read();
@@ -229,7 +248,8 @@ public class Brexit {
                                 field = field + current;
                             else
                             {
-                                fields.add(field);
+                                AesEncrypter.decrypt(field); // decript the string
+                                fields.add(AesEncrypter.getDecryptedString()); // add it to the arrayList
                                 field = "";
                             }
                             current = (char) fis.read();

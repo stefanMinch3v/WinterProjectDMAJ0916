@@ -1,5 +1,7 @@
 package ModelLayer;
 
+import UILayer.AesEncrypter;
+
 import java.util.ArrayList;
 import java.util.Iterator;
 
@@ -84,10 +86,22 @@ public class EmployeeContainer {
     {
         String data = "";
         Employee employee = employees.get(index);
-        data = ( employee.getName()+" "+employee.getAddress()+" "+employee.getEmail()+" "+employee.getPhone()+" "+employee.getCity()+employee.getCpr()+" "+employee.getWorkId()+"\n");
 
+        AesEncrypter.encrypt( employee.getName() );
+        data = data + AesEncrypter.getEncryptedString()+" ";
+        AesEncrypter.encrypt( employee.getAddress() );
+        data = data + AesEncrypter.getEncryptedString()+" ";
+        AesEncrypter.encrypt( employee.getEmail() );
+        data = data + AesEncrypter.getEncryptedString()+" ";
+        AesEncrypter.encrypt( employee.getPhone() );
+        data = data + AesEncrypter.getEncryptedString()+" ";
+        AesEncrypter.encrypt( employee.getCity() );
+        data = data + AesEncrypter.getEncryptedString()+" ";
+        AesEncrypter.encrypt( employee.getCpr() );
+        data = data + AesEncrypter.getEncryptedString()+" ";
+        AesEncrypter.encrypt( employee.getWorkId() );
+        data = data + AesEncrypter.getEncryptedString()+"\n";
 
-        data = data + "\r\n"; // make a new line
 
         return data;
     }

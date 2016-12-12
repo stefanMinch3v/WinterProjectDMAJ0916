@@ -1,5 +1,5 @@
-import ModelLayer.Authentication;
-import UILayer.*;
+import UILayer.AesEncrypter;
+import UILayer.MainMenuUI;
 
 /**
  * Created by RaidenRabit on 2016-11-25.
@@ -19,6 +19,8 @@ public class Main {
 
      //   Authentication p = new Authentication();
       //  p.adminLogin();
+
+        AesEncrypter.setKey("EncryptingPassword123");
        MainMenuUI mainMenuUI = new MainMenuUI();
        mainMenuUI.runMainLoop();
 

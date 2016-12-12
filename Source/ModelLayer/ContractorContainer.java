@@ -1,5 +1,7 @@
 package ModelLayer;
 
+import UILayer.AesEncrypter;
+
 import java.util.*;
 
 /**
@@ -75,10 +77,19 @@ public class ContractorContainer {
     {
         String data = "";
         Contractor contractor = contractors.get(index);
-        data = ( contractor.getName()+" "+contractor.getAddress()+" "+contractor.getEmail()+" "+contractor.getPhone()+" "+contractor.getCity()+" "+contractor.getCvr()+"\n");
 
-
-        data = data + "\r\n"; // make a new line
+        AesEncrypter.encrypt( contractor.getName() );
+        data = data + AesEncrypter.getEncryptedString()+" ";
+        AesEncrypter.encrypt( contractor.getAddress() );
+        data = data + AesEncrypter.getEncryptedString()+" ";
+        AesEncrypter.encrypt( contractor.getEmail() );
+        data = data + AesEncrypter.getEncryptedString()+" ";
+        AesEncrypter.encrypt( contractor.getPhone() );
+        data = data + AesEncrypter.getEncryptedString()+" ";
+        AesEncrypter.encrypt( contractor.getCity() );
+        data = data + AesEncrypter.getEncryptedString()+" ";
+        AesEncrypter.encrypt( contractor.getCvr() );
+        data = data + AesEncrypter.getEncryptedString()+"\n";
 
         return data;
     }

@@ -1,16 +1,249 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="d57d5f10-cdce-4f2b-94f1-d1acec5501e4" name="Default" comment="1">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/compiler.xml" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
+    <list default="true" id="d57d5f10-cdce-4f2b-94f1-d1acec5501e4" name="Default" comment="128-bit AES encyption&#10;P.S don't mind the commons-codec file, it is only a library that i used and is not in the java.jdk package">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/commons-codec-1.10-bin/commons-codec-1.10/apidocs/resources/background.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/commons-codec-1.10-bin/commons-codec-1.10/apidocs/resources/tab.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/commons-codec-1.10-bin/commons-codec-1.10/apidocs/resources/titlebar.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/commons-codec-1.10-bin/commons-codec-1.10/apidocs/resources/titlebar_end.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/commons-codec-1.10-bin/commons-codec-1.10/commons-codec-1.10-javadoc.jar" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/commons-codec-1.10-bin/commons-codec-1.10/commons-codec-1.10-sources.jar" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/commons-codec-1.10-bin/commons-codec-1.10/commons-codec-1.10-test-sources.jar" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/commons-codec-1.10-bin/commons-codec-1.10/commons-codec-1.10-tests.jar" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/commons-codec-1.10-bin/commons-codec-1.10/commons-codec-1.10.jar" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Source/UILayer/AesEncrypter.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/commons-codec-1.10-bin/commons-codec-1.10/LICENSE.txt" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/commons-codec-1.10-bin/commons-codec-1.10/NOTICE.txt" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/commons-codec-1.10-bin/commons-codec-1.10/RELEASE-NOTES.txt" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/commons-codec-1.10-bin/commons-codec-1.10/apidocs/allclasses-frame.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/commons-codec-1.10-bin/commons-codec-1.10/apidocs/allclasses-noframe.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/commons-codec-1.10-bin/commons-codec-1.10/apidocs/constant-values.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/commons-codec-1.10-bin/commons-codec-1.10/apidocs/deprecated-list.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/commons-codec-1.10-bin/commons-codec-1.10/apidocs/help-doc.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/commons-codec-1.10-bin/commons-codec-1.10/apidocs/index-all.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/commons-codec-1.10-bin/commons-codec-1.10/apidocs/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/commons-codec-1.10-bin/commons-codec-1.10/apidocs/org/apache/commons/codec/BinaryDecoder.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/commons-codec-1.10-bin/commons-codec-1.10/apidocs/org/apache/commons/codec/BinaryEncoder.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/commons-codec-1.10-bin/commons-codec-1.10/apidocs/org/apache/commons/codec/CharEncoding.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/commons-codec-1.10-bin/commons-codec-1.10/apidocs/org/apache/commons/codec/Charsets.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/commons-codec-1.10-bin/commons-codec-1.10/apidocs/org/apache/commons/codec/Decoder.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/commons-codec-1.10-bin/commons-codec-1.10/apidocs/org/apache/commons/codec/DecoderException.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/commons-codec-1.10-bin/commons-codec-1.10/apidocs/org/apache/commons/codec/Encoder.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/commons-codec-1.10-bin/commons-codec-1.10/apidocs/org/apache/commons/codec/EncoderException.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/commons-codec-1.10-bin/commons-codec-1.10/apidocs/org/apache/commons/codec/StringDecoder.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/commons-codec-1.10-bin/commons-codec-1.10/apidocs/org/apache/commons/codec/StringEncoder.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/commons-codec-1.10-bin/commons-codec-1.10/apidocs/org/apache/commons/codec/StringEncoderComparator.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/commons-codec-1.10-bin/commons-codec-1.10/apidocs/org/apache/commons/codec/binary/Base32.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/commons-codec-1.10-bin/commons-codec-1.10/apidocs/org/apache/commons/codec/binary/Base32InputStream.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/commons-codec-1.10-bin/commons-codec-1.10/apidocs/org/apache/commons/codec/binary/Base32OutputStream.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/commons-codec-1.10-bin/commons-codec-1.10/apidocs/org/apache/commons/codec/binary/Base64.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/commons-codec-1.10-bin/commons-codec-1.10/apidocs/org/apache/commons/codec/binary/Base64InputStream.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/commons-codec-1.10-bin/commons-codec-1.10/apidocs/org/apache/commons/codec/binary/Base64OutputStream.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/commons-codec-1.10-bin/commons-codec-1.10/apidocs/org/apache/commons/codec/binary/BaseNCodec.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/commons-codec-1.10-bin/commons-codec-1.10/apidocs/org/apache/commons/codec/binary/BaseNCodecInputStream.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/commons-codec-1.10-bin/commons-codec-1.10/apidocs/org/apache/commons/codec/binary/BaseNCodecOutputStream.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/commons-codec-1.10-bin/commons-codec-1.10/apidocs/org/apache/commons/codec/binary/BinaryCodec.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/commons-codec-1.10-bin/commons-codec-1.10/apidocs/org/apache/commons/codec/binary/CharSequenceUtils.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/commons-codec-1.10-bin/commons-codec-1.10/apidocs/org/apache/commons/codec/binary/Hex.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/commons-codec-1.10-bin/commons-codec-1.10/apidocs/org/apache/commons/codec/binary/StringUtils.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/commons-codec-1.10-bin/commons-codec-1.10/apidocs/org/apache/commons/codec/binary/class-use/Base32.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/commons-codec-1.10-bin/commons-codec-1.10/apidocs/org/apache/commons/codec/binary/class-use/Base32InputStream.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/commons-codec-1.10-bin/commons-codec-1.10/apidocs/org/apache/commons/codec/binary/class-use/Base32OutputStream.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/commons-codec-1.10-bin/commons-codec-1.10/apidocs/org/apache/commons/codec/binary/class-use/Base64.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/commons-codec-1.10-bin/commons-codec-1.10/apidocs/org/apache/commons/codec/binary/class-use/Base64InputStream.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/commons-codec-1.10-bin/commons-codec-1.10/apidocs/org/apache/commons/codec/binary/class-use/Base64OutputStream.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/commons-codec-1.10-bin/commons-codec-1.10/apidocs/org/apache/commons/codec/binary/class-use/BaseNCodec.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/commons-codec-1.10-bin/commons-codec-1.10/apidocs/org/apache/commons/codec/binary/class-use/BaseNCodecInputStream.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/commons-codec-1.10-bin/commons-codec-1.10/apidocs/org/apache/commons/codec/binary/class-use/BaseNCodecOutputStream.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/commons-codec-1.10-bin/commons-codec-1.10/apidocs/org/apache/commons/codec/binary/class-use/BinaryCodec.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/commons-codec-1.10-bin/commons-codec-1.10/apidocs/org/apache/commons/codec/binary/class-use/CharSequenceUtils.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/commons-codec-1.10-bin/commons-codec-1.10/apidocs/org/apache/commons/codec/binary/class-use/Hex.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/commons-codec-1.10-bin/commons-codec-1.10/apidocs/org/apache/commons/codec/binary/class-use/StringUtils.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/commons-codec-1.10-bin/commons-codec-1.10/apidocs/org/apache/commons/codec/binary/package-frame.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/commons-codec-1.10-bin/commons-codec-1.10/apidocs/org/apache/commons/codec/binary/package-summary.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/commons-codec-1.10-bin/commons-codec-1.10/apidocs/org/apache/commons/codec/binary/package-tree.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/commons-codec-1.10-bin/commons-codec-1.10/apidocs/org/apache/commons/codec/binary/package-use.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/commons-codec-1.10-bin/commons-codec-1.10/apidocs/org/apache/commons/codec/class-use/BinaryDecoder.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/commons-codec-1.10-bin/commons-codec-1.10/apidocs/org/apache/commons/codec/class-use/BinaryEncoder.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/commons-codec-1.10-bin/commons-codec-1.10/apidocs/org/apache/commons/codec/class-use/CharEncoding.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/commons-codec-1.10-bin/commons-codec-1.10/apidocs/org/apache/commons/codec/class-use/Charsets.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/commons-codec-1.10-bin/commons-codec-1.10/apidocs/org/apache/commons/codec/class-use/Decoder.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/commons-codec-1.10-bin/commons-codec-1.10/apidocs/org/apache/commons/codec/class-use/DecoderException.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/commons-codec-1.10-bin/commons-codec-1.10/apidocs/org/apache/commons/codec/class-use/Encoder.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/commons-codec-1.10-bin/commons-codec-1.10/apidocs/org/apache/commons/codec/class-use/EncoderException.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/commons-codec-1.10-bin/commons-codec-1.10/apidocs/org/apache/commons/codec/class-use/StringDecoder.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/commons-codec-1.10-bin/commons-codec-1.10/apidocs/org/apache/commons/codec/class-use/StringEncoder.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/commons-codec-1.10-bin/commons-codec-1.10/apidocs/org/apache/commons/codec/class-use/StringEncoderComparator.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/commons-codec-1.10-bin/commons-codec-1.10/apidocs/org/apache/commons/codec/digest/Crypt.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/commons-codec-1.10-bin/commons-codec-1.10/apidocs/org/apache/commons/codec/digest/DigestUtils.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/commons-codec-1.10-bin/commons-codec-1.10/apidocs/org/apache/commons/codec/digest/HmacAlgorithms.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/commons-codec-1.10-bin/commons-codec-1.10/apidocs/org/apache/commons/codec/digest/HmacUtils.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/commons-codec-1.10-bin/commons-codec-1.10/apidocs/org/apache/commons/codec/digest/Md5Crypt.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/commons-codec-1.10-bin/commons-codec-1.10/apidocs/org/apache/commons/codec/digest/MessageDigestAlgorithms.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/commons-codec-1.10-bin/commons-codec-1.10/apidocs/org/apache/commons/codec/digest/Sha2Crypt.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/commons-codec-1.10-bin/commons-codec-1.10/apidocs/org/apache/commons/codec/digest/UnixCrypt.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/commons-codec-1.10-bin/commons-codec-1.10/apidocs/org/apache/commons/codec/digest/class-use/Crypt.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/commons-codec-1.10-bin/commons-codec-1.10/apidocs/org/apache/commons/codec/digest/class-use/DigestUtils.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/commons-codec-1.10-bin/commons-codec-1.10/apidocs/org/apache/commons/codec/digest/class-use/HmacAlgorithms.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/commons-codec-1.10-bin/commons-codec-1.10/apidocs/org/apache/commons/codec/digest/class-use/HmacUtils.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/commons-codec-1.10-bin/commons-codec-1.10/apidocs/org/apache/commons/codec/digest/class-use/Md5Crypt.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/commons-codec-1.10-bin/commons-codec-1.10/apidocs/org/apache/commons/codec/digest/class-use/MessageDigestAlgorithms.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/commons-codec-1.10-bin/commons-codec-1.10/apidocs/org/apache/commons/codec/digest/class-use/Sha2Crypt.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/commons-codec-1.10-bin/commons-codec-1.10/apidocs/org/apache/commons/codec/digest/class-use/UnixCrypt.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/commons-codec-1.10-bin/commons-codec-1.10/apidocs/org/apache/commons/codec/digest/package-frame.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/commons-codec-1.10-bin/commons-codec-1.10/apidocs/org/apache/commons/codec/digest/package-summary.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/commons-codec-1.10-bin/commons-codec-1.10/apidocs/org/apache/commons/codec/digest/package-tree.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/commons-codec-1.10-bin/commons-codec-1.10/apidocs/org/apache/commons/codec/digest/package-use.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/commons-codec-1.10-bin/commons-codec-1.10/apidocs/org/apache/commons/codec/language/AbstractCaverphone.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/commons-codec-1.10-bin/commons-codec-1.10/apidocs/org/apache/commons/codec/language/Caverphone.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/commons-codec-1.10-bin/commons-codec-1.10/apidocs/org/apache/commons/codec/language/Caverphone1.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/commons-codec-1.10-bin/commons-codec-1.10/apidocs/org/apache/commons/codec/language/Caverphone2.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/commons-codec-1.10-bin/commons-codec-1.10/apidocs/org/apache/commons/codec/language/ColognePhonetic.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/commons-codec-1.10-bin/commons-codec-1.10/apidocs/org/apache/commons/codec/language/DaitchMokotoffSoundex.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/commons-codec-1.10-bin/commons-codec-1.10/apidocs/org/apache/commons/codec/language/DoubleMetaphone.DoubleMetaphoneResult.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/commons-codec-1.10-bin/commons-codec-1.10/apidocs/org/apache/commons/codec/language/DoubleMetaphone.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/commons-codec-1.10-bin/commons-codec-1.10/apidocs/org/apache/commons/codec/language/MatchRatingApproachEncoder.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/commons-codec-1.10-bin/commons-codec-1.10/apidocs/org/apache/commons/codec/language/Metaphone.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/commons-codec-1.10-bin/commons-codec-1.10/apidocs/org/apache/commons/codec/language/Nysiis.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/commons-codec-1.10-bin/commons-codec-1.10/apidocs/org/apache/commons/codec/language/RefinedSoundex.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/commons-codec-1.10-bin/commons-codec-1.10/apidocs/org/apache/commons/codec/language/Soundex.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/commons-codec-1.10-bin/commons-codec-1.10/apidocs/org/apache/commons/codec/language/bm/BeiderMorseEncoder.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/commons-codec-1.10-bin/commons-codec-1.10/apidocs/org/apache/commons/codec/language/bm/Lang.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/commons-codec-1.10-bin/commons-codec-1.10/apidocs/org/apache/commons/codec/language/bm/Languages.LanguageSet.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/commons-codec-1.10-bin/commons-codec-1.10/apidocs/org/apache/commons/codec/language/bm/Languages.SomeLanguages.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/commons-codec-1.10-bin/commons-codec-1.10/apidocs/org/apache/commons/codec/language/bm/Languages.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/commons-codec-1.10-bin/commons-codec-1.10/apidocs/org/apache/commons/codec/language/bm/NameType.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/commons-codec-1.10-bin/commons-codec-1.10/apidocs/org/apache/commons/codec/language/bm/PhoneticEngine.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/commons-codec-1.10-bin/commons-codec-1.10/apidocs/org/apache/commons/codec/language/bm/Rule.Phoneme.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/commons-codec-1.10-bin/commons-codec-1.10/apidocs/org/apache/commons/codec/language/bm/Rule.PhonemeExpr.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/commons-codec-1.10-bin/commons-codec-1.10/apidocs/org/apache/commons/codec/language/bm/Rule.PhonemeList.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/commons-codec-1.10-bin/commons-codec-1.10/apidocs/org/apache/commons/codec/language/bm/Rule.RPattern.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/commons-codec-1.10-bin/commons-codec-1.10/apidocs/org/apache/commons/codec/language/bm/Rule.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/commons-codec-1.10-bin/commons-codec-1.10/apidocs/org/apache/commons/codec/language/bm/RuleType.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/commons-codec-1.10-bin/commons-codec-1.10/apidocs/org/apache/commons/codec/language/bm/class-use/BeiderMorseEncoder.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/commons-codec-1.10-bin/commons-codec-1.10/apidocs/org/apache/commons/codec/language/bm/class-use/Lang.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/commons-codec-1.10-bin/commons-codec-1.10/apidocs/org/apache/commons/codec/language/bm/class-use/Languages.LanguageSet.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/commons-codec-1.10-bin/commons-codec-1.10/apidocs/org/apache/commons/codec/language/bm/class-use/Languages.SomeLanguages.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/commons-codec-1.10-bin/commons-codec-1.10/apidocs/org/apache/commons/codec/language/bm/class-use/Languages.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/commons-codec-1.10-bin/commons-codec-1.10/apidocs/org/apache/commons/codec/language/bm/class-use/NameType.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/commons-codec-1.10-bin/commons-codec-1.10/apidocs/org/apache/commons/codec/language/bm/class-use/PhoneticEngine.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/commons-codec-1.10-bin/commons-codec-1.10/apidocs/org/apache/commons/codec/language/bm/class-use/Rule.Phoneme.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/commons-codec-1.10-bin/commons-codec-1.10/apidocs/org/apache/commons/codec/language/bm/class-use/Rule.PhonemeExpr.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/commons-codec-1.10-bin/commons-codec-1.10/apidocs/org/apache/commons/codec/language/bm/class-use/Rule.PhonemeList.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/commons-codec-1.10-bin/commons-codec-1.10/apidocs/org/apache/commons/codec/language/bm/class-use/Rule.RPattern.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/commons-codec-1.10-bin/commons-codec-1.10/apidocs/org/apache/commons/codec/language/bm/class-use/Rule.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/commons-codec-1.10-bin/commons-codec-1.10/apidocs/org/apache/commons/codec/language/bm/class-use/RuleType.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/commons-codec-1.10-bin/commons-codec-1.10/apidocs/org/apache/commons/codec/language/bm/package-frame.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/commons-codec-1.10-bin/commons-codec-1.10/apidocs/org/apache/commons/codec/language/bm/package-summary.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/commons-codec-1.10-bin/commons-codec-1.10/apidocs/org/apache/commons/codec/language/bm/package-tree.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/commons-codec-1.10-bin/commons-codec-1.10/apidocs/org/apache/commons/codec/language/bm/package-use.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/commons-codec-1.10-bin/commons-codec-1.10/apidocs/org/apache/commons/codec/language/class-use/AbstractCaverphone.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/commons-codec-1.10-bin/commons-codec-1.10/apidocs/org/apache/commons/codec/language/class-use/Caverphone.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/commons-codec-1.10-bin/commons-codec-1.10/apidocs/org/apache/commons/codec/language/class-use/Caverphone1.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/commons-codec-1.10-bin/commons-codec-1.10/apidocs/org/apache/commons/codec/language/class-use/Caverphone2.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/commons-codec-1.10-bin/commons-codec-1.10/apidocs/org/apache/commons/codec/language/class-use/ColognePhonetic.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/commons-codec-1.10-bin/commons-codec-1.10/apidocs/org/apache/commons/codec/language/class-use/DaitchMokotoffSoundex.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/commons-codec-1.10-bin/commons-codec-1.10/apidocs/org/apache/commons/codec/language/class-use/DoubleMetaphone.DoubleMetaphoneResult.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/commons-codec-1.10-bin/commons-codec-1.10/apidocs/org/apache/commons/codec/language/class-use/DoubleMetaphone.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/commons-codec-1.10-bin/commons-codec-1.10/apidocs/org/apache/commons/codec/language/class-use/MatchRatingApproachEncoder.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/commons-codec-1.10-bin/commons-codec-1.10/apidocs/org/apache/commons/codec/language/class-use/Metaphone.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/commons-codec-1.10-bin/commons-codec-1.10/apidocs/org/apache/commons/codec/language/class-use/Nysiis.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/commons-codec-1.10-bin/commons-codec-1.10/apidocs/org/apache/commons/codec/language/class-use/RefinedSoundex.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/commons-codec-1.10-bin/commons-codec-1.10/apidocs/org/apache/commons/codec/language/class-use/Soundex.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/commons-codec-1.10-bin/commons-codec-1.10/apidocs/org/apache/commons/codec/language/package-frame.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/commons-codec-1.10-bin/commons-codec-1.10/apidocs/org/apache/commons/codec/language/package-summary.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/commons-codec-1.10-bin/commons-codec-1.10/apidocs/org/apache/commons/codec/language/package-tree.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/commons-codec-1.10-bin/commons-codec-1.10/apidocs/org/apache/commons/codec/language/package-use.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/commons-codec-1.10-bin/commons-codec-1.10/apidocs/org/apache/commons/codec/net/BCodec.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/commons-codec-1.10-bin/commons-codec-1.10/apidocs/org/apache/commons/codec/net/QCodec.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/commons-codec-1.10-bin/commons-codec-1.10/apidocs/org/apache/commons/codec/net/QuotedPrintableCodec.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/commons-codec-1.10-bin/commons-codec-1.10/apidocs/org/apache/commons/codec/net/URLCodec.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/commons-codec-1.10-bin/commons-codec-1.10/apidocs/org/apache/commons/codec/net/class-use/BCodec.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/commons-codec-1.10-bin/commons-codec-1.10/apidocs/org/apache/commons/codec/net/class-use/QCodec.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/commons-codec-1.10-bin/commons-codec-1.10/apidocs/org/apache/commons/codec/net/class-use/QuotedPrintableCodec.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/commons-codec-1.10-bin/commons-codec-1.10/apidocs/org/apache/commons/codec/net/class-use/URLCodec.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/commons-codec-1.10-bin/commons-codec-1.10/apidocs/org/apache/commons/codec/net/package-frame.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/commons-codec-1.10-bin/commons-codec-1.10/apidocs/org/apache/commons/codec/net/package-summary.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/commons-codec-1.10-bin/commons-codec-1.10/apidocs/org/apache/commons/codec/net/package-tree.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/commons-codec-1.10-bin/commons-codec-1.10/apidocs/org/apache/commons/codec/net/package-use.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/commons-codec-1.10-bin/commons-codec-1.10/apidocs/org/apache/commons/codec/package-frame.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/commons-codec-1.10-bin/commons-codec-1.10/apidocs/org/apache/commons/codec/package-summary.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/commons-codec-1.10-bin/commons-codec-1.10/apidocs/org/apache/commons/codec/package-tree.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/commons-codec-1.10-bin/commons-codec-1.10/apidocs/org/apache/commons/codec/package-use.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/commons-codec-1.10-bin/commons-codec-1.10/apidocs/overview-frame.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/commons-codec-1.10-bin/commons-codec-1.10/apidocs/overview-summary.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/commons-codec-1.10-bin/commons-codec-1.10/apidocs/overview-tree.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/commons-codec-1.10-bin/commons-codec-1.10/apidocs/package-list" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/commons-codec-1.10-bin/commons-codec-1.10/apidocs/serialized-form.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/commons-codec-1.10-bin/commons-codec-1.10/apidocs/src-html/org/apache/commons/codec/BinaryDecoder.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/commons-codec-1.10-bin/commons-codec-1.10/apidocs/src-html/org/apache/commons/codec/BinaryEncoder.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/commons-codec-1.10-bin/commons-codec-1.10/apidocs/src-html/org/apache/commons/codec/CharEncoding.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/commons-codec-1.10-bin/commons-codec-1.10/apidocs/src-html/org/apache/commons/codec/Charsets.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/commons-codec-1.10-bin/commons-codec-1.10/apidocs/src-html/org/apache/commons/codec/Decoder.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/commons-codec-1.10-bin/commons-codec-1.10/apidocs/src-html/org/apache/commons/codec/DecoderException.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/commons-codec-1.10-bin/commons-codec-1.10/apidocs/src-html/org/apache/commons/codec/Encoder.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/commons-codec-1.10-bin/commons-codec-1.10/apidocs/src-html/org/apache/commons/codec/EncoderException.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/commons-codec-1.10-bin/commons-codec-1.10/apidocs/src-html/org/apache/commons/codec/StringDecoder.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/commons-codec-1.10-bin/commons-codec-1.10/apidocs/src-html/org/apache/commons/codec/StringEncoder.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/commons-codec-1.10-bin/commons-codec-1.10/apidocs/src-html/org/apache/commons/codec/StringEncoderComparator.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/commons-codec-1.10-bin/commons-codec-1.10/apidocs/src-html/org/apache/commons/codec/binary/Base32.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/commons-codec-1.10-bin/commons-codec-1.10/apidocs/src-html/org/apache/commons/codec/binary/Base32InputStream.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/commons-codec-1.10-bin/commons-codec-1.10/apidocs/src-html/org/apache/commons/codec/binary/Base32OutputStream.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/commons-codec-1.10-bin/commons-codec-1.10/apidocs/src-html/org/apache/commons/codec/binary/Base64.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/commons-codec-1.10-bin/commons-codec-1.10/apidocs/src-html/org/apache/commons/codec/binary/Base64InputStream.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/commons-codec-1.10-bin/commons-codec-1.10/apidocs/src-html/org/apache/commons/codec/binary/Base64OutputStream.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/commons-codec-1.10-bin/commons-codec-1.10/apidocs/src-html/org/apache/commons/codec/binary/BaseNCodec.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/commons-codec-1.10-bin/commons-codec-1.10/apidocs/src-html/org/apache/commons/codec/binary/BaseNCodecInputStream.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/commons-codec-1.10-bin/commons-codec-1.10/apidocs/src-html/org/apache/commons/codec/binary/BaseNCodecOutputStream.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/commons-codec-1.10-bin/commons-codec-1.10/apidocs/src-html/org/apache/commons/codec/binary/BinaryCodec.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/commons-codec-1.10-bin/commons-codec-1.10/apidocs/src-html/org/apache/commons/codec/binary/CharSequenceUtils.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/commons-codec-1.10-bin/commons-codec-1.10/apidocs/src-html/org/apache/commons/codec/binary/Hex.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/commons-codec-1.10-bin/commons-codec-1.10/apidocs/src-html/org/apache/commons/codec/binary/StringUtils.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/commons-codec-1.10-bin/commons-codec-1.10/apidocs/src-html/org/apache/commons/codec/digest/Crypt.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/commons-codec-1.10-bin/commons-codec-1.10/apidocs/src-html/org/apache/commons/codec/digest/DigestUtils.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/commons-codec-1.10-bin/commons-codec-1.10/apidocs/src-html/org/apache/commons/codec/digest/HmacAlgorithms.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/commons-codec-1.10-bin/commons-codec-1.10/apidocs/src-html/org/apache/commons/codec/digest/HmacUtils.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/commons-codec-1.10-bin/commons-codec-1.10/apidocs/src-html/org/apache/commons/codec/digest/Md5Crypt.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/commons-codec-1.10-bin/commons-codec-1.10/apidocs/src-html/org/apache/commons/codec/digest/MessageDigestAlgorithms.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/commons-codec-1.10-bin/commons-codec-1.10/apidocs/src-html/org/apache/commons/codec/digest/Sha2Crypt.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/commons-codec-1.10-bin/commons-codec-1.10/apidocs/src-html/org/apache/commons/codec/digest/UnixCrypt.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/commons-codec-1.10-bin/commons-codec-1.10/apidocs/src-html/org/apache/commons/codec/language/AbstractCaverphone.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/commons-codec-1.10-bin/commons-codec-1.10/apidocs/src-html/org/apache/commons/codec/language/Caverphone.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/commons-codec-1.10-bin/commons-codec-1.10/apidocs/src-html/org/apache/commons/codec/language/Caverphone1.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/commons-codec-1.10-bin/commons-codec-1.10/apidocs/src-html/org/apache/commons/codec/language/Caverphone2.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/commons-codec-1.10-bin/commons-codec-1.10/apidocs/src-html/org/apache/commons/codec/language/ColognePhonetic.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/commons-codec-1.10-bin/commons-codec-1.10/apidocs/src-html/org/apache/commons/codec/language/DaitchMokotoffSoundex.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/commons-codec-1.10-bin/commons-codec-1.10/apidocs/src-html/org/apache/commons/codec/language/DoubleMetaphone.DoubleMetaphoneResult.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/commons-codec-1.10-bin/commons-codec-1.10/apidocs/src-html/org/apache/commons/codec/language/DoubleMetaphone.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/commons-codec-1.10-bin/commons-codec-1.10/apidocs/src-html/org/apache/commons/codec/language/MatchRatingApproachEncoder.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/commons-codec-1.10-bin/commons-codec-1.10/apidocs/src-html/org/apache/commons/codec/language/Metaphone.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/commons-codec-1.10-bin/commons-codec-1.10/apidocs/src-html/org/apache/commons/codec/language/Nysiis.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/commons-codec-1.10-bin/commons-codec-1.10/apidocs/src-html/org/apache/commons/codec/language/RefinedSoundex.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/commons-codec-1.10-bin/commons-codec-1.10/apidocs/src-html/org/apache/commons/codec/language/Soundex.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/commons-codec-1.10-bin/commons-codec-1.10/apidocs/src-html/org/apache/commons/codec/language/bm/BeiderMorseEncoder.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/commons-codec-1.10-bin/commons-codec-1.10/apidocs/src-html/org/apache/commons/codec/language/bm/Lang.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/commons-codec-1.10-bin/commons-codec-1.10/apidocs/src-html/org/apache/commons/codec/language/bm/Languages.LanguageSet.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/commons-codec-1.10-bin/commons-codec-1.10/apidocs/src-html/org/apache/commons/codec/language/bm/Languages.SomeLanguages.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/commons-codec-1.10-bin/commons-codec-1.10/apidocs/src-html/org/apache/commons/codec/language/bm/Languages.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/commons-codec-1.10-bin/commons-codec-1.10/apidocs/src-html/org/apache/commons/codec/language/bm/NameType.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/commons-codec-1.10-bin/commons-codec-1.10/apidocs/src-html/org/apache/commons/codec/language/bm/PhoneticEngine.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/commons-codec-1.10-bin/commons-codec-1.10/apidocs/src-html/org/apache/commons/codec/language/bm/Rule.Phoneme.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/commons-codec-1.10-bin/commons-codec-1.10/apidocs/src-html/org/apache/commons/codec/language/bm/Rule.PhonemeExpr.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/commons-codec-1.10-bin/commons-codec-1.10/apidocs/src-html/org/apache/commons/codec/language/bm/Rule.PhonemeList.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/commons-codec-1.10-bin/commons-codec-1.10/apidocs/src-html/org/apache/commons/codec/language/bm/Rule.RPattern.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/commons-codec-1.10-bin/commons-codec-1.10/apidocs/src-html/org/apache/commons/codec/language/bm/Rule.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/commons-codec-1.10-bin/commons-codec-1.10/apidocs/src-html/org/apache/commons/codec/language/bm/RuleType.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/commons-codec-1.10-bin/commons-codec-1.10/apidocs/src-html/org/apache/commons/codec/net/BCodec.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/commons-codec-1.10-bin/commons-codec-1.10/apidocs/src-html/org/apache/commons/codec/net/QCodec.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/commons-codec-1.10-bin/commons-codec-1.10/apidocs/src-html/org/apache/commons/codec/net/QuotedPrintableCodec.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/commons-codec-1.10-bin/commons-codec-1.10/apidocs/src-html/org/apache/commons/codec/net/URLCodec.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/commons-codec-1.10-bin/commons-codec-1.10/apidocs/stylesheet.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Source/ControlLayer/Brexit.java" afterPath="$PROJECT_DIR$/Source/ControlLayer/Brexit.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Source/Main.java" afterPath="$PROJECT_DIR$/Source/Main.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Source/ModelLayer/ContractorContainer.java" afterPath="$PROJECT_DIR$/Source/ModelLayer/ContractorContainer.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Source/ModelLayer/Employee.java" afterPath="$PROJECT_DIR$/Source/ModelLayer/Employee.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Source/ModelLayer/CustomerContainer.java" afterPath="$PROJECT_DIR$/Source/ModelLayer/CustomerContainer.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Source/ModelLayer/EmployeeContainer.java" afterPath="$PROJECT_DIR$/Source/ModelLayer/EmployeeContainer.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Source/UILayer/ContractorMenu.java" afterPath="$PROJECT_DIR$/Source/UILayer/ContractorMenu.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Source/UILayer/EmployeeMenu.java" afterPath="$PROJECT_DIR$/Source/UILayer/EmployeeMenu.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/WinterProjectDMAJ0916.iml" afterPath="$PROJECT_DIR$/WinterProjectDMAJ0916.iml" />
     </list>
     <ignored path="WinterProjectDMAJ0916.iws" />
@@ -39,8 +272,8 @@
       <file leaf-file-name="Brexit.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Source/ControlLayer/Brexit.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="477">
-              <caret line="249" column="20" lean-forward="true" selection-start-line="249" selection-start-column="20" selection-end-line="249" selection-end-column="20" />
+            <state relative-caret-position="864">
+              <caret line="254" column="56" lean-forward="false" selection-start-line="254" selection-start-column="56" selection-end-line="254" selection-end-column="56" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -48,11 +281,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="CustomerMenu.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Source/UILayer/CustomerMenu.java">
+      <file leaf-file-name="Main.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Source/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="119">
-              <caret line="21" column="37" lean-forward="true" selection-start-line="21" selection-start-column="8" selection-end-line="21" selection-end-column="37" />
+            <state relative-caret-position="459">
+              <caret line="27" column="1" lean-forward="false" selection-start-line="27" selection-start-column="1" selection-end-line="27" selection-end-column="1" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -60,11 +293,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="EmployeeMenu.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/Source/UILayer/EmployeeMenu.java">
+      <file leaf-file-name="AesEncrypter.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Source/UILayer/AesEncrypter.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="153">
-              <caret line="9" column="3" lean-forward="true" selection-start-line="9" selection-start-column="3" selection-end-line="9" selection-end-column="3" />
+            <state relative-caret-position="99">
+              <caret line="39" column="50" lean-forward="false" selection-start-line="39" selection-start-column="50" selection-end-line="39" selection-end-column="50" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -72,13 +305,41 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ContractorMenu.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Source/UILayer/ContractorMenu.java">
+      <file leaf-file-name="ContractorContainer.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Source/ModelLayer/ContractorContainer.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="153">
-              <caret line="19" column="37" lean-forward="false" selection-start-line="19" selection-start-column="37" selection-end-line="19" selection-end-column="37" />
+            <state relative-caret-position="380">
+              <caret line="91" column="61" lean-forward="false" selection-start-line="91" selection-start-column="61" selection-end-line="91" selection-end-column="61" />
               <folding>
                 <element signature="imports" expanded="true" />
+                <element signature="e#2108#2109#0" expanded="true" />
+                <element signature="e#2149#2150#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="EmployeeContainer.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Source/ModelLayer/EmployeeContainer.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="23">
+              <caret line="89" column="8" lean-forward="false" selection-start-line="89" selection-start-column="8" selection-end-line="90" selection-end-column="60" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="CustomerContainer.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Source/ModelLayer/CustomerContainer.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="244">
+              <caret line="87" column="0" lean-forward="false" selection-start-line="87" selection-start-column="0" selection-end-line="87" selection-end-column="0" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#312#313#0" expanded="true" />
+                <element signature="e#357#358#0" expanded="true" />
+                <element signature="e#1885#1886#0" expanded="true" />
+                <element signature="e#1924#1925#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -98,6 +359,10 @@
       <find>getInstance</find>
       <find>existingIds</find>
       <find>in</find>
+      <find>fileEmployee</find>
+      <find>fis</find>
+      <find>k</find>
+      <find>getEn</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -105,7 +370,7 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="test" />
+        <entry key="$PROJECT_DIR$" value="myBranch" />
       </map>
     </option>
   </component>
@@ -135,19 +400,23 @@
         <option value="$PROJECT_DIR$/Source/UILayer/ErrorCode.java" />
         <option value="$PROJECT_DIR$/Source/UILayer/MenuText.java" />
         <option value="$PROJECT_DIR$/Source/ControlLayer/ContractorControl.java" />
-        <option value="$PROJECT_DIR$/Source/Main.java" />
         <option value="$PROJECT_DIR$/Source/UILayer/Authentication.java" />
         <option value="$PROJECT_DIR$/Source/UILayer/InputChecker.java" />
-        <option value="$PROJECT_DIR$/Source/ModelLayer/CustomerContainer.java" />
         <option value="$PROJECT_DIR$/Source/UILayer/CustomerMenu.java" />
         <option value="$PROJECT_DIR$/Source/ModelLayer/asdf.java" />
         <option value="$PROJECT_DIR$/Source/UILayer/MainMenuUI.java" />
-        <option value="$PROJECT_DIR$/Source/ModelLayer/EmployeeContainer.java" />
         <option value="$PROJECT_DIR$/Source/ModelLayer/Employee.java" />
-        <option value="$PROJECT_DIR$/Source/ModelLayer/ContractorContainer.java" />
-        <option value="$PROJECT_DIR$/Source/ControlLayer/Brexit.java" />
         <option value="$PROJECT_DIR$/Source/UILayer/EmployeeMenu.java" />
         <option value="$PROJECT_DIR$/Source/UILayer/ContractorMenu.java" />
+        <option value="$PROJECT_DIR$/Source/DATA/Customer.txt" />
+        <option value="$PROJECT_DIR$/.idea/workspace.xml" />
+        <option value="$PROJECT_DIR$/Source/UILayer/AesEncryper.java" />
+        <option value="$PROJECT_DIR$/Source/ControlLayer/Brexit.java" />
+        <option value="$PROJECT_DIR$/Source/ModelLayer/EmployeeContainer.java" />
+        <option value="$PROJECT_DIR$/Source/ModelLayer/CustomerContainer.java" />
+        <option value="$PROJECT_DIR$/Source/ModelLayer/ContractorContainer.java" />
+        <option value="$PROJECT_DIR$/Source/Main.java" />
+        <option value="$PROJECT_DIR$/Source/UILayer/AesEncrypter.java" />
       </list>
     </option>
   </component>
@@ -198,6 +467,16 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="External Libraries" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ExternalLibrariesNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="WinterProjectDMAJ0916s" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="WinterProjectDMAJ0916s" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -230,25 +509,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="UILayer" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="WinterProjectDMAJ0916s" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="WinterProjectDMAJ0916s" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Source" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ControlLayer" />
+              <option name="myItemId" value="ModelLayer" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -258,11 +519,16 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="settings.editor.selected.configurable" value="reference.projectsettings.compiler.excludes" />
+    <property name="settings.editor.selected.configurable" value="reference.projectsettings.compiler.javacompiler" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="Groovy JUnit" />
     <property name="js.eslint.eslintPackage" value="" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/commons-codec-1.10-bin/commons-codec-1.10/commons-codec-1.10.jar!/" />
+    <property name="findjar.last.used.dir" value="$PROJECT_DIR$" />
+    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.2" />
   </component>
   <component name="RecentsManager">
     <key name="CreateTestDialog.RecentsKey">
@@ -270,6 +536,9 @@
     </key>
     <key name="CreateTestDialog.Recents.Supers">
       <recent name="groovy.util.GroovyTestCase" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\Workspace\WinterProjectDMAJ0916s" />
     </key>
   </component>
   <component name="RestoreUpdateTree" date="Moments ago" ActionInfo="_Update">
@@ -286,17 +555,9 @@
           <option name="mySupportsDeletion" value="false" />
           <option name="myCanBeAbsent" value="false" />
           <option name="myId" value="UPDATED" />
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/Source/ControlLayer/ItemControl.java</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/Source/ControlLayer/SaleControl.java</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/Source/ModelLayer/Item.java</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/Source/ModelLayer/ItemContainer.java</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/Source/UILayer/ContractorMenu.java</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/Source/UILayer/CustomerMenu.java</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/Source/UILayer/InputChecker.java</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/Source/Main.java</PATH>
           <PATH vcs="Git" revision="">$PROJECT_DIR$/Source/UILayer/ItemMenu.java</PATH>
           <PATH vcs="Git" revision="">$PROJECT_DIR$/Source/UILayer/MainMenuUI.java</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/Source/UILayer/MenuText.java</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/Source/UILayer/SaleMenu.java</PATH>
         </FILE-GROUP>
         <FILE-GROUP>
           <option name="myUpdateName" value="Created" />
@@ -304,6 +565,7 @@
           <option name="mySupportsDeletion" value="false" />
           <option name="myCanBeAbsent" value="false" />
           <option name="myId" value="CREATED" />
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/Source/ModelLayer/Authentication.java</PATH>
         </FILE-GROUP>
         <FILE-GROUP>
           <option name="myUpdateName" value="Deleted" />
@@ -311,6 +573,7 @@
           <option name="mySupportsDeletion" value="false" />
           <option name="myCanBeAbsent" value="true" />
           <option name="myId" value="REMOVED_FROM_REPOSITORY" />
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/Source/UILayer/Authentication.java</PATH>
         </FILE-GROUP>
         <FILE-GROUP>
           <option name="myUpdateName" value="Restored" />
@@ -788,8 +1051,15 @@
     <configuration default="true" type="osgi.bnd.run" factoryName="Test Launcher (JUnit)">
       <method />
     </configuration>
-    <list size="1">
+    <configuration default="false" name="org.apache.servicemix.bundles.commons-codec-1.2_1.jar" type="JarApplication" factoryName="JAR Application">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <option name="JAR_PATH" value="$PROJECT_DIR$/org.apache.servicemix.bundles.commons-codec-1.2_1.jar" />
+      <envs />
+      <method />
+    </configuration>
+    <list size="2">
       <item index="0" class="java.lang.String" itemvalue="Application.Main" />
+      <item index="1" class="java.lang.String" itemvalue="JAR Application.org.apache.servicemix.bundles.commons-codec-1.2_1.jar" />
     </list>
     <recent_temporary>
       <list size="1">
@@ -846,6 +1116,8 @@
       <workItem from="1481185157967" duration="7043000" />
       <workItem from="1481222896757" duration="858000" />
       <workItem from="1481273320588" duration="11103000" />
+      <workItem from="1481285257981" duration="42000" />
+      <workItem from="1481540103478" duration="16115000" />
     </task>
     <task id="LOCAL-00001" summary="12132132">
       <created>1480584817141</created>
@@ -956,42 +1228,51 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="62824000" />
+    <option name="totallyTimeSpent" value="78981000" />
+  </component>
+  <component name="TodoView" selected-index="4">
+    <todo-panel id="selected-file">
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="true" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32967034" sideWeight="0.49707174" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Nl-Palette" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32810047" sideWeight="0.4070278" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32810047" sideWeight="0.40263543" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3846154" sideWeight="0.5754026" order="8" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32967034" sideWeight="0.50292826" order="8" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.34425348" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.07535322" sideWeight="0.45021963" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3846154" sideWeight="0.42459735" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Coverage" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.329429" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.1821036" sideWeight="0.44436312" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3720565" sideWeight="0.6734993" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32616082" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20204978" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32810047" sideWeight="0.49707174" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2747253" sideWeight="0.4590044" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3956044" sideWeight="0.43557832" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3295583" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Coverage" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.329429" sideWeight="0.5" order="10" side_tool="true" content_ui="tabs" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -1020,51 +1301,30 @@
     <MESSAGE value="InputCHecker for WorkId is now working" />
     <MESSAGE value="Exit feature implemented in CustomerMenu.&#10;Load feature implemented." />
     <MESSAGE value="Fixed" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fixed" />
+    <MESSAGE value="128-bit AES encyption&#10;P.S don't mind the commons-codec file, it is only a library that i used and is not in the java.jdk package" />
+    <option name="LAST_COMMIT_MESSAGE" value="128-bit AES encyption&#10;P.S don't mind the commons-codec file, it is only a library that i used and is not in the java.jdk package" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="23" />
+      <option name="time" value="27" />
     </breakpoint-manager>
-    <watches-manager />
+    <watches-manager>
+      <configuration name="Application">
+        <watch expression="field.value[15]" />
+      </configuration>
+    </watches-manager>
   </component>
   <component name="antWorkspaceConfiguration">
     <option name="IS_AUTOSCROLL_TO_SOURCE" value="false" />
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/Source/UILayer/UpdateMenu.java" />
-    <entry file="file://$PROJECT_DIR$/Source/UILayer/Authentication.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Source/UILayer/Input.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="132">
-          <caret line="8" column="22" lean-forward="false" selection-start-line="8" selection-start-column="22" selection-end-line="8" selection-end-column="22" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Source/ControlLayer/ContractorControl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="88">
-          <caret line="4" column="3" lean-forward="false" selection-start-line="4" selection-start-column="3" selection-end-line="4" selection-end-column="3" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Source/ControlLayer/CustomerControl.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="154">
           <caret line="7" column="13" lean-forward="false" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="imports" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1179,14 +1439,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Source/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="124">
-          <caret line="14" column="14" lean-forward="false" selection-start-line="14" selection-start-column="14" selection-end-line="14" selection-end-column="14" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Source/UILayer/SaleMenu.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="133">
@@ -1216,7 +1468,7 @@
         <state relative-caret-position="170">
           <caret line="13" column="0" lean-forward="true" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="imports" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1233,7 +1485,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="238">
           <caret line="14" column="0" lean-forward="false" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1241,14 +1492,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="137">
           <caret line="11" column="0" lean-forward="false" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Source/DATA/Customer.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="0" lean-forward="true" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -1265,26 +1508,10 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
           <caret line="27" column="3" lean-forward="true" selection-start-line="27" selection-start-column="3" selection-end-line="27" selection-end-column="3" />
-          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Source/UILayer/Authentication.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-34">
-          <caret line="7" column="13" lean-forward="false" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Source/ModelLayer/asdf.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="10" column="29" lean-forward="false" selection-start-line="10" selection-start-column="29" selection-end-line="10" selection-end-column="29" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/Source/ModelLayer/asdf.java" />
     <entry file="file://$PROJECT_DIR$/Source/ControlLayer/EmployeeControl.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="119">
@@ -1298,16 +1525,8 @@
         <state relative-caret-position="170">
           <caret line="10" column="12" lean-forward="false" selection-start-line="10" selection-start-column="12" selection-end-line="10" selection-end-column="12" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="imports" expanded="false" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Source/UILayer/MainMenuUI.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="561">
-          <caret line="33" column="16" lean-forward="false" selection-start-line="33" selection-start-column="16" selection-end-line="33" selection-end-column="16" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1315,30 +1534,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="136">
           <caret line="8" column="35" lean-forward="false" selection-start-line="8" selection-start-column="35" selection-end-line="8" selection-end-column="35" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Source/ModelLayer/EmployeeContainer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-391">
-          <caret line="29" column="33" lean-forward="false" selection-start-line="29" selection-start-column="33" selection-end-line="29" selection-end-column="33" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Source/ModelLayer/CustomerContainer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="309">
-          <caret line="78" column="5" lean-forward="true" selection-start-line="68" selection-start-column="4" selection-end-line="78" selection-end-column="5" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Source/ModelLayer/ContractorContainer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="68" column="33" lean-forward="false" selection-start-line="68" selection-start-column="33" selection-end-line="68" selection-end-column="33" />
           <folding />
         </state>
       </provider>
@@ -1351,45 +1546,219 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Source/ControlLayer/Brexit.java">
+    <entry file="file://$PROJECT_DIR$/Source/UILayer/EmployeeMenu.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="477">
-          <caret line="249" column="20" lean-forward="true" selection-start-line="249" selection-start-column="20" selection-end-line="249" selection-end-column="20" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Source/UILayer/CustomerMenu.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="21" column="37" lean-forward="true" selection-start-line="21" selection-start-column="8" selection-end-line="21" selection-end-column="37" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state relative-caret-position="17">
+          <caret line="5" column="33" lean-forward="false" selection-start-line="5" selection-start-column="33" selection-end-line="5" selection-end-column="33" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Source/UILayer/ContractorMenu.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
+        <state relative-caret-position="17">
           <caret line="19" column="37" lean-forward="false" selection-start-line="19" selection-start-column="37" selection-end-line="19" selection-end-column="37" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="imports" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Source/UILayer/EmployeeMenu.java">
+    <entry file="file://$PROJECT_DIR$/Source/UILayer/Authentication.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="9" column="3" lean-forward="true" selection-start-line="9" selection-start-column="3" selection-end-line="9" selection-end-column="3" />
+        <state relative-caret-position="255">
+          <caret line="59" column="0" lean-forward="true" selection-start-line="59" selection-start-column="0" selection-end-line="59" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Source/UILayer/MainMenuUI.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="112">
+          <caret line="27" column="0" lean-forward="false" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Source/DATA/Employee.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="1" column="0" lean-forward="true" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="100">
+          <caret line="33" column="17" lean-forward="false" selection-start-line="33" selection-start-column="15" selection-end-line="33" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Source/UILayer/CustomerMenu.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="24" column="0" lean-forward="false" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Source/DATA/Contractorr.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="1" column="0" lean-forward="true" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Source/DATA/Customer.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="0" lean-forward="true" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Source/ModelLayer/CustomerContainer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="244">
+          <caret line="87" column="0" lean-forward="false" selection-start-line="87" selection-start-column="0" selection-end-line="87" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#312#313#0" expanded="true" />
+            <element signature="e#357#358#0" expanded="true" />
+            <element signature="e#1885#1886#0" expanded="true" />
+            <element signature="e#1924#1925#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Source/ModelLayer/EmployeeContainer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="23">
+          <caret line="89" column="8" lean-forward="false" selection-start-line="89" selection-start-column="8" selection-end-line="90" selection-end-column="60" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Source/ModelLayer/ContractorContainer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="380">
+          <caret line="91" column="61" lean-forward="false" selection-start-line="91" selection-start-column="61" selection-end-line="91" selection-end-column="61" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#2108#2109#0" expanded="true" />
+            <element signature="e#2149#2150#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Source/ControlLayer/Brexit.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="864">
+          <caret line="254" column="56" lean-forward="false" selection-start-line="254" selection-start-column="56" selection-end-line="254" selection-end-column="56" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/Source/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="459">
+          <caret line="27" column="1" lean-forward="false" selection-start-line="27" selection-start-column="1" selection-end-line="27" selection-end-column="1" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Source/UILayer/AesEncrypter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="99">
+          <caret line="39" column="50" lean-forward="false" selection-start-line="39" selection-start-column="50" selection-end-line="39" selection-end-column="50" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+  </component>
+  <component name="masterDetails">
+    <states>
+      <state key="ArtifactsStructureConfigurable.UI">
+        <settings>
+          <artifact-editor />
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="FacetStructureConfigurable.UI">
+        <settings>
+          <last-edited>No facets are configured</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="GlobalLibrariesConfigurable.UI">
+        <settings>
+          <last-edited>org.apache.servicemix.bundles.commons-codec-1.2_1</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="JdkListConfigurable.UI">
+        <settings>
+          <last-edited>1.8</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ModuleStructureConfigurable.UI">
+        <settings>
+          <last-edited>WinterProjectDMAJ0916</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ProjectLibrariesConfigurable.UI">
+        <settings>
+          <last-edited>org.apache.servicemix.bundles.commons-codec-1.2_1</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+    </states>
   </component>
 </project>

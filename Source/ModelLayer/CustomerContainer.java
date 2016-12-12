@@ -1,5 +1,7 @@
 package ModelLayer;
 
+import UILayer.AesEncrypter;
+
 import java.util.ArrayList;
 import java.util.Iterator;
 
@@ -70,10 +72,20 @@ public class CustomerContainer {
     {
         String data = "";
         Customer customer = customers.get(index);
-            data = ( customer.getCpr()+" "+customer.getName()+" "+customer.getAddress()+" "+customer.getEmail()+" "+customer.getPhone()+" "+customer.getCity()+"\n");
 
+        AesEncrypter.encrypt( customer.getCpr().trim() ); // encrypt
+        data = data + AesEncrypter.getEncryptedString()+" "; // add
+        AesEncrypter.encrypt( customer.getName().trim() );
+        data = data + AesEncrypter.getEncryptedString()+" ";
+        AesEncrypter.encrypt( customer.getAddress().trim() );
+        data = data + AesEncrypter.getEncryptedString()+" ";
+        AesEncrypter.encrypt( customer.getEmail().trim() );
+        data = data + AesEncrypter.getEncryptedString()+" ";
+        AesEncrypter.encrypt( customer.getPhone().trim() );
+        data = data + AesEncrypter.getEncryptedString()+" ";
+        AesEncrypter.encrypt( customer.getCity().trim() );
+        data = data + AesEncrypter.getEncryptedString()+"\n";
 
-        data = data + "\r\n"; // make a new line
 
         return data;
     }
