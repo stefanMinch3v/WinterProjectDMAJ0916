@@ -1,7 +1,7 @@
 package UILayer;
 
-import ControlLayer.Brexit;
-import ModelLayer.Authentication;
+import ControlLayer.*;
+
 
 import static UILayer.MenuText.MAIN_MENU;
 

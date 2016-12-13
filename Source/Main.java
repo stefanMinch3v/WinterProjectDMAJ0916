@@ -1,3 +1,5 @@
+import UILayer.*;
+import ControlLayer.*;
 import UILayer.AesEncrypter;
 import UILayer.MainMenuUI;
 
@@ -17,12 +19,12 @@ public class Main {
 
     public static void main(String[] args) {
 
-     //   Authentication p = new Authentication();
-      //  p.adminLogin();
+       Authentication p = new Authentication();
+       p.login();
+
 
         AesEncrypter.setKey("EncryptingPassword123");
-       MainMenuUI mainMenuUI = new MainMenuUI();
-       mainMenuUI.runMainLoop();
+
 
     }
 }
