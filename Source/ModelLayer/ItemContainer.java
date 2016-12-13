@@ -111,16 +111,16 @@ public class ItemContainer {
         data = data + AesEncrypter.getEncryptedString()+" "; // add
         AesEncrypter.encrypt( item.getBarcode().trim() ); // encrypt
         data = data + AesEncrypter.getEncryptedString()+" "; // add
-        AesEncrypter.encrypt( String.valueOf( item.getCostPrice() ).trim() ); // convert to string then encrypt
+        AesEncrypter.encrypt( Double.toString( item.getCostPrice() ).trim() ); // convert to string then encrypt
         data = data + AesEncrypter.getEncryptedString()+" "; // add
-        AesEncrypter.encrypt( String.valueOf( item.getTradeAllowance() ).trim() ); // convert to string then encrypt
+        AesEncrypter.encrypt( Double.toString( item.getTradeAllowance() ).trim() ); // convert to string then encrypt
         data = data + AesEncrypter.getEncryptedString()+" "; // add
-        AesEncrypter.encrypt( String.valueOf( item.getRetailPrice() ).trim() ); // convert to string then encrypt
+        AesEncrypter.encrypt( Double.toString( item.getRetailPrice() ).trim() ); // convert to string then encrypt
         data = data + AesEncrypter.getEncryptedString()+" "; // add
-        AesEncrypter.encrypt( String.valueOf( item.getQuantityAtDIY() ).trim() ); // convert to string then encrypt
+        AesEncrypter.encrypt( Integer.toString( item.getQuantityAtDIY() ).trim() ); // convert to string then encrypt
         data = data + AesEncrypter.getEncryptedString()+" "; // add
-        AesEncrypter.encrypt( String.valueOf( item.getQuantityAtTimber() ).trim() ); // convert to string then encrypt
-        data = data + AesEncrypter.getEncryptedString()+" "; // add
+        AesEncrypter.encrypt( Integer.toString( item.getQuantityAtTimber() ).trim() ); // convert to string then encrypt
+        data = data + AesEncrypter.getEncryptedString()+" \n"; // add
 
 
         return data;

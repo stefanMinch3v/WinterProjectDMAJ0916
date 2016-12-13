@@ -100,7 +100,7 @@ public class EmployeeContainer {
         AesEncrypter.encrypt( employee.getCpr() );
         data = data + AesEncrypter.getEncryptedString()+" ";
         AesEncrypter.encrypt( employee.getWorkId() );
-        data = data + AesEncrypter.getEncryptedString()+"\n";
+        data = data + AesEncrypter.getEncryptedString()+" \n";
 
 
         return data;

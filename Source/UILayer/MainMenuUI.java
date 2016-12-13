@@ -1,8 +1,9 @@
 package UILayer;
 
+import ControlLayer.Brexit;
 import ModelLayer.Authentication;
 
-import static UILayer.MenuText.*;
+import static UILayer.MenuText.MAIN_MENU;
 
 
 
@@ -19,6 +20,8 @@ public class MainMenuUI {
         SaleMenu saleMenu = new SaleMenu();
         LoanMenu loanMenu = new LoanMenu();
         Authentication p = new Authentication();
+        Brexit brexit = new Brexit();
+        brexit.load();
 
 
         int choice;
@@ -50,7 +53,7 @@ public class MainMenuUI {
                     choice = loanMenu.menu();
                     break;
                 case 7:
-                    //exit
+                    brexit.exit();
                     break;
                 case 8:
                     p.login();

@@ -84,7 +84,7 @@ public class CustomerContainer {
         AesEncrypter.encrypt( customer.getPhone().trim() );
         data = data + AesEncrypter.getEncryptedString()+" ";
         AesEncrypter.encrypt( customer.getCity().trim() );
-        data = data + AesEncrypter.getEncryptedString()+"\n";
+        data = data + AesEncrypter.getEncryptedString()+" \n";
 
 
         return data;

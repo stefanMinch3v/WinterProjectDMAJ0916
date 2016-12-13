@@ -324,9 +324,9 @@ public class Brexit {
                             current = (char) fis.read();
                         }
 
-                        fields.add(field);
+
                         field = "";
-                        Item item = new Item(fields.get(k), fields.get(k+1),fields.get(k+2), Double.parseDouble( fields.get(k+3) ), Double.parseDouble( fields.get(k+4) ),  Double.parseDouble( fields.get(k+5) ), Integer.parseInt( fields.get(k+6) ), "DIY");
+                        Item item = new Item(fields.get(k), fields.get(k+1),fields.get(k+2), Double.valueOf( fields.get(k+3) ), Double.valueOf( fields.get(k+4) ),  Double.parseDouble( fields.get(k+5) ), Integer.parseInt( fields.get(k+6) ), "DIY");
                         item.setQuantityAtTimber( Integer.parseInt(fields.get(k+7)) );
                         itemContainer.addItem(item);
                         k=k+8;
