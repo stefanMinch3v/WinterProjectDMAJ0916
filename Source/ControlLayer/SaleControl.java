@@ -17,9 +17,8 @@ public class SaleControl {
         itemContainer = ItemContainer.getInstance();
     }
 
-    public boolean addSale(String numberID, int quantity, double price, String customerCPR) {
-        Customer customer = customerContainer.findCustomerByCpr(customerCPR);
-        Sale sale = new Sale(numberID, quantity, price, customer);
+    public boolean addSale(ArrayList<Item> items,String numberID, double price, Customer customer) {
+        Sale sale = new Sale(items,numberID, price, customer);
         //saleContainer.addSale(new Sale(numberID,quantity,price,customer));
         return saleContainer.addSale(sale);
     }
@@ -32,7 +31,7 @@ public class SaleControl {
         Sale sale = saleContainer.getSaleByID(numberID);
         return sale.updateFields(fieldNumber, fieldInfo);
     }
-    public ArrayList<Item> getAvailableItems(String place, HashMap<String, Integer> items)
+    public boolean getAvailableItems(String place, HashMap<String, Integer> items, String numberId, String customerCPR)
     {
         ArrayList<Item> orderItems = new ArrayList<>();
         // Get a set of the entries
@@ -50,7 +49,14 @@ public class SaleControl {
             int quantity = (Integer) me.getValue();
             orderItems.add(itemContainer.getOrderItem(place, barcode, quantity));
         }
-        return orderItems;
+        double price = 0;
+        for(Item item : orderItems)
+        {
+            price +=item.getQuantityAtTimber()*item.getRetailPrice();
+        }
+        Customer customer = customerContainer.findCustomerByCpr(customerCPR);
+        addSale(orderItems,numberId,price,customer);
+        return true;
     }
 
 }

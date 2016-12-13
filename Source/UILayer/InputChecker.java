@@ -16,7 +16,7 @@ public class InputChecker {
     private static int quantity, periodOfTime;
     private static double price, costPrice, tradeAllowance, retailPrice;
     private static boolean ok;
-    public static ItemControl itemControl;
+    public static ItemControl itemControl = new ItemControl();;
     public static ArrayList<String> existingIds = new ArrayList<>();
     public static ArrayList<String> existingBarcodes = new ArrayList<>();// keeping track of all of the CPR and CVR so we can make sure they are unique
     private static InputChecker instance;
@@ -24,7 +24,7 @@ public class InputChecker {
     public InputChecker() {
         existingIds = new ArrayList<>();
         existingBarcodes = new ArrayList<>();
-        itemControl = new ItemControl();
+
     }
 
     public static InputChecker getInstance() {

@@ -7,13 +7,11 @@ import java.util.*;
 public abstract class Order {
 
     private String numberID;
-    private int quantity;
     private double price;
     private Customer customer;
 
-    public Order(String numberID, int quantity, double price, Customer customer) {
+    public Order(String numberID, double price, Customer customer) {
         this.numberID = numberID;
-        this.quantity = quantity;
         this.price = price;
         this.customer = customer;
     }
@@ -24,14 +22,6 @@ public abstract class Order {
 
     public void setNumberID(String numberID) {
         this.numberID = numberID;
-    }
-
-    public int getQuantity() {
-        return quantity;
-    }
-
-    public void setQuantity(int quantity) {
-        this.quantity = quantity;
     }
 
     public double getPrice() {

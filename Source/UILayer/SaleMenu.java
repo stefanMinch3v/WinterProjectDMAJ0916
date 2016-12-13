@@ -31,8 +31,8 @@ public class SaleMenu {
                             if(quantity>0) items.put(barcode,quantity);
                         }
                     }while(!barcode.equals("done"));
-                    saleControl.getAvailableItems(place, items);
-                    return 7;
+                    saleControl.getAvailableItems(place, items, InputChecker.verifySaleNumberID(),InputChecker.verifyId(2));
+                    break;
                 case 2: // read
                     ArrayList<String> sales = saleControl.readSale(InputChecker.verifySaleNumberID());
                     if (sales != null) {

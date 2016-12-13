@@ -17,10 +17,10 @@ public class Loan extends Order{
     private boolean status;
     private ArrayList<Item> items = new ArrayList<>();
 
-    public Loan(/*ArrayList<Item> items,*/String numberID, int quantity, double price,Customer customer, int periodOfTime) {
-        super(numberID, quantity, price, customer);
+    public Loan(ArrayList<Item> items,String numberID, double price,Customer customer, int periodOfTime) {
+        super(numberID, price, customer);
         this.periodOfTime = periodOfTime;
-        //this.items = items;
+        this.items = items;
         status = true;
     }
 
@@ -55,7 +55,7 @@ public class Loan extends Order{
     public boolean updateFields(int fieldNumber, Object fieldInfo) {
         switch (fieldNumber) {
             case 1:
-                setQuantity((int)fieldInfo);
+                setNumberID((String)fieldInfo);
                 return true;
             case 2:
                 setPrice((double)fieldInfo);

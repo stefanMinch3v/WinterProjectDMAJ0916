@@ -8,9 +8,9 @@ import java.util.ArrayList;
 public class Sale extends Order{
     private ArrayList<Item> items;
 
-    public Sale(String numberID, int quantity, double price, Customer customer) {
-        super(numberID, quantity, price, customer);
-        items = new ArrayList<>();
+    public Sale(ArrayList<Item> items,String numberID, double price, Customer customer) {
+        super(numberID, price, customer);
+        this.items = items;
     }
 
     public ArrayList<Item> getItems() {
@@ -20,7 +20,7 @@ public class Sale extends Order{
     public boolean updateFields(int fieldNumber, Object fieldInfo) {
         switch (fieldNumber) {
             case 1:
-                setQuantity((int)fieldInfo);
+                setNumberID((String)fieldInfo);
                 return true;
             case 2:
                 setPrice((double)fieldInfo);

@@ -61,13 +61,9 @@ public class LoanContainer {
         for (Loan l: loan) {
             if(l.getNumberID().equals(numberID)) {
                 list.add("1.NumberID: " + l.getNumberID());
-                list.add("2.Quantity: " + l.getQuantity());
-                list.add("3.Price: " + l.getPrice() + " DKK");
-                list.add("4.Customer: " + l.getCustomer().getName());
-                list.add("5.Start date: " + l.getStartDate());
-                list.add("6.Period: " + l.getPeriodOfTime() + " week/s");
-                list.add("7.Available: " + l.isReturned());
-                list.add("8.Item: " + l.getItems());
+                list.add("2.Price: " + l.getPrice() + " DKK");
+                list.add("3.Customer: " + l.getCustomer().getName()+ ": " + l.getCustomer().getCpr());
+                list.add("4.Period: " + l.getPeriodOfTime() + " week/s");
             }
         }
         return list;

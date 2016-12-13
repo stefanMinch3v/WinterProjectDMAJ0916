@@ -3,6 +3,7 @@ package UILayer;
 import ControlLayer.LoanControl;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 
 import static UILayer.MenuText.*;
 
@@ -21,12 +22,18 @@ public class LoanMenu {
 
             switch (choice) {
                 case 1: //create
-                    if (loanControl.addLoan(InputChecker.verifySaleNumberID(), InputChecker.verifyQuantity(), InputChecker.verifyPrice(), InputChecker.verifyId(2), InputChecker.verifyPeriod())) {
-                        MenuText.write(SUCCESS);
-                    }
-                    else {
-                        MenuText.write(FAILURE);
-                    }
+                    String place = InputChecker.verifyPlace();
+                    HashMap<String,Integer> items = new HashMap<>();
+                    String barcode;
+                    int quantity;
+                    do {
+                        barcode = InputChecker.verifyItemBarcode();
+                        if(!barcode.isEmpty()&&!barcode.equals("done")) {
+                            quantity = InputChecker.getQuantityAtPlace(place,barcode);
+                            if(quantity>0) items.put(barcode,quantity);
+                        }
+                    }while(!barcode.equals("done"));
+                    loanControl.getAvailableItems(place, items, InputChecker.verifySaleNumberID(),InputChecker.verifyId(2),InputChecker.verifyPeriod());
                     break;
                 case 2: //read
                     ArrayList<String> loans = loanControl.readLoan(InputChecker.verifySaleNumberID());
