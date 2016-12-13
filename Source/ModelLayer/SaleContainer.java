@@ -59,9 +59,10 @@ public class SaleContainer {
             if(s.getNumberID().equals(numberID)) {
                 list.add("1.NumberId: " + s.getNumberID());
                 list.add("2.Price: " + s.getPrice() + " DKK");
-                list.add("3.Customer: " + s.getCustomer().getName());
+                list.add("3.Customer: " + s.getCustomer().getName()+ ": " + s.getCustomer().getCpr());
             }
         }
-        return list;
+        if(!list.isEmpty())return list;
+            else return null;
     }
 }

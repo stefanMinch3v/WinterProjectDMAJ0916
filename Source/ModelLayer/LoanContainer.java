@@ -66,6 +66,7 @@ public class LoanContainer {
                 list.add("4.Period: " + l.getPeriodOfTime() + " week/s");
             }
         }
-        return list;
+        if(!list.isEmpty())return list;
+        else return null;
     }
 }
