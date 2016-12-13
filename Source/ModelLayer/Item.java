@@ -98,18 +98,21 @@ public class Item {
                 type = (String) fieldInfo;
                 return true;
             case 3:
-                costPrice = (double) fieldInfo;
+                barcode= (String) fieldInfo;
                 return true;
             case 4:
-                tradeAllowance = (double) fieldInfo;
+                costPrice = (double) fieldInfo;
                 return true;
             case 5:
-                retailPrice = (double) fieldInfo;
+                tradeAllowance = (double) fieldInfo;
                 return true;
             case 6:
-                quantityAtDIY = (int) fieldInfo;
+                retailPrice = (double) fieldInfo;
                 return true;
             case 7:
+                quantityAtDIY = (int) fieldInfo;
+                return true;
+            case 8:
                 quantityAtTimber = (int) fieldInfo;
                 return true;
             default:

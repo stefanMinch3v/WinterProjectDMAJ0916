@@ -31,32 +31,29 @@ public class MainMenuUI {
 
             switch (choice) {
                 case 1:
-                    choice = customerMenu.menu();
+                        choice = customerMenu.menu();
                     break;
                 case 2:
-                    if(authentication.adminLogin()) {
+                    if(authentication.adminLogin())
                         choice = employeeMenu.menu();
-                    }
-                    else
-
                     break;
                 case 3:
-                    choice =  itemMenu.menu();
+                        choice =  itemMenu.menu();
                     break;
                 case 4:
-                     choice = contractorMenu.menu();
+                        choice = contractorMenu.menu();
                     break;
                 case 5:
-                    choice = saleMenu.menu();
+                        choice = saleMenu.menu();
                     break;
                 case 6:
-                    choice = loanMenu.menu();
+                        choice = loanMenu.menu();
                     break;
                 case 7:
-                    brexit.exit();
+                        brexit.exit();
                     break;
                 case 8:
-                    p.login();
+                        p.login();
                     break;
                 default:
                     System.out.println("Choice must be a value between 1 and 7.");

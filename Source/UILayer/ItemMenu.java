@@ -1,6 +1,7 @@
 package UILayer;
-import ControlLayer.*;
-
+import ControlLayer.Authentication;
+import ControlLayer.Brexit;
+import ControlLayer.ItemControl;
 
 import java.util.ArrayList;
 
@@ -18,7 +19,7 @@ public class ItemMenu {
         int choice;
 
         do{
-           MenuText.write(ITEM_MENU);
+            MenuText.write(ITEM_MENU);
             choice = Input.readInt();
             switch(choice) {
                 case 1: //create name, type, barcode, costPrice, tradeAllowance, retailPrice, quantity, place
@@ -86,17 +87,15 @@ public class ItemMenu {
             case 3:
                 return InputChecker.verifyItemBarcode();
             case 4:
-                return InputChecker.verifyId(2);
-            case 5:
                 return InputChecker.verifyCostPrice();
-            case 6:
+            case 5:
                 return InputChecker.verifyTradeAllowance();
-            case 7:
+            case 6:
                 return InputChecker.verifyRetailPrice();
+            case 7:
+                return InputChecker.verifyQuantity();
             case 8:
-                return  InputChecker.verifyQuantity();
-            case 9:
-                return InputChecker.verifyPlace();
+                return InputChecker.verifyQuantity();
 
             default:
                 return null;

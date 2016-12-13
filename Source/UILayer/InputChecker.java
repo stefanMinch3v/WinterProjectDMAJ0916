@@ -71,7 +71,7 @@ public class InputChecker {
     public static String verifyName() {
         name = null;    // making sure it is empty before starting the process
         do {
-            System.out.println("Please input user's name");
+            System.out.println("Please input the name.");
             ok = true;
             name = Input.readString();
             if (name.length() <= 3) {
@@ -87,7 +87,7 @@ public class InputChecker {
         address = null; // making sure it is empty before starting the process
 
         do {
-            System.out.println("Please input user's address.");
+            System.out.println("Please input the address.");
             ok = true;
             address = Input.readString();
             if (!address.matches(".*\\d+.*") || address.length() < 3) //checks if there is at least one number in the string
@@ -120,7 +120,7 @@ public class InputChecker {
         phone = null; // making sure it is empty before starting the process
 
         do {
-            System.out.println("Please input user's phone.");
+            System.out.println("Please input the phone number.");
             ok = true;
             phone = Input.readString();
             if (!phone.matches("[0-9]+")) //checks if string is composed only of numbers
@@ -158,7 +158,7 @@ public class InputChecker {
         city = null; // making sure it is empty before starting the process
 
         do {
-            System.out.println("Please input user's city.");
+            System.out.println("Please input the city.");
             ok = true;
             city = Input.readString();
             if (city.length() < 3) {
@@ -174,7 +174,7 @@ public class InputChecker {
         workId = null; // making sure it is empty before starting the process
 
         do {
-            System.out.println("Please input user's workID.");
+            System.out.println("Please input the worker's identification number.");
             ok = true;
             workId = Input.readString();
             if (workId.length() != 6 || (!workId.matches("[0-9]+"))) // checking if
@@ -207,7 +207,7 @@ public class InputChecker {
         numberID = null; // make sure it is empty before starting the process
 
         do {
-            System.out.println("Please input sale's/leasing's numberID.");
+            System.out.println("Please input the identification number.");
             ok = true;
             numberID = Input.readString();
             if (numberID.length() <= 4 || (!numberID.matches("[0-9]+"))) {
@@ -230,7 +230,7 @@ public class InputChecker {
         quantity = 0; // make sure it is empty before starting the process
 
         do {
-            System.out.println("Please input quantity.");
+            System.out.println("Please input the quantity.");
             ok = true;
             quantity = Input.readInt();
             if (quantity <= 0) {
@@ -262,7 +262,7 @@ public class InputChecker {
         periodOfTime = 0; // make sure it is empty before starting the process
 
         do {
-            System.out.println("Please input period of time.");
+            System.out.println("Please input the period of time,in days.");
             ok = true;
             periodOfTime = Input.readInt();
             if (periodOfTime <= 0) {
@@ -275,10 +275,10 @@ public class InputChecker {
     }
 
     public static String verifyItemBarcode() {
-
+        System.out.println("Type done if there is no barcode to be inputted.");
         do {
-            System.out.println("Please input item's barcode: ");
-            System.out.println("Type done if there is no barcode to be inputted");
+            System.out.println("Please input item's barcode. ");
+
             ok = true;
             barcode = Input.readString().toLowerCase();
             if(barcode.length()<4){
@@ -292,7 +292,7 @@ public class InputChecker {
     {
        int availableQuantity = itemControl.getQuantityAtPlace(place, barcode);
         do {
-            System.out.println("Please input quantity that is lesser or equal to " + availableQuantity + ".");
+            System.out.println("Please input a quantity that is lesser or equal to " + availableQuantity + ".");
             ok = true;
             quantity = Input.readInt();
             if (quantity > availableQuantity) {
@@ -311,7 +311,7 @@ public class InputChecker {
         costPrice = 0; // make sure it is empty before starting the process
 
         do {
-            System.out.println("Please input item's cost price : ");
+            System.out.println("Please input item's cost price. ");
             ok = true;
             costPrice = Input.readInt();
             if (costPrice <= 0) {
@@ -329,7 +329,7 @@ public class InputChecker {
         tradeAllowance = 0; // make sure it is empty before starting the process
 
         do {
-            System.out.println("Please input item's trade allowance price : ");
+            System.out.println("Please input item's trade allowance price. ");
             ok = true;
             tradeAllowance = Input.readInt();
             if (tradeAllowance < 0) {
@@ -346,7 +346,7 @@ public class InputChecker {
         retailPrice = 0; // make sure it is empty before starting the process
 
         do {
-            System.out.println("Please input item's retail price : ");
+            System.out.println("Please input item's retail price. ");
             ok = true;
             retailPrice = Input.readInt();
             if (retailPrice < 0) {
@@ -362,7 +362,7 @@ public class InputChecker {
     public static String verifyType() {
         type = null;    // making sure it is empty before starting the process
         do {
-            System.out.println("Please input item's type : ");
+            System.out.println("Please input item's type. ");
             ok = true;
             type = Input.readString();
             if (type.length() < 2) {
@@ -377,7 +377,7 @@ public class InputChecker {
     public static String verifyPlace() {
         place = null;    // making sure it is empty before starting the process
         do {
-            System.out.println("Please input item's place : Timber or DIY");
+            System.out.println("Please input item's place, Timber or DIY.");
             ok = true;
             place = Input.readString().toLowerCase();
             if (!((place.equals("timber"))||(place.equals("diy")))) {

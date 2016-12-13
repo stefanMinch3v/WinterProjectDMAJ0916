@@ -58,8 +58,7 @@ public class EmployeeMenu {
                     System.out.println("Choice must be a value between 1 and 6.");
             }
         } while (choice != 5 && choice != 6);
-        if(choice == 6) return 7;
-        else return 3;
+        return choice == 6 ? 7 : 1;
     }
     public String checkData(int fieldNumber)
     {

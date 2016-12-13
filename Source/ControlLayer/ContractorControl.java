@@ -14,28 +14,28 @@ public class ContractorControl {
         contractorContainer = ContractorContainer.getInstance();
     }
 
-//CREATE
-public boolean createContractor(String cvr, String name, String address, String email, String phone, String city )
-{
-    Contractor contractor = new Contractor(cvr, name, address, email, phone, city);
-    return contractorContainer.addContractor(contractor);
-}
+    //CREATE
+    public boolean createContractor(String cvr, String name, String address, String email, String phone, String city )
+    {
+        Contractor contractor = new Contractor(name, address, email, phone, city, cvr);
+        return contractorContainer.addContractor(contractor);
+    }
 
-//READ
+    //READ
     public ArrayList<String> readContractor(String cvr) {
         return contractorContainer.getContractorFieldsByCvr(cvr);
     }
 
-//UPDATE
+    //UPDATE
     public boolean changeContractorFieldByCvr(String cvr, int fieldNumber, Object fieldInfo)
     {
         Contractor contractor = contractorContainer.findContractorByCvr( cvr );
         return contractor.setField( fieldNumber, fieldInfo );
     }
 
-//DELETE
+    //DELETE
     public boolean deleteContractor(String cvr) { // asumes there is at least 1 customer in the system
-          return contractorContainer.removeContractorByCvr(cvr);
+        return contractorContainer.removeContractorByCvr(cvr);
     }
 
 }
