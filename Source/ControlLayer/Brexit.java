@@ -1,4 +1,5 @@
 package ControlLayer;
+
 import ModelLayer.*;
 import UILayer.AesEncrypter;
 
@@ -14,21 +15,20 @@ public class Brexit {
     EmployeeContainer employeeContainer;
     ContractorContainer contractorContainer;
     ItemContainer itemContainer;
-    public Brexit()
-    {
+
+    public Brexit() {
         customerContainer = CustomerContainer.getInstance();
         employeeContainer = EmployeeContainer.getInstance();
         contractorContainer = ContractorContainer.getInstance();
         itemContainer = ItemContainer.getInstance();
     }
 
-    public void exit()
-    {
-        try{
+    public void exit() {
+        try {
             // create new file
             String content;
-            String pathCustomer="Source//DATA//Customer.txt";
-            String pathContractor="Source//DATA//Contractorr.txt";
+            String pathCustomer = "Source//DATA//Customer.txt";
+            String pathContractor = "Source//DATA//Contractorr.txt";
             String pathEmployee = "Source//DATA//Employee.txt";
             String pathItem = "Source//DATA//Item.txt";
             //TODO:for Sale, Leasing when they are ready fix for Contractor when is ready
@@ -42,12 +42,10 @@ public class Brexit {
             File fileItem = new File(pathItem);
 
 
-
-
 //CUSTOMER
-            if(customerContainer.getCustomersSize() > 0) {
+            if (customerContainer.getCustomersSize() > 0) {
 
-                if ( !fileCustomer.exists() ) {
+                if (!fileCustomer.exists()) {
                     fileCustomer.createNewFile();
                 }
 
@@ -63,9 +61,9 @@ public class Brexit {
                 bw1.close();
             }
 //EMPLOYEE
-            if(employeeContainer.getEmployeesSize() > 0) {
+            if (employeeContainer.getEmployeesSize() > 0) {
 
-                if ( !fileCustomer.exists() ) {
+                if (!fileCustomer.exists()) {
                     fileEmployee.createNewFile();
                 }
 
@@ -81,9 +79,9 @@ public class Brexit {
                 bw2.close();
             }
 //CONTRACTOR
-            if(contractorContainer.getContractorSize() > 0) {
+            if (contractorContainer.getContractorSize() > 0) {
 
-                if ( !fileCustomer.exists() ) {
+                if (!fileCustomer.exists()) {
                     fileContractor.createNewFile();
                 }
 
@@ -100,16 +98,16 @@ public class Brexit {
             }
 
 //ITEM
-            if(itemContainer.getItemsSize() > 0){
-                if( !fileItem.exists() ){
+            if (itemContainer.getItemsSize() > 0) {
+                if (!fileItem.exists()) {
                     fileItem.createNewFile();
                 }
 
                 FileWriter fw4 = new FileWriter(fileItem.getAbsoluteFile()); // the filewriter will write in this absolute file (overwrite it each time it is called)
                 BufferedWriter bw4 = new BufferedWriter(fw4);
                 //write in file
-                bw4.write(itemContainer.getItemsSize()+"\r\n"); // write the number of items and 2 new lines
-                for(int i = 0; i < itemContainer.getItemsSize(); i++){
+                bw4.write(itemContainer.getItemsSize() + "\r\n"); // write the number of items and 2 new lines
+                for (int i = 0; i < itemContainer.getItemsSize(); i++) {
                     content = null;
                     content = itemContainer.saveData(i); // get the encrypted string
                     bw4.write(content); // write it in the file
@@ -118,14 +116,12 @@ public class Brexit {
             }
 
 
-
-        }catch(Exception e){
+        } catch (Exception e) {
             System.out.println(e);
         }
     }
 
-    public void load()
-    {
+    public void load() {
         loadCustomer();
         loadContractor();
         loadEmployee();
@@ -133,10 +129,9 @@ public class Brexit {
     }
 
 
-
     private boolean loadEmployee() {
-        ArrayList<String>fields = new ArrayList<>();
-        int k=0;
+        ArrayList<String> fields = new ArrayList<>();
+        int k = 0;
 
         File file = new File("Source//DATA//Employee.txt");
         if (!file.exists()) {
@@ -149,20 +144,18 @@ public class Brexit {
             char current;
             String field = "";
             current = (char) fis.read();
-            if( String.valueOf(current).matches("[0-9]+") ) // if it is an integer
+            if (String.valueOf(current).matches("[0-9]+")) // if it is an integer
             {
-                int size = Integer.parseInt( String.valueOf( current) );
-                for(int i = 0; i < size; i++) // read everything that is after it
+                int size = Integer.parseInt(String.valueOf(current));
+                for (int i = 0; i < size; i++) // read everything that is after it
                 {
                     current = (char) fis.read();
                     current = (char) fis.read();
                     current = (char) fis.read();
-                    while( current != '\n' )
-                    {
-                        if( current != ' ' )
+                    while (current != '\n') {
+                        if (current != ' ')
                             field = field + current;
-                        else
-                        {
+                        else {
                             AesEncrypter.decrypt(field); // decript the string
                             fields.add(AesEncrypter.getDecryptedString()); // add it to the arraylist
                             field = "";
@@ -171,9 +164,9 @@ public class Brexit {
                     }
                     fields.add(field);
                     field = "";
-                    Employee employee = new Employee(fields.get(k), fields.get(k+1), fields.get(k+2), fields.get(k+3), fields.get(k+4), fields.get(k+5), fields.get(k+6));
+                    Employee employee = new Employee(fields.get(k), fields.get(k + 1), fields.get(k + 2), fields.get(k + 3), fields.get(k + 4), fields.get(k + 5), fields.get(k + 6));
                     employeeContainer.addEmployee(employee);
-                    k=k+7;
+                    k = k + 7;
                 }
 
             }
@@ -185,9 +178,9 @@ public class Brexit {
         return true;
     }
 
-    private boolean loadContractor(){
-        ArrayList<String>fields = new ArrayList<>();
-        int k=0;
+    private boolean loadContractor() {
+        ArrayList<String> fields = new ArrayList<>();
+        int k = 0;
 
         File file = new File("Source//DATA//Contractor.txt");
         if (!file.exists()) {
@@ -200,20 +193,18 @@ public class Brexit {
             char current;
             String field = "";
             current = (char) fis.read();
-            if( String.valueOf(current).matches("[0-9]+") ) // if it is an integer
+            if (String.valueOf(current).matches("[0-9]+")) // if it is an integer
             {
-                int size = Integer.parseInt( String.valueOf( current) );
-                for(int i = 0; i < size; i++) // read everything that is after it
+                int size = Integer.parseInt(String.valueOf(current));
+                for (int i = 0; i < size; i++) // read everything that is after it
                 {
                     current = (char) fis.read();
                     current = (char) fis.read();
                     current = (char) fis.read();
-                    while( current != '\n' )
-                    {
-                        if( current != ' ' )
+                    while (current != '\n') {
+                        if (current != ' ')
                             field = field + current;
-                        else
-                        {
+                        else {
                             AesEncrypter.decrypt(field); // decript the string
                             fields.add(AesEncrypter.getDecryptedString()); // add it to the arrayList
                             field = "";
@@ -222,9 +213,9 @@ public class Brexit {
                     }
                     fields.add(field);
                     field = "";
-                    Contractor contractor = new Contractor(fields.get(k), fields.get(k+1), fields.get(k+2), fields.get(k+3), fields.get(k+4), fields.get(k+5));
+                    Contractor contractor = new Contractor(fields.get(k), fields.get(k + 1), fields.get(k + 2), fields.get(k + 3), fields.get(k + 4), fields.get(k + 5));
                     contractorContainer.addContractor(contractor);
-                    k=k+6;
+                    k = k + 6;
                 }
 
             }
@@ -237,10 +228,9 @@ public class Brexit {
 
     }
 
-    private boolean loadCustomer()
-    {
-        ArrayList<String>fields = new ArrayList<>();
-        int k=0;
+    private boolean loadCustomer() {
+        ArrayList<String> fields = new ArrayList<>();
+        int k = 0;
 
         File file = new File("Source//DATA//Customer.txt");
         if (!file.exists()) {
@@ -252,35 +242,33 @@ public class Brexit {
             FileInputStream fis = new FileInputStream(file);
             char current;
             String field = "";
-                current = (char) fis.read();
-                if( String.valueOf(current).matches("[0-9]+") ) // if it is an integer
+            current = (char) fis.read();
+            if (String.valueOf(current).matches("[0-9]+")) // if it is an integer
+            {
+                int size = Integer.parseInt(String.valueOf(current));
+                for (int i = 0; i < size; i++) // read everything that is after it
                 {
-                    int size = Integer.parseInt( String.valueOf( current) );
-                    for(int i = 0; i < size; i++) // read everything that is after it
-                    {
-                        current = (char) fis.read();
-                        current = (char) fis.read();
-                        current = (char) fis.read();
-                        while( current != '\n' )
-                        {
-                            if( current != ' ' )
-                                field = field + current;
-                            else
-                            {
-                                AesEncrypter.decrypt(field); // decript the string
-                                fields.add(AesEncrypter.getDecryptedString()); // add it to the arrayList
-                                field = "";
-                            }
-                            current = (char) fis.read();
+                    current = (char) fis.read();
+                    current = (char) fis.read();
+                    current = (char) fis.read();
+                    while (current != '\n') {
+                        if (current != ' ')
+                            field = field + current;
+                        else {
+                            AesEncrypter.decrypt(field); // decript the string
+                            fields.add(AesEncrypter.getDecryptedString()); // add it to the arrayList
+                            field = "";
                         }
-                        fields.add(field);
-                        field = "";
-                        Customer customer = new Customer(fields.get(k), fields.get(k+1), fields.get(k+2), fields.get(k+3), fields.get(k+4), fields.get(k+5));
-                        customerContainer.addCustomer(customer);
-                        k=k+6;
+                        current = (char) fis.read();
                     }
-
+                    fields.add(field);
+                    field = "";
+                    Customer customer = new Customer(fields.get(k), fields.get(k + 1), fields.get(k + 2), fields.get(k + 3), fields.get(k + 4), fields.get(k + 5));
+                    customerContainer.addCustomer(customer);
+                    k = k + 6;
                 }
+
+            }
 
         } catch (IOException e) {
             e.printStackTrace();
@@ -290,57 +278,54 @@ public class Brexit {
     }
 
     private boolean loadItem() {
-        ArrayList<String>fields = new ArrayList<>();
-        int k=0;
+        ArrayList<String> fields = new ArrayList<>();
+        int k = 0;
 
         File file = new File("Source//DATA//Item.txt");
         if (!file.exists()) { // if file doesn't exist
             return false;
         }
-            try{
-                FileInputStream fis = new FileInputStream(file);
-                char current;
-                String field = "";
-                current = (char) fis.read();
-                if( String.valueOf(current).matches("[0-9]+") ) // if it is an integer
+        try {
+            FileInputStream fis = new FileInputStream(file);
+            char current;
+            String field = "";
+            current = (char) fis.read();
+            if (String.valueOf(current).matches("[0-9]+")) // if it is an integer
+            {
+                int size = Integer.parseInt(String.valueOf(current));
+                for (int i = 0; i < size; i++) // read everything that is after it
                 {
-                    int size = Integer.parseInt( String.valueOf( current) );
-                    for(int i = 0; i < size; i++) // read everything that is after it
-                    {
-                        current = (char) fis.read();
-                        current = (char) fis.read();
-                        current = (char) fis.read();
-                        // Item fields read loop
-                        while( current != '\n' )
-                        {
-                            if( current != ' ' )
-                                field = field + current;
-                            else
-                            {
-                                AesEncrypter.decrypt(field); // decript the string
-                                fields.add(AesEncrypter.getDecryptedString()); // add it to the arrayList
-                                field = "";
-                            }
-                            current = (char) fis.read();
+                    current = (char) fis.read();
+                    current = (char) fis.read();
+                    current = (char) fis.read();
+                    // Item fields read loop
+                    while (current != '\n') {
+                        if (current != ' ')
+                            field = field + current;
+                        else {
+                            AesEncrypter.decrypt(field); // decript the string
+                            fields.add(AesEncrypter.getDecryptedString()); // add it to the arrayList
+                            field = "";
                         }
-
-
-                        field = "";
-                        Item item = new Item(fields.get(k), fields.get(k+1),fields.get(k+2), Double.valueOf( fields.get(k+3) ), Double.valueOf( fields.get(k+4) ),  Double.parseDouble( fields.get(k+5) ), Integer.parseInt( fields.get(k+6) ), "DIY");
-                        item.setQuantityAtTimber( Integer.parseInt(fields.get(k+7)) );
-                        itemContainer.addItem(item);
-                        k=k+8;
+                        current = (char) fis.read();
                     }
 
+
+                    field = "";
+                    Item item = new Item(fields.get(k), fields.get(k + 1), fields.get(k + 2), Double.valueOf(fields.get(k + 3)), Double.valueOf(fields.get(k + 4)), Double.parseDouble(fields.get(k + 5)), Integer.parseInt(fields.get(k + 6)), "DIY");
+                    item.setQuantityAtTimber(Integer.parseInt(fields.get(k + 7)));
+                    itemContainer.addItem(item);
+                    k = k + 8;
                 }
 
-            } catch (IOException e) {
-                e.printStackTrace();
             }
 
-            return true;
-            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
 
+        return true;
+    }
 
 
 }

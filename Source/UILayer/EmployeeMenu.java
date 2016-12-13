@@ -1,9 +1,13 @@
 package UILayer;
-import ControlLayer.*;
+
+import ControlLayer.Brexit;
+import ControlLayer.EmployeeControl;
 
 import java.util.ArrayList;
+
 import static UILayer.ErrorCode.NO_SUCH_EMPLOYEE;
-import static UILayer.MenuText.*;
+import static UILayer.MenuText.EMPLOYEE_MENU;
+import static UILayer.MenuText.SUCCESS;
 
 /**
  * Created by EU on 2016-12-01.
@@ -22,30 +26,31 @@ public class EmployeeMenu {
             switch (choice) {
                 case 1: // create
 
-                    if(employeeControl.addEmployee(InputChecker.verifyName(),InputChecker.verifyAddress(),InputChecker.verifyEmail(),InputChecker.verifyPhone(),InputChecker.verifyCity(),InputChecker.verifyId(1),InputChecker.verifyWorkId(1)))
+                    if (employeeControl.addEmployee(InputChecker.verifyName(), InputChecker.verifyAddress(), InputChecker.verifyEmail(), InputChecker.verifyPhone(), InputChecker.verifyCity(), InputChecker.verifyId(1), InputChecker.verifyWorkId(1)))
                         MenuText.write(SUCCESS);
                     else
                         ErrorCode.print(NO_SUCH_EMPLOYEE);
                     break;
                 case 2: // read
                     ArrayList<String> aux = employeeControl.getEmployeeByWorkId(InputChecker.verifyWorkId(2));
-                    if(!aux.isEmpty()) System.out.println(aux);
+                    if (!aux.isEmpty()) System.out.println(aux);
                     else ErrorCode.print(NO_SUCH_EMPLOYEE);
                     break;
                 case 3: // update
                     String workId = InputChecker.verifyWorkId(2);
                     ArrayList<String> aux2 = employeeControl.getEmployeeByWorkId(workId);
-                    if(!aux2.isEmpty()) System.out.println(aux2);
+                    if (!aux2.isEmpty()) System.out.println(aux2);
                     else {
                         ErrorCode.print(NO_SUCH_EMPLOYEE);
                         break;
                     }
                     int fieldNumber = InputChecker.verifyFieldNumber(aux2.size());
                     String fieldInfo = checkData(fieldNumber);
-                    if(employeeControl.changeEmployeeFieldByWorkId(workId, fieldNumber, fieldInfo)) MenuText.write(SUCCESS);
+                    if (employeeControl.changeEmployeeFieldByWorkId(workId, fieldNumber, fieldInfo))
+                        MenuText.write(SUCCESS);
                     break;
                 case 4: // delete
-                    if(employeeControl.deleteEmployee( InputChecker.verifyWorkId(3))) MenuText.write(SUCCESS);
+                    if (employeeControl.deleteEmployee(InputChecker.verifyWorkId(3))) MenuText.write(SUCCESS);
                     else ErrorCode.print(NO_SUCH_EMPLOYEE);
                     break;
                 case 5:
@@ -60,10 +65,9 @@ public class EmployeeMenu {
         } while (choice != 5 && choice != 6);
         return choice == 6 ? 7 : 1;
     }
-    public String checkData(int fieldNumber)
-    {
-        switch (fieldNumber)
-        {
+
+    public String checkData(int fieldNumber) {
+        switch (fieldNumber) {
             case 1:
                 return InputChecker.verifyName();
             case 2:

@@ -1,6 +1,5 @@
 package ModelLayer;
 
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Iterator;
 
@@ -16,7 +15,7 @@ public class LoanContainer {
     }
 
     public static LoanContainer getInstance() {
-        if(instance==null){
+        if (instance == null) {
             instance = new LoanContainer();
         }
         return instance;
@@ -45,9 +44,9 @@ public class LoanContainer {
         Loan foundLoan = null;
 
         Iterator<Loan> it = loan.iterator();
-        while(it.hasNext()) {//!found
+        while (it.hasNext()) {//!found
             Loan recordLoan = it.next();
-            if(recordLoan.getNumberID().equals(numberID)) {
+            if (recordLoan.getNumberID().equals(numberID)) {
                 //found = true;
                 foundLoan = recordLoan;
             }
@@ -58,11 +57,11 @@ public class LoanContainer {
 
     public ArrayList<String> getLoanByNumberID(String numberID) {
         ArrayList<String> list = new ArrayList<>();
-        for (Loan l: loan) {
-            if(l.getNumberID().equals(numberID)) {
+        for (Loan l : loan) {
+            if (l.getNumberID().equals(numberID)) {
                 list.add("1.NumberID: " + l.getNumberID());
                 list.add("2.Price: " + l.getPrice() + " DKK");
-                list.add("3.Customer: " + l.getCustomer().getName()+ ": " + l.getCustomer().getCpr());
+                list.add("3.Customer: " + l.getCustomer().getName() + ": " + l.getCustomer().getCpr());
                 list.add("4.Period: " + l.getPeriodOfTime() + " week/s");
             }
         }

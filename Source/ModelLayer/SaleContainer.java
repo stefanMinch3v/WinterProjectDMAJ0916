@@ -15,7 +15,7 @@ public class SaleContainer {
     }
 
     public static SaleContainer getInstance() {
-        if(instance==null){
+        if (instance == null) {
             instance = new SaleContainer();
         }
         return instance;
@@ -35,9 +35,9 @@ public class SaleContainer {
         Sale foundSale = null;
 
         Iterator<Sale> it = sale.iterator();
-        while(it.hasNext()) {
+        while (it.hasNext()) {
             Sale recordSale = it.next();
-            if(recordSale.getNumberID().equals(numberID)) {
+            if (recordSale.getNumberID().equals(numberID)) {
                 foundSale = recordSale;
             }
         }
@@ -55,8 +55,8 @@ public class SaleContainer {
 
     public ArrayList<String> getSaleByNumberID(String numberID) {
         ArrayList<String> list = new ArrayList<>();
-        for(Sale s: sale) {
-            if(s.getNumberID().equals(numberID)) {
+        for (Sale s : sale) {
+            if (s.getNumberID().equals(numberID)) {
                 list.add("1.NumberId: " + s.getNumberID());
                 list.add("2.Price: " + s.getPrice() + " DKK");
                 list.add("3.Customer: " + s.getCustomer().getName());

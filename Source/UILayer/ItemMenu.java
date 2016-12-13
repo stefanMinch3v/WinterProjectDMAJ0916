@@ -1,4 +1,5 @@
 package UILayer;
+
 import ControlLayer.Authentication;
 import ControlLayer.Brexit;
 import ControlLayer.ItemControl;
@@ -7,23 +8,25 @@ import java.util.ArrayList;
 
 import static UILayer.ErrorCode.NO_SUCH_ITEM;
 import static UILayer.MenuText.*;
+
 /**
  * Created by Luke on 08/12/2016.
  */
 public class ItemMenu {
     Authentication authentication = new Authentication();
-    public int menu(){
+
+    public int menu() {
         ItemControl itemControl = new ItemControl();
         Brexit brexit = new Brexit();
 
         int choice;
 
-        do{
+        do {
             MenuText.write(ITEM_MENU);
             choice = Input.readInt();
-            switch(choice) {
+            switch (choice) {
                 case 1: //create name, type, barcode, costPrice, tradeAllowance, retailPrice, quantity, place
-                    if(authentication.adminLogin()) {
+                    if (authentication.adminLogin()) {
                         if (itemControl.addItem(InputChecker.verifyName(), InputChecker.verifyType(), InputChecker.verifyItemBarcode(), InputChecker.verifyCostPrice(), InputChecker.verifyTradeAllowance(), InputChecker.verifyRetailPrice(), InputChecker.verifyQuantity(), InputChecker.verifyPlace())) {
                             MenuText.write(SUCCESS);
                         } else {
@@ -36,8 +39,7 @@ public class ItemMenu {
                     ArrayList<String> items = itemControl.getItemByBarcode(InputChecker.verifyItemBarcode());
                     if (items != null) {
                         System.out.println(items);
-                    }
-                    else {
+                    } else {
                         MenuText.write(FAILURE);
                     }
                     break;
@@ -46,8 +48,7 @@ public class ItemMenu {
                     ArrayList<String> items2 = itemControl.getItemByBarcode(barcode);
                     if (items2 != null) {
                         System.out.println(items2);
-                    }
-                    else {
+                    } else {
                         MenuText.write(FAILURE);
                         break;
                     }
@@ -57,7 +58,7 @@ public class ItemMenu {
                         MenuText.write(SUCCESS);
                     }
                 case 4: // delete
-                    if(itemControl.deleteItem( InputChecker.verifyItemBarcode()))
+                    if (itemControl.deleteItem(InputChecker.verifyItemBarcode()))
                         MenuText.write(SUCCESS);
                     else
                         ErrorCode.print(NO_SUCH_ITEM);
@@ -76,10 +77,8 @@ public class ItemMenu {
         return choice == 6 ? 7 : 1;
     }
 
-    public Object checkData(int fieldNumber)
-    {
-        switch (fieldNumber)
-        {
+    public Object checkData(int fieldNumber) {
+        switch (fieldNumber) {
             case 1:
                 return InputChecker.verifyName();
             case 2:

@@ -18,11 +18,8 @@ public class Main {
     public static void main(String[] args) {
         AesEncrypter.setKey("EncryptingPassword123");
 
-       Authentication p = new Authentication();
-       p.login();
-
-
-
+        Authentication p = new Authentication();
+        p.login();
 
 
     }

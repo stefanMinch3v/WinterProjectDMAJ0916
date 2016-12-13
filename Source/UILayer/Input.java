@@ -1,6 +1,6 @@
 package UILayer;
+
 import java.util.Scanner;
-import UILayer.ErrorCode;
 
 import static UILayer.ErrorCode.WRONG_INPUT_INTEGER;
 
@@ -25,12 +25,12 @@ public abstract class Input {
 
         inputString = scan.nextLine();
 
-        if( !inputString.matches("[0-9]+") )// if whatever is read is not mainly made out of numbers
+        if (!inputString.matches("[0-9]+"))// if whatever is read is not mainly made out of numbers
         {
-            ErrorCode.print( WRONG_INPUT_INTEGER );
+            ErrorCode.print(WRONG_INPUT_INTEGER);
             return 0;
         }
 
-        return Integer.parseInt( inputString );
+        return Integer.parseInt(inputString);
     }
 }

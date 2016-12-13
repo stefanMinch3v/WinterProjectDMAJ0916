@@ -6,8 +6,8 @@ package ModelLayer;
 public class Customer extends Person {
     private String cpr;
 
-    public Customer(String cpr, String name, String address, String email,String phone,String city) {
-        super(name,address,email,phone,city);
+    public Customer(String cpr, String name, String address, String email, String phone, String city) {
+        super(name, address, email, phone, city);
         this.cpr = cpr;
     }
 
@@ -19,26 +19,25 @@ public class Customer extends Person {
         this.cpr = cpr;
     }
 
-    public boolean setField(int fieldNumber, Object fieldInfo){
-        switch (fieldNumber)
-        {
+    public boolean setField(int fieldNumber, Object fieldInfo) {
+        switch (fieldNumber) {
             case 1:
-                setCpr( (String)fieldInfo );
+                setCpr((String) fieldInfo);
                 return true;
             case 2:
-                setName( (String)fieldInfo );
+                setName((String) fieldInfo);
                 return true;
             case 3:
-                setAddress( (String)fieldInfo );
+                setAddress((String) fieldInfo);
                 return true;
             case 4:
-                setEmail( (String)fieldInfo );
+                setEmail((String) fieldInfo);
                 return true;
             case 5:
-                setCity( (String)fieldInfo );
+                setCity((String) fieldInfo);
                 return true;
             case 6:
-                setPhone( (String)fieldInfo );
+                setPhone((String) fieldInfo);
                 return true;
 
             default:

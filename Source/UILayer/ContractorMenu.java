@@ -14,6 +14,7 @@ import static UILayer.MenuText.*;
 public class ContractorMenu {
 
     private ContractorControl contractorControl;
+
     public int menu() {
 
         contractorControl = new ContractorControl();
@@ -27,14 +28,14 @@ public class ContractorMenu {
 
             switch (choice) {
                 case 1: // create
-                    if(contractorControl.createContractor( InputChecker.verifyId(1), InputChecker.verifyName(),InputChecker.verifyAddress(),InputChecker.verifyEmail(),InputChecker.verifyPhone(),InputChecker.verifyCity()))
+                    if (contractorControl.createContractor(InputChecker.verifyId(1), InputChecker.verifyName(), InputChecker.verifyAddress(), InputChecker.verifyEmail(), InputChecker.verifyPhone(), InputChecker.verifyCity()))
                         MenuText.write(SUCCESS);
                     else
                         MenuText.write(FAILURE);
                     break;
                 case 2: // read
                     ArrayList<String> aux = contractorControl.readContractor(InputChecker.verifyId(2));
-                    if(!aux.isEmpty())
+                    if (!aux.isEmpty())
                         System.out.println(aux);
                     else
                         ErrorCode.print(NO_SUCH_CONTRACTOR);
@@ -42,20 +43,20 @@ public class ContractorMenu {
                 case 3: // update
                     String cvr = InputChecker.verifyId(2);
                     ArrayList<String> aux2 = contractorControl.readContractor(cvr);
-                    if(!aux2.isEmpty()) System.out.println(aux2);
+                    if (!aux2.isEmpty()) System.out.println(aux2);
                     else {
                         ErrorCode.print(NO_SUCH_CONTRACTOR);
                         break;
                     }
                     int fieldNumber = InputChecker.verifyFieldNumber(aux2.size());
                     String fieldInfo = checkData(fieldNumber);
-                    if(contractorControl.changeContractorFieldByCvr(cvr, fieldNumber, fieldInfo))
+                    if (contractorControl.changeContractorFieldByCvr(cvr, fieldNumber, fieldInfo))
                         MenuText.write(SUCCESS);
                     else
                         MenuText.write(FAILURE);
                     break;
                 case 4: // delete
-                    if(contractorControl.deleteContractor( InputChecker.verifyId(3)))
+                    if (contractorControl.deleteContractor(InputChecker.verifyId(3)))
                         MenuText.write(SUCCESS);
                     else
                         ErrorCode.print(NO_SUCH_CONTRACTOR);
@@ -70,14 +71,13 @@ public class ContractorMenu {
                     System.out.println("Choice must be a value between 1 and 6.");
             }
         } while (choice != 5 && choice != 6);
-        if(choice == 6) return 7;
+        if (choice == 6) return 7;
         else return 1;
     }
 
     private String checkData(int fieldNumber) {
 
-        switch (fieldNumber)
-        {
+        switch (fieldNumber) {
             case 1:
                 return InputChecker.verifyId(2);
             case 2:

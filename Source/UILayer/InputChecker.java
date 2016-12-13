@@ -1,10 +1,8 @@
 package UILayer;
+
 import ControlLayer.ItemControl;
 
-import java.text.DateFormat;
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-import java.util.Date;
 
 import static UILayer.ErrorCode.*;
 
@@ -16,7 +14,8 @@ public class InputChecker {
     private static int quantity, periodOfTime;
     private static double price, costPrice, tradeAllowance, retailPrice;
     private static boolean ok;
-    public static ItemControl itemControl = new ItemControl();;
+    public static ItemControl itemControl = new ItemControl();
+    ;
     public static ArrayList<String> existingIds = new ArrayList<>();
     public static ArrayList<String> existingBarcodes = new ArrayList<>();// keeping track of all of the CPR and CVR so we can make sure they are unique
     private static InputChecker instance;
@@ -281,16 +280,16 @@ public class InputChecker {
 
             ok = true;
             barcode = Input.readString().toLowerCase();
-            if(barcode.length()<4){
+            if (barcode.length() < 4) {
                 ok = false;
             }
 
         } while (!ok);
-    return barcode;
+        return barcode;
     }
-    public static int getQuantityAtPlace(String place, String barcode)
-    {
-       int availableQuantity = itemControl.getQuantityAtPlace(place, barcode);
+
+    public static int getQuantityAtPlace(String place, String barcode) {
+        int availableQuantity = itemControl.getQuantityAtPlace(place, barcode);
         do {
             System.out.println("Please input a quantity that is lesser or equal to " + availableQuantity + ".");
             ok = true;
@@ -380,7 +379,7 @@ public class InputChecker {
             System.out.println("Please input item's place, Timber or DIY.");
             ok = true;
             place = Input.readString().toLowerCase();
-            if (!((place.equals("timber"))||(place.equals("diy")))) {
+            if (!((place.equals("timber")) || (place.equals("diy")))) {
                 ok = false;
                 ErrorCode.print(WRONG_NAME_INPUT);
             }
