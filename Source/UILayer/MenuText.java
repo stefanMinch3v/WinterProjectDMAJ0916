@@ -15,7 +15,7 @@ public enum MenuText {
     ITEM_MENU("***ITEM MENU***\n* 1)Create Item *\n* 2)Read Item *\n* 3)Edit Item *\n* 4)Delete Menu *\n* 5)Previous menu* *\n* 6)Exit program");
     private String errorMessage;
 
-    MenuText (String errorMessage) {
+    MenuText(String errorMessage) {
         this.errorMessage = errorMessage;
     }
 

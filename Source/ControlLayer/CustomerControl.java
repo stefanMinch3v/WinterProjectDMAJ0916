@@ -15,21 +15,22 @@ public class CustomerControl {
     public CustomerControl() {
         customerContainer = CustomerContainer.getInstance();
     }
+
     //CREATE
-    public boolean createCustomer(String cpr, String name, String address, String email, String phone, String city )
-    {
+    public boolean createCustomer(String cpr, String name, String address, String email, String phone, String city) {
         Customer customer = new Customer(cpr, name, address, email, phone, city);
         return customerContainer.addCustomer(customer);
     }
+
     //READ
-    public ArrayList<String> getCustomerByCpr(String cpr){
+    public ArrayList<String> getCustomerByCpr(String cpr) {
         return customerContainer.getCustomerFieldsByCpr(cpr);
     }
+
     //UPDATE
-    public boolean changeCustomerFieldByCpr(String cpr, int fieldNumber, Object fieldInfo)
-    {
-        Customer customer = customerContainer.findCustomerByCpr( cpr );
-        return customer.setField( fieldNumber, fieldInfo );
+    public boolean changeCustomerFieldByCpr(String cpr, int fieldNumber, Object fieldInfo) {
+        Customer customer = customerContainer.findCustomerByCpr(cpr);
+        return customer.setField(fieldNumber, fieldInfo);
     }
 
     //DELETE

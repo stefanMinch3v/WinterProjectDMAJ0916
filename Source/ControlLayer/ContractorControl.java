@@ -1,5 +1,7 @@
 package ControlLayer;
-import ModelLayer.*;
+
+import ModelLayer.Contractor;
+import ModelLayer.ContractorContainer;
 
 import java.util.ArrayList;
 
@@ -15,8 +17,7 @@ public class ContractorControl {
     }
 
     //CREATE
-    public boolean createContractor(String cvr, String name, String address, String email, String phone, String city )
-    {
+    public boolean createContractor(String cvr, String name, String address, String email, String phone, String city) {
         Contractor contractor = new Contractor(name, address, email, phone, city, cvr);
         return contractorContainer.addContractor(contractor);
     }
@@ -27,10 +28,9 @@ public class ContractorControl {
     }
 
     //UPDATE
-    public boolean changeContractorFieldByCvr(String cvr, int fieldNumber, Object fieldInfo)
-    {
-        Contractor contractor = contractorContainer.findContractorByCvr( cvr );
-        return contractor.setField( fieldNumber, fieldInfo );
+    public boolean changeContractorFieldByCvr(String cvr, int fieldNumber, Object fieldInfo) {
+        Contractor contractor = contractorContainer.findContractorByCvr(cvr);
+        return contractor.setField(fieldNumber, fieldInfo);
     }
 
     //DELETE

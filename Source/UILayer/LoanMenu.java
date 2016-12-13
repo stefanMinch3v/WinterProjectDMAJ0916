@@ -23,24 +23,23 @@ public class LoanMenu {
             switch (choice) {
                 case 1: //create
                     String place = InputChecker.verifyPlace();
-                    HashMap<String,Integer> items = new HashMap<>();
+                    HashMap<String, Integer> items = new HashMap<>();
                     String barcode;
                     int quantity;
                     do {
                         barcode = InputChecker.verifyItemBarcode();
-                        if(!barcode.isEmpty()&&!barcode.equals("done")) {
-                            quantity = InputChecker.getQuantityAtPlace(place,barcode);
-                            if(quantity>0) items.put(barcode,quantity);
+                        if (!barcode.isEmpty() && !barcode.equals("done")) {
+                            quantity = InputChecker.getQuantityAtPlace(place, barcode);
+                            if (quantity > 0) items.put(barcode, quantity);
                         }
-                    }while(!barcode.equals("done"));
-                    loanControl.getAvailableItems(place, items, InputChecker.verifySaleNumberID(),InputChecker.verifyId(2),InputChecker.verifyPeriod());
+                    } while (!barcode.equals("done"));
+                    loanControl.getAvailableItems(place, items, InputChecker.verifySaleNumberID(), InputChecker.verifyId(2), InputChecker.verifyPeriod());
                     break;
                 case 2: //read
                     ArrayList<String> loans = loanControl.readLoan(InputChecker.verifySaleNumberID());
                     if (loans != null) {
                         System.out.println(loans);
-                    }
-                    else {
+                    } else {
                         MenuText.write(FAILURE);
                     }
                     break;
@@ -49,8 +48,7 @@ public class LoanMenu {
                     ArrayList<String> loans2 = loanControl.readLoan(numberID);
                     if (loans2 != null) {
                         System.out.println(loans2);
-                    }
-                    else {
+                    } else {
                         MenuText.write(FAILURE);
                         break;
                     }
@@ -76,10 +74,8 @@ public class LoanMenu {
         return choice == 6 ? 7 : 1;
     }
 
-    public Object checkData(int fieldNumber)
-    {
-        switch (fieldNumber)
-        {
+    public Object checkData(int fieldNumber) {
+        switch (fieldNumber) {
             case 1:
                 return InputChecker.verifySaleNumberID();
             case 2:

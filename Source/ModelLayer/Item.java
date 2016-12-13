@@ -64,8 +64,8 @@ public class Item {
         this.costPrice = costPrice;
         this.tradeAllowance = tradeAllowance;
         this.retailPrice = retailPrice;
-        if(place.equals("DIY"))this.quantityAtDIY += quantity;
-        else this.quantityAtTimber+= quantity;
+        if (place.equals("DIY")) this.quantityAtDIY += quantity;
+        else this.quantityAtTimber += quantity;
     }
 
     public double getCostPrice() {
@@ -88,9 +88,8 @@ public class Item {
         return barcode;
     }
 
-    public boolean setField(int fieldNumber, Object fieldInfo){
-        switch (fieldNumber)
-        {
+    public boolean setField(int fieldNumber, Object fieldInfo) {
+        switch (fieldNumber) {
             case 1:
                 name = (String) fieldInfo;
                 return true;
@@ -98,7 +97,7 @@ public class Item {
                 type = (String) fieldInfo;
                 return true;
             case 3:
-                barcode= (String) fieldInfo;
+                barcode = (String) fieldInfo;
                 return true;
             case 4:
                 costPrice = (double) fieldInfo;

@@ -1,4 +1,5 @@
 package UILayer;
+
 /**
  * Created by RaidenRabit on 2016-11-25.
  */
@@ -27,7 +28,7 @@ public enum ErrorCode {
 
     private String errorMessage;
 
-    ErrorCode (String errorMessage) {
+    ErrorCode(String errorMessage) {
         this.errorMessage = errorMessage;
     }
 

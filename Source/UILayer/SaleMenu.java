@@ -6,6 +6,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 
 import static UILayer.MenuText.*;
+
 /**
  * Created by Admin on 12/7/2016.
  */
@@ -21,24 +22,23 @@ public class SaleMenu {
             switch (choice) {
                 case 1:
                     String place = InputChecker.verifyPlace();
-                    HashMap<String,Integer> items = new HashMap<>();
+                    HashMap<String, Integer> items = new HashMap<>();
                     String barcode;
                     int quantity;
                     do {
-                    barcode = InputChecker.verifyItemBarcode();
-                        if(!barcode.isEmpty()&&!barcode.equals("done")) {
-                            quantity = InputChecker.getQuantityAtPlace(place,barcode);
-                            if(quantity>0) items.put(barcode,quantity);
+                        barcode = InputChecker.verifyItemBarcode();
+                        if (!barcode.isEmpty() && !barcode.equals("done")) {
+                            quantity = InputChecker.getQuantityAtPlace(place, barcode);
+                            if (quantity > 0) items.put(barcode, quantity);
                         }
-                    }while(!barcode.equals("done"));
-                    saleControl.getAvailableItems(place, items, InputChecker.verifySaleNumberID(),InputChecker.verifyId(2));
+                    } while (!barcode.equals("done"));
+                    saleControl.getAvailableItems(place, items, InputChecker.verifySaleNumberID(), InputChecker.verifyId(2));
                     break;
                 case 2: // read
                     ArrayList<String> sales = saleControl.readSale(InputChecker.verifySaleNumberID());
                     if (sales != null) {
                         System.out.println(sales);
-                    }
-                    else {
+                    } else {
                         MenuText.write(FAILURE);
                     }
                     break;
@@ -47,8 +47,7 @@ public class SaleMenu {
                     ArrayList<String> sales2 = saleControl.readSale(numberID);
                     if (sales2 != null) {
                         System.out.println(sales2);
-                    }
-                    else {
+                    } else {
                         MenuText.write(FAILURE);
                         break;
                     }
@@ -72,19 +71,15 @@ public class SaleMenu {
         } while (choice != 4 && choice != 5 && choice != 6);
         if (choice == 6) {
             return 7;
-        }
-        else if (choice == 4) {
+        } else if (choice == 4) {
             return 5;
-        }
-        else {
+        } else {
             return 1;
         }
     }
 
-    public Object checkData(int fieldNumber)
-    {
-        switch (fieldNumber)
-        {
+    public Object checkData(int fieldNumber) {
+        switch (fieldNumber) {
             case 1:
                 return InputChecker.verifySaleNumberID();
             case 2:
