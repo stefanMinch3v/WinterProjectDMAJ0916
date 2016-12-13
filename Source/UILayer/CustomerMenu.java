@@ -24,7 +24,6 @@ public class CustomerMenu {
         int choice;
 
         do {
-            brexit.load();
             MenuText.write(CUSTOMER_MENU);
             choice = Input.readInt();
 

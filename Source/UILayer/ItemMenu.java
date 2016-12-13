@@ -1,12 +1,12 @@
 package UILayer;
-import ControlLayer.*;
+import ControlLayer.Brexit;
+import ControlLayer.ItemControl;
 import ModelLayer.Authentication;
-import ModelLayer.ItemContainer;
 
 import java.util.ArrayList;
 
-import static UILayer.MenuText.*;
 import static UILayer.ErrorCode.NO_SUCH_ITEM;
+import static UILayer.MenuText.*;
 /**
  * Created by Luke on 08/12/2016.
  */
@@ -14,6 +14,7 @@ public class ItemMenu {
     Authentication authentication = new Authentication();
     public int menu(){
         ItemControl itemControl = new ItemControl();
+        Brexit brexit = new Brexit();
 
         int choice;
 
@@ -65,7 +66,7 @@ public class ItemMenu {
                     //go back
                     break;
                 case 6:
-                    //exit
+                    brexit.exit();
                     break;
                 default:
                     System.out.println("Choice must be a value between 1 and 6.");

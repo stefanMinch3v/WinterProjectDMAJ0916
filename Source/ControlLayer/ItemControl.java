@@ -17,7 +17,7 @@ public class ItemControl {
 //CREATE
     public boolean addItem(String name,String type,String barcode, double costPrice, double tradeAllowance, double retailPrice, int quantity, String place) {
         Item item = new Item(name, type, barcode, costPrice, tradeAllowance, retailPrice, quantity, place);
-        return itemContainer.addEItem(item);
+        return itemContainer.addItem(item);
     }
 
 //READ

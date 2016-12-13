@@ -1,5 +1,7 @@
 package ModelLayer;
 
+import UILayer.AesEncrypter;
+
 import java.util.ArrayList;
 import java.util.Iterator;
 
@@ -22,7 +24,7 @@ public class ItemContainer {
         return instance;
     }
 
-    public  boolean addEItem(Item item) {
+    public  boolean addItem(Item item) {
         items.add(item);
         return true;
     }
@@ -97,6 +99,32 @@ public class ItemContainer {
             }
         }
         return false;
+    }
+
+    public String saveData(int index){
+        String data = "";
+        Item item = items.get(index);
+
+        AesEncrypter.encrypt( item.getName().trim() ); // encrypt
+        data = data + AesEncrypter.getEncryptedString()+" "; // add
+        AesEncrypter.encrypt( item.getType().trim() ); // encrypt
+        data = data + AesEncrypter.getEncryptedString()+" "; // add
+        AesEncrypter.encrypt( item.getBarcode().trim() ); // encrypt
+        data = data + AesEncrypter.getEncryptedString()+" "; // add
+        AesEncrypter.encrypt( String.valueOf( item.getCostPrice() ).trim() ); // convert to string then encrypt
+        data = data + AesEncrypter.getEncryptedString()+" "; // add
+        AesEncrypter.encrypt( String.valueOf( item.getTradeAllowance() ).trim() ); // convert to string then encrypt
+        data = data + AesEncrypter.getEncryptedString()+" "; // add
+        AesEncrypter.encrypt( String.valueOf( item.getRetailPrice() ).trim() ); // convert to string then encrypt
+        data = data + AesEncrypter.getEncryptedString()+" "; // add
+        AesEncrypter.encrypt( String.valueOf( item.getQuantityAtDIY() ).trim() ); // convert to string then encrypt
+        data = data + AesEncrypter.getEncryptedString()+" "; // add
+        AesEncrypter.encrypt( String.valueOf( item.getQuantityAtTimber() ).trim() ); // convert to string then encrypt
+        data = data + AesEncrypter.getEncryptedString()+" "; // add
+
+
+        return data;
+
     }
 
 }

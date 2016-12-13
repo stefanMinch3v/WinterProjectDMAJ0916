@@ -1,6 +1,6 @@
 package ModelLayer;
 
-import ModelLayer.*;
+import ControlLayer.Brexit;
 import UILayer.Input;
 import UILayer.MainMenuUI;
 
@@ -43,6 +43,8 @@ public class Authentication {
         System.out.println("You are logged in");
 
                 MainMenuUI c = new MainMenuUI();
+                Brexit brexit = new Brexit();
+                brexit.load(); // load the files right before going in the first menu
                 c.runMainLoop();
 
 

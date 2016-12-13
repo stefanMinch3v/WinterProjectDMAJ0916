@@ -20,6 +20,7 @@ public class MainMenuUI {
         LoanMenu loanMenu = new LoanMenu();
         Authentication p = new Authentication();
 
+
         int choice;
         do {
             MenuText.write(MAIN_MENU);
