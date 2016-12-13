@@ -1,7 +1,5 @@
-import UILayer.*;
-import ControlLayer.*;
+import ControlLayer.Authentication;
 import UILayer.AesEncrypter;
-import UILayer.MainMenuUI;
 
 /**
  * Created by RaidenRabit on 2016-11-25.
@@ -18,12 +16,13 @@ import UILayer.MainMenuUI;
 public class Main {
 
     public static void main(String[] args) {
+        AesEncrypter.setKey("EncryptingPassword123");
 
        Authentication p = new Authentication();
        p.login();
 
 
-        AesEncrypter.setKey("EncryptingPassword123");
+
 
 
     }
