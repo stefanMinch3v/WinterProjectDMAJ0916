@@ -54,7 +54,7 @@ public class EmployeeContainer {
                 employeeFields.add("4. Phone: " + employee.getPhone());
                 employeeFields.add("5. City: " + employee.getCity());
                 employeeFields.add("6. WorkID: " + employee.getWorkId());
-                employeeFields.add("7. CPR" + employee.getCpr());
+                employeeFields.add("7. CPR:" + employee.getCpr());
                 return employeeFields;
             }
         }
