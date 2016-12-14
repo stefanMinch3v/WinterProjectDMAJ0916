@@ -123,7 +123,6 @@ public class ItemContainer {
         AesEncrypter.encrypt(Integer.toString(item.getQuantityAtTimber()).trim()); // convert to string then encrypt
         data = data + AesEncrypter.getEncryptedString() + " \n"; // add
 
-
         return data;
 
     }

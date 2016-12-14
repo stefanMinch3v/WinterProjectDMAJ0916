@@ -20,7 +20,6 @@ public class MainMenuUI {
         LoanMenu loanMenu = new LoanMenu();
         Authentication p = new Authentication();
         Brexit brexit = new Brexit();
-        brexit.load();
 
 
         int choice;

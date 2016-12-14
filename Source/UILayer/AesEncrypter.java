@@ -29,7 +29,7 @@ public class AesEncrypter {
             key = myKey.getBytes("UTF-8");
             sha = MessageDigest.getInstance("SHA-1");
             key = sha.digest(key);
-            key = Arrays.copyOf(key, 16); // use only first 128 bit
+            key = Arrays.copyOf(key, 16); // use only first 25 bit
             secretKey = new SecretKeySpec(key, "AES");
 
 

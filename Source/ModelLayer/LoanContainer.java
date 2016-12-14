@@ -79,4 +79,29 @@ public class LoanContainer {
         }
         return false;
     }
+
+    public int getLoanSize() {
+        return loan.size();
+    }
+
+    public String save(int index) {
+        String data = "";
+        Loan loan1 = loan.get(index);
+/*
+        AesEncrypter.encrypt( loan1.getCpr().trim() ); // encrypt
+        data = data + AesEncrypter.getEncryptedString()+" "; // add
+        AesEncrypter.encrypt( customer.getName().trim() );
+        data = data + AesEncrypter.getEncryptedString()+" ";
+        AesEncrypter.encrypt( customer.getAddress().trim() );
+        data = data + AesEncrypter.getEncryptedString()+" ";
+        AesEncrypter.encrypt( customer.getEmail().trim() );
+        data = data + AesEncrypter.getEncryptedString()+" ";
+        AesEncrypter.encrypt( customer.getPhone().trim() );
+        data = data + AesEncrypter.getEncryptedString()+" ";
+        AesEncrypter.encrypt( customer.getCity().trim() );
+        data = data + AesEncrypter.getEncryptedString()+" \n";
+*/
+
+        return data;
+    }
 }

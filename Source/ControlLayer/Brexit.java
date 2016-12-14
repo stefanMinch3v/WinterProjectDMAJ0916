@@ -49,7 +49,7 @@ public class Brexit {
                     fileCustomer.createNewFile();
                 }
 
-                FileWriter fw1 = new FileWriter(fileCustomer.getAbsoluteFile());
+                FileWriter fw1 = new FileWriter(fileCustomer.getAbsoluteFile(), false);
                 BufferedWriter bw1 = new BufferedWriter(fw1);
                 // write in file
                 bw1.write(customerContainer.getCustomersSize() + "\r\n");  // write the number of customers and 2 new lines
@@ -67,7 +67,7 @@ public class Brexit {
                     fileEmployee.createNewFile();
                 }
 
-                FileWriter fw2 = new FileWriter(fileEmployee.getAbsoluteFile());
+                FileWriter fw2 = new FileWriter(fileEmployee.getAbsoluteFile(), false);
                 BufferedWriter bw2 = new BufferedWriter(fw2);
                 // write in file
                 bw2.write(employeeContainer.getCustomersSize() + "\r\n");  // write the number of employees and 2 new lines
@@ -85,7 +85,7 @@ public class Brexit {
                     fileContractor.createNewFile();
                 }
 
-                FileWriter fw3 = new FileWriter(fileContractor.getAbsoluteFile());
+                FileWriter fw3 = new FileWriter(fileContractor.getAbsoluteFile(), false);
                 BufferedWriter bw3 = new BufferedWriter(fw3);
                 // write in file
                 bw3.write(contractorContainer.getContractorSize() + "\r\n");  // write the number of contractors and 2 new lines
@@ -103,7 +103,7 @@ public class Brexit {
                     fileItem.createNewFile();
                 }
 
-                FileWriter fw4 = new FileWriter(fileItem.getAbsoluteFile()); // the filewriter will write in this absolute file (overwrite it each time it is called)
+                FileWriter fw4 = new FileWriter(fileItem.getAbsoluteFile(), false); // the filewriter will write in this absolute file (overwrite it each time it is called)
                 BufferedWriter bw4 = new BufferedWriter(fw4);
                 //write in file
                 bw4.write(itemContainer.getItemsSize() + "\r\n"); // write the number of items and 2 new lines
@@ -149,8 +149,10 @@ public class Brexit {
                 int size = Integer.parseInt(String.valueOf(current));
                 for (int i = 0; i < size; i++) // read everything that is after it
                 {
-                    current = (char) fis.read();
-                    current = (char) fis.read();
+                    if( i == 0 ) {
+                        current = (char) fis.read();
+                        current = (char) fis.read();
+                    }
                     current = (char) fis.read();
                     while (current != '\n') {
                         if (current != ' ')
@@ -162,7 +164,9 @@ public class Brexit {
                         }
                         current = (char) fis.read();
                     }
-                    fields.add(field);
+
+                    AesEncrypter.decrypt(field); // decript the string
+                    fields.add(AesEncrypter.getDecryptedString()); // add it to the arrayList
                     field = "";
                     Employee employee = new Employee(fields.get(k), fields.get(k + 1), fields.get(k + 2), fields.get(k + 3), fields.get(k + 4), fields.get(k + 5), fields.get(k + 6));
                     employeeContainer.addEmployee(employee);
@@ -198,8 +202,10 @@ public class Brexit {
                 int size = Integer.parseInt(String.valueOf(current));
                 for (int i = 0; i < size; i++) // read everything that is after it
                 {
-                    current = (char) fis.read();
-                    current = (char) fis.read();
+                    if( i == 0 ) {
+                        current = (char) fis.read();
+                        current = (char) fis.read();
+                    }
                     current = (char) fis.read();
                     while (current != '\n') {
                         if (current != ' ')
@@ -211,7 +217,9 @@ public class Brexit {
                         }
                         current = (char) fis.read();
                     }
-                    fields.add(field);
+
+                    AesEncrypter.decrypt(field); // decript the string
+                    fields.add(AesEncrypter.getDecryptedString()); // add it to the arrayList
                     field = "";
                     Contractor contractor = new Contractor(fields.get(k), fields.get(k + 1), fields.get(k + 2), fields.get(k + 3), fields.get(k + 4), fields.get(k + 5));
                     contractorContainer.addContractor(contractor);
@@ -246,10 +254,15 @@ public class Brexit {
             if (String.valueOf(current).matches("[0-9]+")) // if it is an integer
             {
                 int size = Integer.parseInt(String.valueOf(current));
+
+
                 for (int i = 0; i < size; i++) // read everything that is after it
                 {
-                    current = (char) fis.read();
-                    current = (char) fis.read();
+                    if( i == 0 ) {
+                        current = (char) fis.read();
+                        current = (char) fis.read();
+                    }
+
                     current = (char) fis.read();
                     while (current != '\n') {
                         if (current != ' ')
@@ -261,7 +274,8 @@ public class Brexit {
                         }
                         current = (char) fis.read();
                     }
-                    fields.add(field);
+                    AesEncrypter.decrypt(field); // decript the string
+                    fields.add(AesEncrypter.getDecryptedString()); // add it to the arrayList
                     field = "";
                     Customer customer = new Customer(fields.get(k), fields.get(k + 1), fields.get(k + 2), fields.get(k + 3), fields.get(k + 4), fields.get(k + 5));
                     customerContainer.addCustomer(customer);
@@ -295,8 +309,10 @@ public class Brexit {
                 int size = Integer.parseInt(String.valueOf(current));
                 for (int i = 0; i < size; i++) // read everything that is after it
                 {
-                    current = (char) fis.read();
-                    current = (char) fis.read();
+                    if( i == 0 ) {
+                        current = (char) fis.read();
+                        current = (char) fis.read();
+                    }
                     current = (char) fis.read();
                     // Item fields read loop
                     while (current != '\n') {
@@ -310,7 +326,8 @@ public class Brexit {
                         current = (char) fis.read();
                     }
 
-
+                    AesEncrypter.decrypt(field); // decript the string
+                    fields.add(AesEncrypter.getDecryptedString()); // add it to the arrayList
                     field = "";
                     Item item = new Item(fields.get(k), fields.get(k + 1), fields.get(k + 2), Double.valueOf(fields.get(k + 3)), Double.valueOf(fields.get(k + 4)), Double.parseDouble(fields.get(k + 5)), Integer.parseInt(fields.get(k + 6)), "DIY");
                     item.setQuantityAtTimber(Integer.parseInt(fields.get(k + 7)));

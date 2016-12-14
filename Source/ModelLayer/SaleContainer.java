@@ -56,4 +56,9 @@ public class SaleContainer {
         }
      return null;
     }
+
+    public int getSalesSize(){
+        return sale.size();
+    }
+
 }
