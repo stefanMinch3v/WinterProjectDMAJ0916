@@ -28,7 +28,7 @@ public class Brexit {
             // create new file
             String content;
             String pathCustomer = "Source//DATA//Customer.txt";
-            String pathContractor = "Source//DATA//Contractorr.txt";
+            String pathContractor = "Source//DATA//Contractor.txt";
             String pathEmployee = "Source//DATA//Employee.txt";
             String pathItem = "Source//DATA//Item.txt";
             //TODO:for Sale, Leasing when they are ready fix for Contractor when is ready
@@ -165,8 +165,7 @@ public class Brexit {
                         current = (char) fis.read();
                     }
 
-                    AesEncrypter.decrypt(field); // decript the string
-                    fields.add(AesEncrypter.getDecryptedString()); // add it to the arrayList
+
                     field = "";
                     Employee employee = new Employee(fields.get(k), fields.get(k + 1), fields.get(k + 2), fields.get(k + 3), fields.get(k + 4), fields.get(k + 5), fields.get(k + 6));
                     employeeContainer.addEmployee(employee);
