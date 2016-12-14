@@ -33,13 +33,18 @@ public class EmployeeMenu {
                     break;
                 case 2: // read
                     ArrayList<String> aux = employeeControl.getEmployeeByWorkId(InputChecker.verifyWorkId(2));
-                    if (!aux.isEmpty()) System.out.println(aux);
+                    if (aux!=null)
+                        for(String au:aux) {
+                        System.out.println(au);
+                    }
                     else ErrorCode.print(NO_SUCH_EMPLOYEE);
                     break;
                 case 3: // update
                     String workId = InputChecker.verifyWorkId(2);
                     ArrayList<String> aux2 = employeeControl.getEmployeeByWorkId(workId);
-                    if (!aux2.isEmpty()) System.out.println(aux2);
+                    if (aux2!=null) for(String au:aux2) {
+                        System.out.println(au);
+                    }
                     else {
                         ErrorCode.print(NO_SUCH_EMPLOYEE);
                         break;
@@ -57,12 +62,13 @@ public class EmployeeMenu {
                     //go back
                     break;
                 case 6:
-                    brexit.exit();
+
                     break;
                 default:
                     System.out.println("Choice must be a value between 1 and 6.");
             }
         } while (choice != 5 && choice != 6);
+        brexit.exit();
         return choice == 6 ? 7 : 1;
     }
 

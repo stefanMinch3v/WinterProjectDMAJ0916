@@ -37,8 +37,8 @@ public class LoanMenu {
                     break;
                 case 2: //read
                     ArrayList<String> loans = loanControl.readLoan(InputChecker.verifySaleNumberID());
-                    if (loans != null) {
-                        System.out.println(loans);
+                    if (loans!=null) {
+                        for(String loan: loans)System.out.println(loan);
                     } else {
                         MenuText.write(FAILURE);
                     }
@@ -46,8 +46,8 @@ public class LoanMenu {
                 case 3: // update
                     String numberID = InputChecker.verifySaleNumberID();
                     ArrayList<String> loans2 = loanControl.readLoan(numberID);
-                    if (loans2 != null) {
-                        System.out.println(loans2);
+                    if (loans2!=null) {
+                        for(String loan: loans2)System.out.println(loan);
                     } else {
                         MenuText.write(FAILURE);
                         break;
@@ -57,8 +57,11 @@ public class LoanMenu {
                     if (loanControl.updateLoan(numberID, fieldNumber, fieldInfo)) {
                         MenuText.write(SUCCESS);
                     }
+                    break;
                 case 4:
-                    //retrieve leasing
+                    String numberID2 = InputChecker.verifySaleNumberID();
+                    if(loanControl.retrieveLoan(numberID2))MenuText.write(SUCCESS);
+                    else MenuText.write(FAILURE);;
                     break;
                 case 5:
                     //go back

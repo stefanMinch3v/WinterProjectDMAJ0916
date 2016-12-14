@@ -35,15 +35,17 @@ public class CustomerMenu {
                     break;
                 case 2: // read
                     ArrayList<String> aux = customerControler.getCustomerByCpr(InputChecker.verifyId(2));
-                    if (!aux.isEmpty())
-                        System.out.println(aux);
+                    if (aux!=null)
+                        for(String au:aux)System.out.println(au);
                     else
                         ErrorCode.print(NO_SUCH_CUSTOMER);
                     break;
                 case 3: // update
                     String cpr = InputChecker.verifyId(2);
                     ArrayList<String> aux2 = customerControler.getCustomerByCpr(cpr);
-                    if (!aux2.isEmpty()) System.out.println(aux2);
+                    if (aux2!=null)
+                        for(String au:aux2)
+                            System.out.println(au);
                     else {
                         ErrorCode.print(NO_SUCH_CUSTOMER);
                         break;
@@ -65,11 +67,12 @@ public class CustomerMenu {
                     // go back
                     break;
                 case 6:
-                    brexit.exit();
+                    break;
                 default:
                     System.out.println("Choice must be a value between 1 and 6.");
             }
         } while (choice != 5 && choice != 6);
+        brexit.exit();
         if (choice == 6) return 7;
         else return 1;
     }

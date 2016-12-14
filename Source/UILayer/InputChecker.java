@@ -45,7 +45,7 @@ public class InputChecker {
             }
 
 
-            if (existingIds.size() > 0 && check != 2 && ok) {
+            if (existingIds.size() > 1 && check != 2 && ok) {
                 for (int i = 0; i < existingIds.size(); i++) // if the ID (CPR/CVR) already exists in the system
                 {
                     if (check == 3) //if you want to delete one customer/contractor

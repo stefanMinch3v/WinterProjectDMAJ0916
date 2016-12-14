@@ -35,15 +35,19 @@ public class ContractorMenu {
                     break;
                 case 2: // read
                     ArrayList<String> aux = contractorControl.readContractor(InputChecker.verifyId(2));
-                    if (!aux.isEmpty())
-                        System.out.println(aux);
+                    if (aux!=null)
+                        for(String au:aux) {
+                            System.out.println(au);
+                        }
                     else
                         ErrorCode.print(NO_SUCH_CONTRACTOR);
                     break;
                 case 3: // update
                     String cvr = InputChecker.verifyId(2);
                     ArrayList<String> aux2 = contractorControl.readContractor(cvr);
-                    if (!aux2.isEmpty()) System.out.println(aux2);
+                    if (aux2!=null) for(String au:aux2) {
+                        System.out.println(au);
+                    }
                     else {
                         ErrorCode.print(NO_SUCH_CONTRACTOR);
                         break;
@@ -65,12 +69,12 @@ public class ContractorMenu {
                     //go back
                     break;
                 case 6:
-                    brexit.exit();
                     break;
                 default:
                     System.out.println("Choice must be a value between 1 and 6.");
             }
         } while (choice != 5 && choice != 6);
+        brexit.exit();
         if (choice == 6) return 7;
         else return 1;
     }

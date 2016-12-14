@@ -59,4 +59,8 @@ public class LoanControl {
         return true;
     }
 
+    public boolean retrieveLoan(String numberID)
+    {
+        return loanContainer.retrieveLoanByID(numberID);
+    }
 }

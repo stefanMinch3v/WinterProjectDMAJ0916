@@ -62,10 +62,19 @@ public class LoanContainer {
                 list.add("1.NumberID: " + l.getNumberID());
                 list.add("2.Price: " + l.getPrice() + " DKK");
                 list.add("3.Customer: " + l.getCustomer().getName() + ": " + l.getCustomer().getCpr());
-                list.add("4.Period: " + l.getPeriodOfTime() + " week/s");
+                if(l.getPeriodOfTime()>1)list.add("4.Period: " + l.getPeriodOfTime() + " weeks");
+                else list.add("4.Period: " + l.getPeriodOfTime() + " week");
+                return list;
             }
         }
-        if(!list.isEmpty())return list;
-        else return null;
+        return null;
+    }
+    public boolean retrieveLoanByID(String numberID){
+        for(Loan l:loan)
+        {
+            if(l.getNumberId().equals(numberID))l.setStatus(false);
+            return true;
+        }
+        return false;
     }
 }

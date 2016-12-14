@@ -64,9 +64,10 @@ public class ContractorContainer {
                 fields.add("4. Email: " + contractor.getEmail());
                 fields.add("5. Phone: " + contractor.getPhone());
                 fields.add("6. City: " + contractor.getCity());
+                return fields;
             }
         }
-        return fields;
+        return null;
     }
 
     public int getContractorSize() {

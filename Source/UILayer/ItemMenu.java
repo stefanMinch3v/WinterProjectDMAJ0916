@@ -37,8 +37,10 @@ public class ItemMenu {
 
                 case 2: //read
                     ArrayList<String> items = itemControl.getItemByBarcode(InputChecker.verifyItemBarcode());
-                    if (items != null) {
-                        System.out.println(items);
+                    if (items !=null) {
+                        for(String item:items) {
+                            System.out.println(item);
+                        }
                     } else {
                         MenuText.write(FAILURE);
                     }
@@ -46,8 +48,10 @@ public class ItemMenu {
                 case 3: // update
                     String barcode = InputChecker.verifyItemBarcode();
                     ArrayList<String> items2 = itemControl.getItemByBarcode(barcode);
-                    if (items2 != null) {
-                        System.out.println(items2);
+                    if (items2!= null) {
+                        for(String item:items2) {
+                            System.out.println(item);
+                        }
                     } else {
                         MenuText.write(FAILURE);
                         break;
@@ -67,13 +71,14 @@ public class ItemMenu {
                     //go back
                     break;
                 case 6:
-                    brexit.exit();
+
                     break;
                 default:
                     System.out.println("Choice must be a value between 1 and 6.");
             }
         }
         while (choice != 5 && choice != 6);
+        brexit.exit();
         return choice == 6 ? 7 : 1;
     }
 

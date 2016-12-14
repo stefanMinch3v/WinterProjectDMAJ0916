@@ -55,9 +55,10 @@ public class EmployeeContainer {
                 employeeFields.add("5. City: " + employee.getCity());
                 employeeFields.add("6. WorkID: " + employee.getWorkId());
                 employeeFields.add("7. CPR" + employee.getCpr());
+                return employeeFields;
             }
         }
-        return employeeFields;
+        return null;
     }
 
     public Employee findEmployeeByWorkId(String workId) {

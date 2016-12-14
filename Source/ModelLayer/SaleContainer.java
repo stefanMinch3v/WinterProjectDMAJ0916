@@ -44,15 +44,6 @@ public class SaleContainer {
         return foundSale;
     }
 
-    /*public void removeSale(String numberID) {
-        for (Sale s: sale) {
-            if (s.getNumberID().equals(numberID)) {
-                sale.remove(numberID);
-                System.out.println("Removed");
-            }
-        }
-    }*/
-
     public ArrayList<String> getSaleByNumberID(String numberID) {
         ArrayList<String> list = new ArrayList<>();
         for (Sale s : sale) {
@@ -60,9 +51,9 @@ public class SaleContainer {
                 list.add("1.NumberId: " + s.getNumberID());
                 list.add("2.Price: " + s.getPrice() + " DKK");
                 list.add("3.Customer: " + s.getCustomer().getName()+ ": " + s.getCustomer().getCpr());
+                return list;
             }
         }
-        if(!list.isEmpty())return list;
-            else return null;
+     return null;
     }
 }

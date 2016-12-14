@@ -30,22 +30,24 @@ public class ItemContainer {
     }
 
     public Item getOrderItem(String place, String barcode, int quantity) {
-        Item myItem = null;
+
         for (Item item : items) {
-            if (item.getBarcode().equals(barcode))
-                if (place.equals("timber")) {
-                    item.setQuantityAtTimber(item.getQuantityAtTimber() - quantity);
-                } else item.setQuantityAtDIY(item.getQuantityAtDIY() - quantity);
-            myItem = item;
-            if (place.equals("timber")) {
-                myItem.setQuantityAtTimber(quantity);
-                myItem.setQuantityAtDIY(0);
-            } else {
-                myItem.setQuantityAtTimber(0);
-                myItem.setQuantityAtDIY(quantity);
+            if (item.getBarcode().equals(barcode)) {
+                if (place.equals("timber"))
+                {
+                    int aux = item.getQuantityAtTimber() - quantity;
+                    item.setQuantityAtTimber(aux);
+                }
+                else
+                {
+                    int aux = item.getQuantityAtTimber() - quantity;
+                    item.setQuantityAtDIY(aux);
+                }
+                Item myItem = new Item(item.getName(),item.getType(),item.getBarcode(),item.getCostPrice(),item.getTradeAllowance(),item.getRetailPrice(),quantity,place);
+                return myItem;
             }
         }
-        return myItem;
+        return null;
     }
 
     public Item findItemByBarcode(String barcode) {
@@ -82,9 +84,10 @@ public class ItemContainer {
                 itemFields.add("6. Retail price: " + item.getRetailPrice());
                 itemFields.add("7. Quantity of " + item.getName() + " at DIY: " + item.getQuantityAtDIY());
                 itemFields.add("8. Quantity of " + item.getName() + " at Timber: " + item.getQuantityAtTimber());
+                return itemFields;
             }
         }
-        return itemFields;
+        return null;
     }
 
     public boolean removeItemByBarcode(String barcode) {

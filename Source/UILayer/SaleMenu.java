@@ -36,17 +36,23 @@ public class SaleMenu {
                     break;
                 case 2: // read
                     ArrayList<String> sales = saleControl.readSale(InputChecker.verifySaleNumberID());
-                    if (sales != null) {
-                        System.out.println(sales);
-                    } else {
+                    if (sales!=null)
+                        for (String sale : sales)
+                        {
+                            System.out.println(sale);
+                        }
+                    else {
                         MenuText.write(FAILURE);
                     }
                     break;
                 case 3: // update
                     String numberID = InputChecker.verifySaleNumberID();
                     ArrayList<String> sales2 = saleControl.readSale(numberID);
-                    if (sales2 != null) {
-                        System.out.println(sales2);
+                    if (sales2!=null) {
+                        for (String sale : sales2)
+                        {
+                            System.out.println(sale);
+                        }
                     } else {
                         MenuText.write(FAILURE);
                         break;

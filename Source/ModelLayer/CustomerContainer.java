@@ -46,9 +46,10 @@ public class CustomerContainer {
                 fields.add("4. Email: " + customer.getEmail());
                 fields.add("5. Phone: " + customer.getPhone());
                 fields.add("6. City: " + customer.getCity());
+                return fields;
             }
         }
-        return fields;
+        return null;
     }
 
     public boolean removeCustomerByCPR(String cpr) {
