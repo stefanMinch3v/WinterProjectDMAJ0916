@@ -12,7 +12,7 @@ public class LoginContainer {
     private LoginContainer() {
         mapList = new HashMap<String, String>();
         mapList.put("username", "nopass");
-        mapList.put("admin", "hardpass");
+        mapList.put("admin", "Kokot");
     }
 
 
