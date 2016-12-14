@@ -62,6 +62,7 @@ public class LoanContainer {
                 list.add("1.NumberID: " + l.getNumberID());
                 list.add("2.Price: " + l.getPrice() + " DKK");
                 list.add("3.Customer: " + l.getCustomer().getName() + ": " + l.getCustomer().getCpr());
+                list.add("4.Date of purchase: " + l.getStartDate());
                 if(l.getPeriodOfTime()>1)list.add("4.Period: " + l.getPeriodOfTime() + " weeks");
                 else list.add("4.Period: " + l.getPeriodOfTime() + " week");
                 list.add("5.Status: " + l.getStatus());
