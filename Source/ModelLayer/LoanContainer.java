@@ -64,6 +64,7 @@ public class LoanContainer {
                 list.add("3.Customer: " + l.getCustomer().getName() + ": " + l.getCustomer().getCpr());
                 if(l.getPeriodOfTime()>1)list.add("4.Period: " + l.getPeriodOfTime() + " weeks");
                 else list.add("4.Period: " + l.getPeriodOfTime() + " week");
+                list.add("5.Status: " + l.getStatus());
                 return list;
             }
         }

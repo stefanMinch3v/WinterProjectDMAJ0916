@@ -19,7 +19,10 @@ public class Loan extends Order {
         this.items = items;
         status = true;
     }
-
+    public String getStatus(){
+        if(status) return "Not returned";
+        else return "Returned";
+    }
     public String getStartDate() {
         return startDate;
     }
